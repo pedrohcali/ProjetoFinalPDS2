@@ -19,6 +19,7 @@ public:
     std::vector<Task*> getTasksSortedByName(Board* board);
     std::vector<Task*> getTasksSortedByDueDate(Board* board);
     bool moveTask(Task* task, Board* fromBoard, Board* toBoard);
+    void editTask(Task* task, const std::string& newTitle, const std::string& newDescription, const std::string& newDueDate);
 };
 
 #endif // TASK_MANAGER_H

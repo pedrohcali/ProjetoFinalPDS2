@@ -1,0 +1,107 @@
+User.hpp/User.cpp: Esses arquivos implementam a classe User. Os usuários são responsáveis por gerenciar os quadros de tarefas (Boards). Eles podem adicionar ou remover quadros e têm acesso para ver todos os quadros que possuem. A classe User também vai ser atualizada para suportar a movimentação de tarefas entre diferentes quadros.
+
+Board.hpp/Board.cpp: Esses arquivos implementam a classe Board. Um quadro é uma coleção de tarefas e pode adicionar, remover, mostrar todas as tarefas que contém. A classe Board também suportará a edição de suas propriedades.
+
+TaskManager.hpp/TaskManager.cpp: Esses arquivos implementam a classe TaskManager. Essa classe é responsável pela criação, exclusão, obtenção e movimentação de tarefas, tornando a classe Board mais focada em suas responsabilidades principais.
+
+Task.hpp/Task.cpp: Esses arquivos implementam a classe Task. A classe Task representa uma tarefa que tem um título, uma descrição e uma data de vencimento. Além disso, cada tarefa tem um método para mostrar suas informações e também suportará a edição de suas propriedades.
+
+DataStorage.hpp/DataStorage.cpp: Esses arquivos implementam a classe DataStorage, que é uma simulação simples de um sistema de armazenamento de dados. Essa classe é responsável por manter a lista de todos os usuários e por persistência de dados, permitindo que os dados do usuário sejam salvos em um arquivo e carregados novamente quando o programa é reiniciado.
+
+Menu.cpp/Menu.hpp: Esses arquivos implementam a classe Menu. O Menu faz mostrar no terminal ao usuário as opções que ele está interagindo no programa. Faz também com que seja possível indicar qual quadro e qual usuário está acessando por meio de métodos.
+
+main.cpp: Este arquivo contém a função main(), que é o ponto de entrada para o programa. Ele implementa um menu de usuário interativo que permite ao usuário selecionar qual ação eles gostariam de realizar (por exemplo, criar uma nova tarefa, exibir todas as tarefas, etc.). Além disso, também cria alguns objetos de teste e cuida do ciclo de vida desses objetos. Agora também vai incluir opções adicionais para as novas funcionalidades que estamos adicionando, e também incluirá tratamento de erros para evitar situações como acessar um quadro que não existe ou tentar criar uma tarefa com uma data de vencimento inválida.
+
+-------------------
+
+Pseudocódigo da main:
+
+1. Inicialize um objeto DataStorage e TaskManager
+
+2. Carregue os dados dos usuários do armazenamento de dados
+
+3. Inicie um loop principal. Dentro deste loop:
+
+   a. Exiba um menu principal para o usuário que inclui opções como:
+      i. Criar um novo usuário
+     ii. Excluir um usuário existente
+    iii. Acessar um usuário existente
+     iv. Sair do programa
+
+   b. Dependendo da escolha do usuário:
+      i. Se o usuário quiser criar um novo usuário:
+         1. Peça ao usuário o nome e o e-mail do usuário
+         2. Crie um novo objeto de usuário e adicione-o ao armazenamento de dados
+
+     ii. Se o usuário quiser excluir um usuário existente:
+         1. Peça ao usuário o nome do usuário
+         2. Remova o usuário do armazenamento de dados
+
+    iii. Se o usuário quiser acessar um usuário existente:
+         1. Peça ao usuário o nome do usuário
+         2. Recupere o usuário do armazenamento de dados
+         3. Se o usuário não existir, exiba uma mensagem de erro e retorne ao menu principal
+         4. Inicie outro loop. Dentro deste loop:
+            a. Exiba um menu que inclui opções como:
+               i. Criar um novo quadro
+              ii. Excluir um quadro existente
+             iii. Acessar um quadro existente
+              iv. Listar os quadros existentes
+               v. Retornar ao menu principal
+
+            b. Dependendo da escolha do usuário:
+               i. Se o usuário quiser criar um novo quadro:
+                  1. Peça ao usuário o nome do quadro
+                  2. Crie um novo objeto de quadro e adicione-o ao usuário
+
+              ii. Se o usuário quiser excluir um quadro existente:
+                  1. Peça ao usuário o nome do quadro
+                  2. Remova o quadro do usuário
+
+             iii. Se o usuário quiser acessar um quadro existente:
+                  1. Peça ao usuário o nome do quadro
+                  2. Recupere o quadro do usuário
+                  3. Se o quadro não existir, exiba uma mensagem de erro e retorne ao menu do usuário
+                  4. Inicie outro loop. Dentro deste loop:
+                     a. Exiba um menu que inclui opções como:
+                        i. Adicionar uma tarefa ao quadro
+                       ii. Remover uma tarefa do quadro
+                      iii. Mover uma tarefa para outro quadro
+                       iv. Listar todas as tarefas no quadro por adição
+                        v. Listar as tarefas ordenadas por título
+                       vi. Listar as tarefas ordenadas por data de vencimento
+                      vii. Editar uma tarefa
+                     viii. Retornar ao menu do usuário
+
+                     b. Dependendo da escolha do usuário:
+                        i. Se o usuário quiser adicionar uma tarefa ao quadro:
+                           1. Peça ao usuário os detalhes da tarefa
+                           2. Crie um novo objeto de tarefa e adicione-o ao quadro
+
+                       ii. Se o usuário quiser remover uma tarefa do quadro:
+                           1. Peça ao usuário os detalhes da tarefa
+                           2. Remova a tarefa do quadro
+
+                      iii. Se o usuário quiser mover uma tarefa para outro quadro:
+                           1. Peça ao usuário os detalhes da tarefa e do quadro de destino
+                           2. Mova a tarefa para o novo quadro
+
+                       iv. Se o usuário quiser listar todas as tarefas no quadro:
+                           1. Recupere todas as tarefas do quadro e exiba-as ao usuário
+                           
+                        v. Se o usuário quiser listar as tarefas ordenadas por título:
+                           1. Recupere todas as tarefas do quadro, ordene por título e exiba ao usuário
+                           
+                       vi. Se o usuário quiser listar as tarefas ordenadas por data de vencimento:
+                           1. Recupere todas as tarefas do quadro, ordene por data de vencimento e exiba ao usuário
+
+                    # vii. Se o usuário quiser editar uma tarefa (a implementar):
+                           1. Peça ao usuário os detalhes da tarefa e as novas informações
+                           2. Atualize a tarefa com as novas informações
+                        
+                     viii. Se o usuário quiser voltar ao menu do usuário:
+                           1. Voltar ao menu do usuário
+
+4. Se o usuário quiser sair do programa:
+   a. Salve todos os dados do usuário no armazenamento de dados (a implementar salvamento)
+   b. Encerre o programa

@@ -12,7 +12,7 @@ Menu.cpp/Menu.hpp: Esses arquivos implementam a classe Menu. O Menu faz mostrar 
 
 main.cpp: Este arquivo contém a função main(), que é o ponto de entrada para o programa. Ele implementa um menu de usuário interativo que permite ao usuário selecionar qual ação eles gostariam de realizar (por exemplo, criar uma nova tarefa, exibir todas as tarefas, etc.). Além disso, também cria alguns objetos de teste e cuida do ciclo de vida desses objetos. Agora também vai incluir opções adicionais para as novas funcionalidades que estamos adicionando, e também incluirá tratamento de erros para evitar situações como acessar um quadro que não existe ou tentar criar uma tarefa com uma data de vencimento inválida.
 
-------------------
+--------------------
 
 Pseudocódigo da main:
 

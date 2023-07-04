@@ -33,7 +33,7 @@ void Menu::displayBoardMenu(const std::string& boardName) {
               << "4. Listar todas as tarefas no quadro ordenadas por adicao\n"
               << "5. Listar todas as tarefas no quadro ordenadas por titulo\n"
               << "6. Listar todas as tarefas no quadro ordenadas por data de vencimento\n"
-              << "7. Editar uma tarefa (A implementar)\n"
+              << "7. Editar uma tarefa\n"
               << "8. Retornar ao menu do usuario\n"
               << "Escolha uma opcao: \n"
               << "|-------------------------------|\n\n";

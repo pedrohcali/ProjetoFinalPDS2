@@ -1,15 +1,22 @@
 // TaskManager.cpp
 #include "TaskManager.hpp"
 #include <algorithm>
+#include <stdexcept>
 
 TaskManager::TaskManager() {
 }
 
 Task* TaskManager::createTask(const std::string& title, const std::string& description, const std::string& dueDate) {
+    if (title.empty()) {
+        throw std::invalid_argument("O titulo da tarefa nao pode estar vazio.");
+    }
     return new Task(title, description, dueDate);
 }
 
 Task* TaskManager::getTask(Board* board, const std::string& taskTitle) {
+    if (!board) {
+        return nullptr;
+    }
     std::vector<Task*> tasks = getTasks(board);
     for (Task* task : tasks) {
         if (task->getTitle() == taskTitle) {
@@ -21,14 +28,23 @@ Task* TaskManager::getTask(Board* board, const std::string& taskTitle) {
 
 
 bool TaskManager::addTask(Board* board, Task* task) {
+    if (!board || !task) {
+        return false;
+    }
     return board->addTask(task);
 }
 
 bool TaskManager::removeTask(Board* board, Task* task) {
+    if (!board || !task) {
+        return false;
+    }
     return board->removeTask(task);
 }
 
 std::vector<Task*> TaskManager::getTasks(Board* board) {
+    if (!board) {
+        return {};
+    }
     return board->getTasks();
 }
 
@@ -49,6 +65,9 @@ std::vector<Task*> TaskManager::getTasksSortedByDueDate(Board* board) {
 }
 
 bool TaskManager::moveTask(Task* task, Board* fromBoard, Board* toBoard) {
+    if (!task || !fromBoard || !toBoard) {
+        return false;
+    }
     if (fromBoard->removeTask(task)) {
         toBoard->addTask(task);
         return true;
@@ -57,6 +76,13 @@ bool TaskManager::moveTask(Task* task, Board* fromBoard, Board* toBoard) {
 }
 
 void TaskManager::editTask(Task* task, const std::string& newTitle, const std::string& newDescription, const std::string& newDueDate) {
+    if (!task) {
+        throw std::invalid_argument("Tarefa nao pode ser nula para edicao.");
+    }
+
+    if (newTitle.empty()) {
+        throw std::invalid_argument("O titulo da tarefa nao pode estar vazio.");
+    }
     task->setTitle(newTitle);
     task->setDescription(newDescription);
     task->setDueDate(newDueDate);

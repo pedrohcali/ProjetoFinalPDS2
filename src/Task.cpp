@@ -1,4 +1,6 @@
 #include "Task.hpp"
+#include <regex>
+#include <stdexcept>
 
 Task::Task(const std::string& title, const std::string& description, const std::string& dueDate)
 : title(title), description(description), dueDate(dueDate) {}
@@ -8,6 +10,9 @@ std::string Task::getTitle() const {
 }
 
 void Task::setTitle(const std::string& title) {
+    if (title.empty()) {
+        throw std::invalid_argument("Titulo nao pode ser vazio");
+    }
     this->title = title;
 }
 
@@ -24,5 +29,9 @@ std::string Task::getDueDate() const {
 }
 
 void Task::setDueDate(const std::string& dueDate) {
+    std::regex datePattern("\\d{4}-\\d{2}-\\d{2}");
+    if (!std::regex_match(dueDate, datePattern)) {
+        throw std::invalid_argument("Data de vencimento nao esta no formato YYYY-MM-DD");
+    }
     this->dueDate = dueDate;
 }

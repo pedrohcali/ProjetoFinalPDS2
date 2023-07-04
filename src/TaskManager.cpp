@@ -8,7 +8,7 @@ TaskManager::TaskManager() {
 
 Task* TaskManager::createTask(const std::string& title, const std::string& description, const std::string& dueDate) {
     if (title.empty()) {
-        throw std::invalid_argument("O título da tarefa não pode estar vazio.");
+        throw std::invalid_argument("O titulo da tarefa nao pode estar vazio.");
     }
     return new Task(title, description, dueDate);
 }
@@ -77,11 +77,11 @@ bool TaskManager::moveTask(Task* task, Board* fromBoard, Board* toBoard) {
 
 void TaskManager::editTask(Task* task, const std::string& newTitle, const std::string& newDescription, const std::string& newDueDate) {
     if (!task) {
-        throw std::invalid_argument("Tarefa não pode ser nula para edição.");
+        throw std::invalid_argument("Tarefa nao pode ser nula para edicao.");
     }
 
     if (newTitle.empty()) {
-        throw std::invalid_argument("O título da tarefa não pode estar vazio.");
+        throw std::invalid_argument("O titulo da tarefa nao pode estar vazio.");
     }
     task->setTitle(newTitle);
     task->setDescription(newDescription);

@@ -11,7 +11,7 @@ class TaskManager {
 public:
     TaskManager();
 
-    Task* createTask(const std::string& title, const std::string& description, const std::string& dueDate);
+    Task* createTask(const std::string& title, const std::string& description = "-", const std::string& dueDate = "");
     Task* getTask(Board* board, const std::string& taskTitle);
     bool addTask(Board* board, Task* task);
     bool removeTask(Board* board, Task* task);
@@ -23,4 +23,3 @@ public:
 };
 
 #endif // TASK_MANAGER_H
-

@@ -265,7 +265,7 @@ int main() {
 
                                 // Se o usuario quiser sair do programa
                                 if (userChoice == 4) {
-                                    // dataStorage.saveUsers(); // A IMPLEMENTAR AINDA
+                                    dataStorage.saveData(); // A IMPLEMENTAR AINDA
                                     return 0;
                                 }
 
@@ -298,6 +298,7 @@ int main() {
             }
 
             case 4: // Sair
+                dataStorage.saveData();
                 return 0;
 
             default:

@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <memory>
+#include <fstream>
+#include <sstream>
 #include "User.hpp"
 #include "TaskManager.hpp"
 

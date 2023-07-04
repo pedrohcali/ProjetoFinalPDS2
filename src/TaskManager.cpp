@@ -55,3 +55,9 @@ bool TaskManager::moveTask(Task* task, Board* fromBoard, Board* toBoard) {
     }
     return false;
 }
+
+void TaskManager::editTask(Task* task, const std::string& newTitle, const std::string& newDescription, const std::string& newDueDate) {
+    task->setTitle(newTitle);
+    task->setDescription(newDescription);
+    task->setDueDate(newDueDate);
+}

@@ -47,6 +47,7 @@ int main() {
 
                 auto user = std::make_unique<User>(username, email, taskManager);
                 dataStorage.addUser(std::move(user));
+                std::cout << "\n(!) Usuario criado!\n\n";
 
                 break;
             }
@@ -57,6 +58,7 @@ int main() {
                 std::cin >> username;
 
                 dataStorage.removeUser(username);
+                std::cout << "\n(!) Usuario excluido!\n\n";
 
                 break;
             }
@@ -68,7 +70,7 @@ int main() {
 
                 User* user = dataStorage.getUser(username);
                 if (!user) {
-                    std::cout << "Usuario nao encontrado.\n";
+                    std::cout << "\n(!) Usuario nao encontrado! Tente novamente. (Dica: maiusculas fazem diferenca!)\n";
                     break;
                 }
 
@@ -92,6 +94,7 @@ int main() {
 
                             auto board = std::make_unique<Board>(boardName);
                             user->addBoard(std::move(board));
+                            std::cout << "\n(@) Quadro criado!\n\n";
 
                             break;
                         }
@@ -102,6 +105,7 @@ int main() {
                             std::cin >> boardName;
 
                             user->removeBoard(boardName);
+                            std::cout << "\n(@) Quadro deletado!\n\n";
 
                             break;
                         }
@@ -113,7 +117,7 @@ int main() {
 
                             Board* board = user->getBoard(boardName);
                             if (!board) {
-                                std::cout << "Quadro nao encontrado.\n";
+                                std::cout << "\n(@) Quadro nao encontrado.\n\n";
                                 break;
                             }
 
@@ -127,105 +131,141 @@ int main() {
 
                                 switch (boardChoice) {
                                     case 1: { // Adicionar uma tarefa ao quadro
-                                        std::string taskTitle;
-                                        std::cout << "Digite o titulo da tarefa: ";
+                                        std::string taskTitle, taskDescription, taskDueDate;
                                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+                                        std::cout << "Digite o titulo da tarefa: ";
                                         std::getline(std::cin, taskTitle);
 
-                                        std::string taskDescription;
                                         std::cout << "Digite a descricao da tarefa: ";
                                         std::getline(std::cin, taskDescription);
 
-                                        std::string taskDueDate;
                                         std::cout << "Digite a data de vencimento da tarefa (formato YYYY-MM-DD): ";
                                         std::getline(std::cin, taskDueDate);
 
                                         Task* task = taskManager.createTask(taskTitle, taskDescription, taskDueDate);
                                         board->addTask(task);
+                                        std::cout << "\n(#) Tarefa adicionada!\n\n";
 
                                         break;
                                     }
 
                                     case 2: { // Remover uma tarefa do quadro
-                                        std::cout << "Digite o titulo da tarefa a ser removida: ";
                                         std::string taskTitle;
                                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                        
+                                        std::cout << "Digite o titulo da tarefa a ser removida: ";
                                         std::getline(std::cin, taskTitle);
 
                                         Task* task = taskManager.getTask(board, taskTitle);
                                         if (!task) {
-                                            std::cout << "Tarefa nao encontrada.\n";
+                                            std::cout << "\n(#) Tarefa nao encontrada.\n\n";
                                             break;
                                         }
                                         board->removeTask(task);
+                                        std::cout << "\n(#) Tarefa removida!\n\n";
 
                                         break;
                                     }
 
                                     case 3: { // Mover uma tarefa para outro quadro
                                         std::string taskTitle, targetBoardName;
+                                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                        
                                         std::cout << "Digite o titulo da tarefa a ser movida: ";
-                                        std::cin >> taskTitle;
+                                        std::getline(std::cin, taskTitle);
 
                                         Task* task = taskManager.getTask(board, taskTitle);
                                         if (!task) {
-                                            std::cout << "Tarefa nao encontrada.\n";
+                                            std::cout << "\n(#) Tarefa nao encontrada!\n\n";
                                             break;
                                         }
 
                                         std::cout << "Digite o nome do quadro de destino: ";
-                                        std::cin >> targetBoardName;
+                                        std::getline(std::cin, targetBoardName);
 
                                         Board* targetBoard = user->getBoard(targetBoardName);
                                         if (!targetBoard) {
-                                            std::cout << "Quadro de destino nao encontrado.\n";
+                                            std::cout << "\n(@) Quadro nao encontrado!\n\n";
                                             break;
                                         }
 
                                         taskManager.moveTask(task, board, targetBoard);
+                                        std::cout << "\n(#) Tarefa movida para outro quadro!\n\n";
 
                                         break;
                                     }
 
                                     case 4: { // Listar todas as tarefas no quadro ordenadas por adição
                                         auto tasks = taskManager.getTasks(board);
+                                        std::cout << "\n(#) Tarefas listadas por ordem de Adicao:\n";
                                         for (const auto& task : tasks) {
                                             std::cout << "Titulo: " << task->getTitle() << ", Descricao: " << task->getDescription() << ", Data de Vencimento: " << task->getDueDate() << "\n";
                                         }
+                                        std::cout << "-------------------------------------\n\n";
                                         break;
                                     }
 
                                     case 5: { // Listar todas as tarefas no quadro ordenadas por titulo
                                         auto tasks = taskManager.getTasksSortedByName(board);
+                                        std::cout << "\n(#) Tarefas listadas por ordem de A-Z:\n";
                                         for (const auto& task : tasks) {
                                             std::cout << "Titulo: " << task->getTitle() << ", Descricao: " << task->getDescription() << ", Data de Vencimento: " << task->getDueDate() << "\n";
                                         }
+                                        std::cout << "-------------------------------------\n\n";
                                         break;
                                     }
 
                                     case 6: { // Listar todas as tarefas no quadro ordenadas por data de vencimento
                                         auto tasks = taskManager.getTasksSortedByDueDate(board);
+                                        std::cout << "\n(#) Tarefas listadas por ordem de Data de Vencimento:\n";
                                         for (const auto& task : tasks) {
                                             std::cout << "Titulo: " << task->getTitle() << ", Descricao: " << task->getDescription() << ", Data de Vencimento: " << task->getDueDate() << "\n";
                                         }
+                                        std::cout << "-------------------------------------\n\n";
                                         break;
                                     }
 
-                                    case 7: // Editar uma tarefa
-                                        // A implementar ainda
+                                    case 7: { // Editar uma tarefa
+                                        std::string taskTitle, newTitle, newDescription, newDueDate;
+                                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+                                        std::cout << "Digite o titulo da tarefa a ser editada: ";
+                                        std::getline(std::cin, taskTitle);
+
+                                        Task* task = taskManager.getTask(board, taskTitle);
+                                        if (!task) {
+                                            std::cout << "\n(#) Tarefa nao encontrada.\n\n";
+                                            break;
+                                        }
+
+                                        std::cout << "Digite o novo titulo: ";
+                                        std::getline(std::cin, newTitle);
+
+                                        std::cout << "Digite a nova descricao: ";
+                                        std::getline(std::cin, newDescription);
+
+                                        std::cout << "Digite a nova data de vencimento (formato YYYY-MM-DD): ";
+                                        std::getline(std::cin, newDueDate);
+
+                                        taskManager.editTask(task, newTitle, newDescription, newDueDate);
+                                        std::cout << "\n(#) Tarefa editada!\n\n";
+
                                         break;
+                                    }
 
                                     case 8: // Retornar ao menu do usuario
                                         boardLoop = false;
+                                        std::cout << "Retornando ao menu do usuario...\n";
                                         break;
 
                                     default:
-                                        std::cout << "Opcao invalida.\n";
+                                        std::cout << "\n(!) Opcao invalida.\n";
                                 }
 
                                 // Se o usuario quiser sair do programa
                                 if (userChoice == 4) {
-                                    // dataStorage.saveUsers(); // A IMPLEMENTAR AINDA
+                                    dataStorage.saveData(); // A IMPLEMENTAR AINDA
                                     return 0;
                                 }
 
@@ -251,17 +291,18 @@ int main() {
                             break;
 
                         default:
-                            std::cout << "Opcao invalida.\n";
+                            std::cout << "\n(!) Opcao invalida.\n";
                     }
                 }
                 break;
             }
 
             case 4: // Sair
+                dataStorage.saveData();
                 return 0;
 
             default:
-                std::cout << "Opcao invalida.\n";
+                std::cout << "\n(!) Opcao invalida.\n";
         }
     }
 

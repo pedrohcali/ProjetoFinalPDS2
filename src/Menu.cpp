@@ -9,11 +9,11 @@ void Menu::displayMainMenu() {
               << "3. Acessar um usuario existente\n"
               << "4. Sair\n"
               << "Escolha uma opcao: \n"
-              << "|----------------------------------|\n";
+              << "|----------------------------------|\n\n";
 }
 
 void Menu::displayUserMenu(const std::string& userName) {
-    std::cout << "|---------|MENU USUÁRIO|---------|\n"
+    std::cout << "|---------|MENU USUARIO|---------|\n"
               << "Menu do usuario (" << userName << "):\n"
               << "1. Criar um novo quadro\n"
               << "2. Excluir um quadro existente\n"
@@ -21,7 +21,7 @@ void Menu::displayUserMenu(const std::string& userName) {
               << "4. Listar todos os quadros\n"
               << "5. Retornar ao menu principal\n"
               << "Escolha uma opcao: \n"
-              << "|--------------------------------|\n";
+              << "|--------------------------------|\n\n";
 }
 
 void Menu::displayBoardMenu(const std::string& boardName) {
@@ -33,9 +33,9 @@ void Menu::displayBoardMenu(const std::string& boardName) {
               << "4. Listar todas as tarefas no quadro ordenadas por adicao\n"
               << "5. Listar todas as tarefas no quadro ordenadas por titulo\n"
               << "6. Listar todas as tarefas no quadro ordenadas por data de vencimento\n"
-              << "7. Editar uma tarefa (A implementar)\n"
+              << "7. Editar uma tarefa\n"
               << "8. Retornar ao menu do usuario\n"
               << "Escolha uma opcao: \n"
-              << "|-------------------------------|\n";
+              << "|-------------------------------|\n\n";
 }
 

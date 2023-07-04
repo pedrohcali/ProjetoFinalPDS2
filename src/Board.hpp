@@ -13,13 +13,11 @@ public:
 
     const std::string& getName() const;
 
-    void setName(const std::string& name);
-
     std::vector<Task*>& getTasks();
 
-    bool addTask(Task* task);
-
-    bool removeTask(Task* task);
+    void setName(const std::string& name); // Lança std::invalid_argument se o nome for inválido
+    bool addTask(Task* task); // Lança std::invalid_argument se a tarefa já existir no quadro
+    bool removeTask(Task* task); // Lança std::invalid_argument se a tarefa não for encontrada no quadro
 
 private:
     std::string name;

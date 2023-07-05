@@ -22,17 +22,17 @@ void Board::setName(const std::string& name) {
         throw std::invalid_argument("Nome do quadro nao pode ser vazio.");
     }
 
-    // Checar se o nome é longo demais
-    if (name.size() > 50) {
-        throw std::invalid_argument("Nome do quadro nao pode ter mais de 50 caracteres.");
-    }
+    // // Checar se o nome é longo demais
+    // if (name.size() > 50) {
+    //     throw std::invalid_argument("Nome do quadro nao pode ter mais de 50 caracteres.");
+    // }
 
-    // Checar se o nome contém caracteres inválidos
-    for (char c : name) {
-        if (!std::isalnum(c) && !std::isspace(c)) {
-            throw std::invalid_argument("Nome do quadro contem caracteres invalidos.");
-        }
-    }
+    // // Checar se o nome contém caracteres inválidos
+    // for (char c : name) {
+    //     if (!std::isalnum(c) && !std::isspace(c)) {
+    //         throw std::invalid_argument("Nome do quadro contem caracteres invalidos.");
+    //     }
+    // }
 
     this->name = name;
 }
@@ -47,8 +47,9 @@ bool Board::addTask(Task* task) {
     if (it == tasks.end()) {
         tasks.push_back(task);
         return true;
-    } else {
-        throw std::invalid_argument("Tarefa ja existe no quadro.");
+    } 
+    else {
+        return false;
     }
 }
 
@@ -58,7 +59,8 @@ bool Board::removeTask(Task* task) {
     if (it != tasks.end()) {
         tasks.erase(it);
         return true;
-    } else {
-        throw std::invalid_argument("Tarefa nao encontrada no quadro.");
+    } 
+    else {
+        return false;
     }
 }

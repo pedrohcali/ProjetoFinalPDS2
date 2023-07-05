@@ -5,7 +5,9 @@
 #include <stdexcept>
 
 User::User(const std::string& username, const std::string& email, TaskManager& taskManager)
-    : username(username), email(email), taskManager(taskManager) {
+    : taskManager(taskManager) {
+    setUsername(username);
+    setEmail(email);
 }
 
 User::~User() {
@@ -27,8 +29,8 @@ const std::string& User::getEmail() const {
 }
 
 void User::setEmail(const std::string& email) {
-    if (email.empty() || email.find('@') == std::string::npos) {
-        throw std::invalid_argument("O endereco de e-mail fornecido eh invalido.");
+    if (email.empty() || email.find("@ufmg.br") == std::string::npos) {
+        throw std::invalid_argument("O endereco de e-mail fornecido eh invalido ou nao eh da UFMG.");
     }
     this->email = email;
 }
@@ -52,7 +54,6 @@ void User::addBoard(std::unique_ptr<Board> board) {
 }
 
 void User::removeBoard(const std::string& boardName) {
-    // Implementar mecanismo para buscar o quadro pelo nome
     auto it = std::find_if(boards.begin(), boards.end(), [&boardName](const auto& board) {
         return board->getName() == boardName;
     });

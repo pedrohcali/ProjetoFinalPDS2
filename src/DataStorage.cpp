@@ -5,9 +5,9 @@
 
 DataStorage::DataStorage(const std::string& filename, TaskManager& taskManager) 
     : filename(filename), taskManager(taskManager) {
-    if (filename.empty()) {
-        throw std::invalid_argument("Nome do arquivo nao pode ser vazio.");
-    }
+    // if (filename.empty()) {
+    //     throw std::invalid_argument("Nome do arquivo nao pode ser vazio.");
+    // }
 }
 
 DataStorage::~DataStorage() {
@@ -88,6 +88,12 @@ void DataStorage::addUser(std::unique_ptr<User> user) {
     if (!user) {
         throw std::invalid_argument("Nao eh possivel adicionar um usuario nulo.");
     }
+
+    // Verificar se o usuário já existe
+    if (getUser(user->getUsername())) {
+        throw std::invalid_argument("O usuario ja existe. Tente outro nickname.");
+    }
+
     users.push_back(std::move(user));
 }
 

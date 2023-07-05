@@ -10,6 +10,12 @@ Task* TaskManager::createTask(const std::string& title, const std::string& descr
     if (title.empty()) {
         throw std::invalid_argument("O titulo da tarefa nao pode estar vazio.");
     }
+
+    std::regex datePattern("\\d{4}-\\d{2}-\\d{2}");
+    if (!std::regex_match(dueDate, datePattern)) {
+        throw std::invalid_argument("Data de vencimento nao esta no formato YYYY-MM-DD");
+    }
+    
     return new Task(title, description, dueDate);
 }
 

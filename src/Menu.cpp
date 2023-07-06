@@ -4,7 +4,7 @@
 void Menu::displayMainMenu() {
     std::cout << "\n|---------|MENU PRINCIPAL|---------|\n"
               << "Menu principal:\n"
-              << "1. Criar um novo usuario\n"
+              << "1. Criar um novo usuario da UFMG\n"
               << "2. Excluir um usuario existente\n"
               << "3. Acessar um usuario existente\n"
               << "4. Sair\n"

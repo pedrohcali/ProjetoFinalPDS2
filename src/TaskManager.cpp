@@ -2,6 +2,7 @@
 #include "TaskManager.hpp"
 #include <algorithm>
 #include <stdexcept>
+#include <regex>
 
 TaskManager::TaskManager() {
 }

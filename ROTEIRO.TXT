@@ -1,6 +1,6 @@
 User.hpp/User.cpp: Esses arquivos implementam a classe User. Os usuários são responsáveis por gerenciar os quadros de tarefas (Boards). Eles podem adicionar ou remover quadros e têm acesso para ver todos os quadros que possuem. A classe User também vai ser atualizada para suportar a movimentação de tarefas entre diferentes quadros.
 
-Board.hpp/Board.cpp: Esses arquivos implementam a classe Board. Um quadro é uma coleção de tarefas e pode adicionar, remover, mostrar todas as tarefas que contém. A classe Board também suportará a edição de suas propriedades.
+Board.hpp/Board.cpp: Esses arquivos implementam a classe Board. Um quadro é uma coleção de tarefas e pode adicionar, remover, mostrar todas as tarefas que contém. A classe Board também suportará a edição de suas propriedades, além de possibilitar a mobilidade das tarefas de um quadro de origem para outro de destino.
 
 TaskManager.hpp/TaskManager.cpp: Esses arquivos implementam a classe TaskManager. Essa classe é responsável pela criação, exclusão, obtenção e movimentação de tarefas, tornando a classe Board mais focada em suas responsabilidades principais.
 
@@ -8,9 +8,9 @@ Task.hpp/Task.cpp: Esses arquivos implementam a classe Task. A classe Task repre
 
 DataStorage.hpp/DataStorage.cpp: Esses arquivos implementam a classe DataStorage, que é uma simulação simples de um sistema de armazenamento de dados. Essa classe é responsável por manter a lista de todos os usuários e por persistência de dados, permitindo que os dados do usuário sejam salvos em um arquivo e carregados novamente quando o programa é reiniciado.
 
-Menu.cpp/Menu.hpp: Esses arquivos implementam a classe Menu. O Menu faz mostrar no terminal ao usuário as opções que ele está interagindo no programa. Faz também com que seja possível indicar qual quadro e qual usuário está acessando por meio de métodos.
+Menu.cpp/Menu.hpp: Esses arquivos implementam a classe Menu. O Menu faz mostrar ao usuário, no terminal, as opções que ele está interagindo no programa. Essa clase faz também com que seja possível indicar qual quadro e qual usuário está acessando por meio de métodos.
 
-main.cpp: Este arquivo contém a função main(), que é o ponto de entrada para o programa. Ele implementa um menu de usuário interativo que permite ao usuário selecionar qual ação eles gostariam de realizar (por exemplo, criar uma nova tarefa, exibir todas as tarefas, etc.). Além disso, também cria alguns objetos de teste e cuida do ciclo de vida desses objetos. Agora também vai incluir opções adicionais para as novas funcionalidades que estamos adicionando, e também incluirá tratamento de erros para evitar situações como acessar um quadro que não existe ou tentar criar uma tarefa com uma data de vencimento inválida.
+main.cpp: Este arquivo contém a função main(), que é o ponto de entrada para o programa. Ele implementa um menu de usuário interativo que permite ao usuário selecionar qual ação eles gostariam de realizar (por exemplo, criar uma nova tarefa, exibir todas as tarefas, etc.). Além disso, também cria alguns objetos de teste e cuida do ciclo de vida desses objetos. A função main vai ainda incluir opções adicionais para as novas funcionalidades que estamos adicionando, e também incluirá tratamento de erros para evitar situações como acessar um quadro que não existe ou tentar criar uma tarefa com uma data de vencimento inválida.
 
 --------------------
 

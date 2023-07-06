@@ -1,6 +1,6 @@
 # Definindo variáveis
 CXX = g++
-CXXFLAGS = -Wall -std=c++14 -Iheaders
+CXXFLAGS = -Wall -std=c++17 -Iheaders -fprofile-arcs -ftest-coverage
 SOURCES = User.cpp Board.cpp Task.cpp TaskManager.cpp DataStorage.cpp Menu.cpp main.cpp
 OBJECTS = $(addprefix build/,$(SOURCES:.cpp=.o))
 TARGET = taskufmanager
@@ -31,6 +31,10 @@ clean:
 test: $(TEST_TARGET)
 	./$(TEST_TARGET)
 
-# Regra para compilar os testos
+# Regra para compilar os testes
 $(TEST_TARGET): $(TEST_OBJECTS) $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
+
+# Regra para rodar o programa
+run: $(TARGET)
+	./$(TARGET)

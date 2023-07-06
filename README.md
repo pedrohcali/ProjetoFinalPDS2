@@ -72,9 +72,15 @@ cd src
 make
 ```
 
-3. Execute o programa com "taskufmanager"
+3. Execute o programa com "taskufmanager" ou make run
 ```
 ./taskufmanager
+```
+
+ou
+
+```
+make run
 ```
 
 ## Testes
@@ -82,6 +88,7 @@ make
 Para executar os testes unitários, siga as instruções abaixo:
 
 1. Certifique-se de estar no diretório src do projeto
+
 2. Compile os testes usando Makefile
 ```
 make test

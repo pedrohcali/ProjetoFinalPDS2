@@ -1,51 +1,44 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 
 #include "User.hpp"  // para usar a classe User
-#include "User.cpp"
 #include "Board.hpp" // para usar a classe Board
-#include "Board.cpp"
 #include "Task.hpp"  // para usar a classe Task
-#include "Task.cpp"
 #include "TaskManager.hpp" // para usar a classe TaskManager
-#include "TaskManager.cpp"
 #include "DataStorage.hpp" // para usar a classe DataStorage
-#include "DataStorage.cpp"
 #include "Menu.hpp" // para usar a classe Menu
-#include "Menu.cpp"
 
 // TASK TESTES
 TEST_CASE("Teste existencia e criacao de tasks") {
     TaskManager taskManager;
-    DataStorage dataStorage("BancoDados.txt", taskManager);
+    DataStorage dataStorage("src/output/BancoDados.txt", taskManager);
 
     // Carregar dados dos usuários em arquivo externo
     dataStorage.loadData();
 
-    if(dataStorage.getUser("Teste2") == false) {
+    if(dataStorage.getUser("Teste2") == nullptr) {
         auto user = std::make_unique<User>("Teste2", "m@ufmg.br", taskManager);
         dataStorage.addUser(std::move(user));
     }
 
     User* user2 = dataStorage.getUser("Teste2");
 
-    if(user2->getBoard("QuadroTeste") == false) {
+    if(user2->getBoard("QuadroTeste") == nullptr) {
         auto board = std::make_unique<Board>("QuadroTeste");
         user2->addBoard(std::move(board));
     }
 
     Board* board2 = user2->getBoard("QuadroTeste");
 
-    if(taskManager.getTask(board2, "TesteTitulo") == false) {
+    if(taskManager.getTask(board2, "TesteTitulo") == nullptr) {
         Task* task = taskManager.createTask("TesteTitulo", "TesteDescricao", "2003-08-25");
         board2->addTask(task);
     }
 
-    CHECK(taskManager.getTask(board2, "") == false);
+    CHECK(taskManager.getTask(board2, "") == nullptr);
 
-    CHECK(taskManager.getTask(board2, "TesteTitulo") != false);
+    CHECK(taskManager.getTask(board2, "TesteTitulo") != nullptr);
 
-    CHECK(taskManager.getTask(board2, "TesteTituloNAOEXISTE") == false);
+    CHECK(taskManager.getTask(board2, "TesteTituloNAOEXISTE") == nullptr);
 }
 
 TEST_CASE("Teste remocao de task") {
@@ -55,30 +48,30 @@ TEST_CASE("Teste remocao de task") {
     // Carregar dados dos usuários em arquivo externo
     dataStorage.loadData();
 
-    if(dataStorage.getUser("Teste2") == false) {
+    if(dataStorage.getUser("Teste2") == nullptr) {
         auto user = std::make_unique<User>("Teste2", "m@ufmg.br", taskManager);
         dataStorage.addUser(std::move(user));
     }
 
     User* user2 = dataStorage.getUser("Teste2");
 
-    if(user2->getBoard("QuadroTeste") == false) {
+    if(user2->getBoard("QuadroTeste") == nullptr) {
         auto board = std::make_unique<Board>("QuadroTeste");
         user2->addBoard(std::move(board));
     }
 
     Board* board2 = user2->getBoard("QuadroTeste");
 
-    if(taskManager.getTask(board2, "TesteTitulo") == false) {
+    if(taskManager.getTask(board2, "TesteTitulo") == nullptr) {
         Task* task = taskManager.createTask("TesteTitulo", "TesteDescricao", "2003-08-25");
         board2->addTask(task);
     }
 
-    CHECK(taskManager.getTask(board2, "TesteTitulo") != false);
+    CHECK(taskManager.getTask(board2, "TesteTitulo") != nullptr);
 
     board2->removeTask(taskManager.getTask(board2, "TesteTitulo"));
 
-    CHECK(taskManager.getTask(board2, "TesteTitulo") == false);
+    CHECK(taskManager.getTask(board2, "TesteTitulo") == nullptr);
 }
 
 TEST_CASE("Teste lista de tasks") {
@@ -88,31 +81,31 @@ TEST_CASE("Teste lista de tasks") {
     // Carregar dados dos usuários em arquivo externo
     dataStorage.loadData();
 
-    if(dataStorage.getUser("Teste2") == false) {
+    if(dataStorage.getUser("Teste2") == nullptr) {
         auto user = std::make_unique<User>("Teste2", "m@ufmg.br", taskManager);
         dataStorage.addUser(std::move(user));
     }
 
     User* user2 = dataStorage.getUser("Teste2");
 
-    if(user2->getBoard("QuadroTeste") == false) {
+    if(user2->getBoard("QuadroTeste") == nullptr) {
         auto board = std::make_unique<Board>("QuadroTeste");
         user2->addBoard(std::move(board));
     }
 
     Board* board2 = user2->getBoard("QuadroTeste");
 
-    if(taskManager.getTask(board2, "TesteTitulo") == false) {
+    if(taskManager.getTask(board2, "TesteTitulo") == nullptr) {
         Task* task = taskManager.createTask("TesteTitulo", "TesteDescricao", "2003-08-25");
         board2->addTask(task);
     }
 
-    if(taskManager.getTask(board2, "TesteTitulo2") == false) {
+    if(taskManager.getTask(board2, "TesteTitulo2") == nullptr) {
         Task* task = taskManager.createTask("TesteTitulo2", "TesteDescricao2", "2001-08-24");
         board2->addTask(task);
     }
 
-    if(taskManager.getTask(board2, "TesteTitulo3") == false) {
+    if(taskManager.getTask(board2, "TesteTitulo3") == nullptr) {
         Task* task = taskManager.createTask("TesteTitulo3", "TesteDescricao3", "2002-08-24");
         board2->addTask(task);
     }
@@ -131,31 +124,31 @@ TEST_CASE("Teste ordenacao de tasks") {
     // Carregar dados dos usuários em arquivo externo
     dataStorage.loadData();
 
-    if(dataStorage.getUser("Teste2") == false) {
+    if(dataStorage.getUser("Teste2") == nullptr) {
         auto user = std::make_unique<User>("Teste2", "m@ufmg.br", taskManager);
         dataStorage.addUser(std::move(user));
     }
 
     User* user2 = dataStorage.getUser("Teste2");
 
-    if(user2->getBoard("QuadroTeste") == false) {
+    if(user2->getBoard("QuadroTeste") == nullptr) {
         auto board = std::make_unique<Board>("QuadroTeste");
         user2->addBoard(std::move(board));
     }
 
     Board* board2 = user2->getBoard("QuadroTeste");
 
-    if(taskManager.getTask(board2, "TesteTitulo") == false) {
+    if(taskManager.getTask(board2, "TesteTitulo") == nullptr) {
         Task* task = taskManager.createTask("TesteTitulo", "TesteDescricao", "2003-08-25");
         board2->addTask(task);
     }
 
-    if(taskManager.getTask(board2, "TesteTitulo2") == false) {
+    if(taskManager.getTask(board2, "TesteTitulo2") == nullptr) {
         Task* task = taskManager.createTask("TesteTitulo2", "TesteDescricao2", "2001-08-24");
         board2->addTask(task);
     }
 
-    if(taskManager.getTask(board2, "TesteTitulo3") == false) {
+    if(taskManager.getTask(board2, "TesteTitulo3") == nullptr) {
         Task* task = taskManager.createTask("TesteTitulo3", "TesteDescricao3", "2002-08-24");
         board2->addTask(task);
     }
@@ -180,19 +173,19 @@ TEST_CASE("Teste movimentacao de tasks") {
     // Carregar dados dos usuários em arquivo externo
     dataStorage.loadData();
 
-    if(dataStorage.getUser("Teste2") == false) {
+    if(dataStorage.getUser("Teste2") == nullptr) {
         auto user = std::make_unique<User>("Teste2", "m@ufmg.br", taskManager);
         dataStorage.addUser(std::move(user));
     }
 
     User* user2 = dataStorage.getUser("Teste2");
 
-    if(user2->getBoard("QuadroTeste2") == false) {
+    if(user2->getBoard("QuadroTeste2") == nullptr) {
         auto board = std::make_unique<Board>("QuadroTeste2");
         user2->addBoard(std::move(board));
     }
 
-    if(user2->getBoard("QuadroTeste3") == false) {
+    if(user2->getBoard("QuadroTeste3") == nullptr) {
         auto board = std::make_unique<Board>("QuadroTeste3");
         user2->addBoard(std::move(board));
     }
@@ -201,12 +194,12 @@ TEST_CASE("Teste movimentacao de tasks") {
 
     Board* board3 = user2->getBoard("QuadroTeste3");
 
-    if(taskManager.getTask(board2, "TesteTitulo") == false) {
+    if(taskManager.getTask(board2, "TesteTitulo") == nullptr) {
         auto task = taskManager.createTask("TesteTitulo", "TesteDescricao", "2003-08-25");
         board2->addTask(task);
     }
 
-    if(taskManager.getTask(board3, "TesteTitulo2") == false) {
+    if(taskManager.getTask(board3, "TesteTitulo2") == nullptr) {
         auto task = taskManager.createTask("TesteTitulo2", "TesteDescricao2", "2001-08-24");
         board3->addTask(task);
     }
@@ -217,13 +210,13 @@ TEST_CASE("Teste movimentacao de tasks") {
     
     taskManager.moveTask(task, board2, board3);
 
-    CHECK(taskManager.getTask(board3, "TesteTitulo") != false);
-    CHECK(taskManager.getTask(board2, "TesteTitulo") == false);
+    CHECK(taskManager.getTask(board3, "TesteTitulo") != nullptr);
+    CHECK(taskManager.getTask(board2, "TesteTitulo") == nullptr);
     
     taskManager.moveTask(task2, board3, board2);
 
-    CHECK(taskManager.getTask(board2, "TesteTitulo2") != false);
-    CHECK(taskManager.getTask(board3, "TesteTitulo2") == false);
+    CHECK(taskManager.getTask(board2, "TesteTitulo2") != nullptr);
+    CHECK(taskManager.getTask(board3, "TesteTitulo2") == nullptr);
 }
 
 TEST_CASE("Teste edicao de tasks") {
@@ -233,26 +226,26 @@ TEST_CASE("Teste edicao de tasks") {
     // Carregar dados dos usuários em arquivo externo
     dataStorage.loadData();
 
-    if(dataStorage.getUser("Teste2") == false) {
+    if(dataStorage.getUser("Teste2") == nullptr) {
         auto user = std::make_unique<User>("Teste2", "m@ufmg.br", taskManager);
         dataStorage.addUser(std::move(user));
     }
 
     User* user2 = dataStorage.getUser("Teste2");
 
-    if(user2->getBoard("QuadroTeste2") == false) {
+    if(user2->getBoard("QuadroTeste2") == nullptr) {
         auto board = std::make_unique<Board>("QuadroTeste2");
         user2->addBoard(std::move(board));
     }
 
-    if(user2->getBoard("QuadroTeste3") == false) {
+    if(user2->getBoard("QuadroTeste3") == nullptr) {
         auto board = std::make_unique<Board>("QuadroTeste3");
         user2->addBoard(std::move(board));
     }
 
     Board* board2 = user2->getBoard("QuadroTeste2");
 
-    if(taskManager.getTask(board2, "TesteTitulo") == false) {
+    if(taskManager.getTask(board2, "TesteTitulo") == nullptr) {
         auto task = taskManager.createTask("TesteTitulo", "TesteDescricao", "2003-08-25");
         board2->addTask(task);
     }

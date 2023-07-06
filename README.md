@@ -9,8 +9,6 @@ Este é um sistema de gerenciamento de tarefas escrito em C++. Ele permite que o
 - [Pré-Requisitos](#pré-requisitos)
 - [Compilação](#compilação)
 - [Testes](#testes)
-- [Contribuindo](#contribuindo)
-- [Licença](#licença)
 
 ## Recursos
 
@@ -83,14 +81,13 @@ make
 
 Para executar os testes unitários, siga as instruções abaixo:
 
-[Adicione instruções aqui]
+1. Certifique-se de estar no diretório src do projeto
+2. Compile os testes usando Makefile
+```
+make test
+```
 
-## Contribuindo
-
-Se você deseja contribuir para o projeto, siga as instruções abaixo:
-
-[Adicione instruções aqui]
-
-## Licença
-
-[Adicione informações de licença aqui]
+3. Execute os testes
+```
+./build/runtests
+```

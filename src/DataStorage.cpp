@@ -13,6 +13,7 @@ DataStorage::DataStorage(const std::string& filename, TaskManager& taskManager)
 DataStorage::~DataStorage() {
 }
 
+// Itera sobre a lista de usuários e grava os dados de cada usuário e suas tarefas no arquivo
 void DataStorage::saveData() {
     std::ofstream file(filename);
     if (!file) {
@@ -36,6 +37,7 @@ void DataStorage::saveData() {
     }
 }
 
+ // Método para carregar os dados de um arquivo
 void DataStorage::loadData() {
     std::ifstream file(filename);
     if (!file) {
@@ -84,6 +86,7 @@ User* DataStorage::getUser(const std::string& username) {
     return it != users.end() ? it->get() : nullptr;
 }
 
+// Adiciona um novo usuário ao vetor de usuários
 void DataStorage::addUser(std::unique_ptr<User> user) {
     if (!user) {
         throw std::invalid_argument("Nao eh possivel adicionar um usuario nulo.");
@@ -97,6 +100,7 @@ void DataStorage::addUser(std::unique_ptr<User> user) {
     users.push_back(std::move(user));
 }
 
+// Remove o usuário com o nome de usuário fornecido do vetor de usuários
 void DataStorage::removeUser(const std::string& username) {
     auto it = std::remove_if(users.begin(), users.end(), [&username](const std::unique_ptr<User>& user) {
         return user->getUsername() == username;

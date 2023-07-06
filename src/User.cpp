@@ -1,8 +1,8 @@
 #include "User.hpp"
 #include "Board.hpp"
 #include "Task.hpp"
-#include <algorithm>
-#include <stdexcept>
+#include <algorithm> // Para usar a função std::find_if
+#include <stdexcept> // Para usar std::invalid_argument e std::runtime_error
 
 User::User(const std::string& username, const std::string& email, TaskManager& taskManager)
     : taskManager(taskManager) {
@@ -10,13 +10,13 @@ User::User(const std::string& username, const std::string& email, TaskManager& t
     setEmail(email);
 }
 
-User::~User() {
-}
+User::~User() {}
 
 const std::string& User::getUsername() const {
     return username;
 }
 
+// Entrada do nome do usuário
 void User::setUsername(const std::string& username) {
     if (username.empty()) {
         throw std::invalid_argument("O nome de usuario nao pode estar vazio.");
@@ -28,6 +28,7 @@ const std::string& User::getEmail() const {
     return email;
 }
 
+// Entrada do e-mail do usuário
 void User::setEmail(const std::string& email) {
     if (email.empty() || email.find("@ufmg.br") == std::string::npos) {
         throw std::invalid_argument("O endereco de e-mail fornecido eh invalido ou nao eh da UFMG.");
@@ -75,6 +76,7 @@ void User::moveTask(Board* fromBoard, Board* toBoard, Task* task) {
     }
 }
 
+// Busca um objeto Board no vetor "boards" por meio no nome fornecido ("boardName")
 Board* User::getBoard(const std::string& boardName) const {
     for(auto& board : boards) {
         if(board->getName() == boardName) {

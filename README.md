@@ -74,7 +74,7 @@ cd src
 make
 ```
 
-3. Execute o programa com "taskufmanager"
+3. Execute o programa com "taskufmanager" ou make run
 ```
 ./taskufmanager
 ```

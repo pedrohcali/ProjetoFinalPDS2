@@ -1,0 +1,120 @@
+\doxysection{Referência da Estrutura doctest\+::detail\+::Test\+Suite}
+\label{structdoctest_1_1detail_1_1_test_suite}\index{doctest::detail::TestSuite@{doctest::detail::TestSuite}}
+
+
+{\ttfamily \#include $<$doctest.\+h$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Test\+Suite} \& \textbf{ operator$\ast$} (const char $\ast$in)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\textbf{ Test\+Suite} \& \textbf{ operator$\ast$} (const T \&in)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \textbf{ m\+\_\+test\+\_\+suite} = nullptr
+\item 
+const char $\ast$ \textbf{ m\+\_\+description} = nullptr
+\item 
+bool \textbf{ m\+\_\+skip} = false
+\item 
+bool \textbf{ m\+\_\+no\+\_\+breaks} = false
+\item 
+bool \textbf{ m\+\_\+no\+\_\+output} = false
+\item 
+bool \textbf{ m\+\_\+may\+\_\+fail} = false
+\item 
+bool \textbf{ m\+\_\+should\+\_\+fail} = false
+\item 
+int \textbf{ m\+\_\+expected\+\_\+failures} = 0
+\item 
+double \textbf{ m\+\_\+timeout} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\label{structdoctest_1_1detail_1_1_test_suite_ad2551def823db67f1516b78a5e2a967d} 
+\index{doctest::detail::TestSuite@{doctest::detail::TestSuite}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!doctest::detail::TestSuite@{doctest::detail::TestSuite}}
+\doxysubsubsection{operator$\ast$()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ Test\+Suite} \& doctest\+::detail\+::\+Test\+Suite\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const char $\ast$}]{in }\end{DoxyParamCaption})}
+
+\label{structdoctest_1_1detail_1_1_test_suite_a15a89c55da84b7dc5aa40277ab37c7c5} 
+\index{doctest::detail::TestSuite@{doctest::detail::TestSuite}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!doctest::detail::TestSuite@{doctest::detail::TestSuite}}
+\doxysubsubsection{operator$\ast$()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ Test\+Suite} \& doctest\+::detail\+::\+Test\+Suite\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01606\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01607\ \ \ \ \ \ \ \ \ \ \ \ \ in.fill(*\textcolor{keyword}{this});}
+\DoxyCodeLine{01608\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{01609\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Atributos}
+\label{structdoctest_1_1detail_1_1_test_suite_a0458cf84f4f2d308162b26c95a1bbbce} 
+\index{doctest::detail::TestSuite@{doctest::detail::TestSuite}!m\_description@{m\_description}}
+\index{m\_description@{m\_description}!doctest::detail::TestSuite@{doctest::detail::TestSuite}}
+\doxysubsubsection{m\_description}
+{\footnotesize\ttfamily const char$\ast$ doctest\+::detail\+::\+Test\+Suite\+::m\+\_\+description = nullptr}
+
+\label{structdoctest_1_1detail_1_1_test_suite_ab0167ce62046912d83780302cb86adca} 
+\index{doctest::detail::TestSuite@{doctest::detail::TestSuite}!m\_expected\_failures@{m\_expected\_failures}}
+\index{m\_expected\_failures@{m\_expected\_failures}!doctest::detail::TestSuite@{doctest::detail::TestSuite}}
+\doxysubsubsection{m\_expected\_failures}
+{\footnotesize\ttfamily int doctest\+::detail\+::\+Test\+Suite\+::m\+\_\+expected\+\_\+failures = 0}
+
+\label{structdoctest_1_1detail_1_1_test_suite_aeaf438e6731c002c2447e8e87c46c82b} 
+\index{doctest::detail::TestSuite@{doctest::detail::TestSuite}!m\_may\_fail@{m\_may\_fail}}
+\index{m\_may\_fail@{m\_may\_fail}!doctest::detail::TestSuite@{doctest::detail::TestSuite}}
+\doxysubsubsection{m\_may\_fail}
+{\footnotesize\ttfamily bool doctest\+::detail\+::\+Test\+Suite\+::m\+\_\+may\+\_\+fail = false}
+
+\label{structdoctest_1_1detail_1_1_test_suite_a7e86c2494775203d7509434872465d8c} 
+\index{doctest::detail::TestSuite@{doctest::detail::TestSuite}!m\_no\_breaks@{m\_no\_breaks}}
+\index{m\_no\_breaks@{m\_no\_breaks}!doctest::detail::TestSuite@{doctest::detail::TestSuite}}
+\doxysubsubsection{m\_no\_breaks}
+{\footnotesize\ttfamily bool doctest\+::detail\+::\+Test\+Suite\+::m\+\_\+no\+\_\+breaks = false}
+
+\label{structdoctest_1_1detail_1_1_test_suite_af32b6741f56f39846bf750a9685d6446} 
+\index{doctest::detail::TestSuite@{doctest::detail::TestSuite}!m\_no\_output@{m\_no\_output}}
+\index{m\_no\_output@{m\_no\_output}!doctest::detail::TestSuite@{doctest::detail::TestSuite}}
+\doxysubsubsection{m\_no\_output}
+{\footnotesize\ttfamily bool doctest\+::detail\+::\+Test\+Suite\+::m\+\_\+no\+\_\+output = false}
+
+\label{structdoctest_1_1detail_1_1_test_suite_a3c5953ed157cfc68dfc37cce66fb4103} 
+\index{doctest::detail::TestSuite@{doctest::detail::TestSuite}!m\_should\_fail@{m\_should\_fail}}
+\index{m\_should\_fail@{m\_should\_fail}!doctest::detail::TestSuite@{doctest::detail::TestSuite}}
+\doxysubsubsection{m\_should\_fail}
+{\footnotesize\ttfamily bool doctest\+::detail\+::\+Test\+Suite\+::m\+\_\+should\+\_\+fail = false}
+
+\label{structdoctest_1_1detail_1_1_test_suite_a82ecf10ca3db6bff60a087378267caea} 
+\index{doctest::detail::TestSuite@{doctest::detail::TestSuite}!m\_skip@{m\_skip}}
+\index{m\_skip@{m\_skip}!doctest::detail::TestSuite@{doctest::detail::TestSuite}}
+\doxysubsubsection{m\_skip}
+{\footnotesize\ttfamily bool doctest\+::detail\+::\+Test\+Suite\+::m\+\_\+skip = false}
+
+\label{structdoctest_1_1detail_1_1_test_suite_ab6260436f6fd52d473c0020ff916753c} 
+\index{doctest::detail::TestSuite@{doctest::detail::TestSuite}!m\_test\_suite@{m\_test\_suite}}
+\index{m\_test\_suite@{m\_test\_suite}!doctest::detail::TestSuite@{doctest::detail::TestSuite}}
+\doxysubsubsection{m\_test\_suite}
+{\footnotesize\ttfamily const char$\ast$ doctest\+::detail\+::\+Test\+Suite\+::m\+\_\+test\+\_\+suite = nullptr}
+
+\label{structdoctest_1_1detail_1_1_test_suite_a430d6e400dd91b9a21c7bb06ede81ec9} 
+\index{doctest::detail::TestSuite@{doctest::detail::TestSuite}!m\_timeout@{m\_timeout}}
+\index{m\_timeout@{m\_timeout}!doctest::detail::TestSuite@{doctest::detail::TestSuite}}
+\doxysubsubsection{m\_timeout}
+{\footnotesize\ttfamily double doctest\+::detail\+::\+Test\+Suite\+::m\+\_\+timeout = 0}
+
+
+
+A documentação para essa estrutura foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\textbf{ doctest.\+h}\end{DoxyCompactItemize}

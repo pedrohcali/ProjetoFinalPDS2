@@ -1,0 +1,43 @@
+\doxysection{User.\+hpp}
+\label{_user_8hpp_source}\index{C:/Users/pedro/Videos/ProjetoFinalPDS2/src/headers/User.hpp@{C:/Users/pedro/Videos/ProjetoFinalPDS2/src/headers/User.hpp}}
+\textbf{ Ir para a documentação desse arquivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ USER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ USER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}TaskManager.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }Board;\ \textcolor{comment}{//\ Incluindo\ antes\ para\ usar\ na\ classe}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }User\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ User(\textcolor{keyword}{const}\ std::string\&\ username,\ \textcolor{keyword}{const}\ std::string\&\ email,\ TaskManager\&\ taskManager);}
+\DoxyCodeLine{00014\ \ \ \ \ \string~User();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ getUsername()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ setUsername(\textcolor{keyword}{const}\ std::string\&\ username);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ getEmail()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ setEmail(\textcolor{keyword}{const}\ std::string\&\ email);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::unique\_ptr<Board>>\&\ getBoards()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ addBoard(std::unique\_ptr<Board>\ board);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ removeBoard(\textcolor{keyword}{const}\ std::string\&\ boardName);}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ moveTask(Board*\ fromBoard,\ Board*\ toBoard,\ Task*\ task);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ Board*\ getBoard(\textcolor{keyword}{const}\ std::string\&\ boardName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ username;}
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ email;}
+\DoxyCodeLine{00033\ \ \ \ \ std::vector<std::unique\_ptr<Board>>\ boards;}
+\DoxyCodeLine{00034\ \ \ \ \ TaskManager\&\ taskManager;}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ USER\_H}}
+
+\end{DoxyCode}

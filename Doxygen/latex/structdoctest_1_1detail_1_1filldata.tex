@@ -1,0 +1,37 @@
+\doxysection{Referência do $<$em$>$Template$<$/em$>$ da Estrutura doctest\+::detail\+::filldata$<$ T $>$}
+\label{structdoctest_1_1detail_1_1filldata}\index{doctest::detail::filldata$<$ T $>$@{doctest::detail::filldata$<$ T $>$}}
+
+
+{\ttfamily \#include $<$doctest.\+h$>$}
+
+\doxysubsubsection*{Membros públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ fill} (\textbf{ std\+::ostream} $\ast$stream, const T \&in)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\label{structdoctest_1_1detail_1_1filldata_ac59161273947acc06c938dc7dbe1f7cd} 
+\index{doctest::detail::filldata$<$ T $>$@{doctest::detail::filldata$<$ T $>$}!fill@{fill}}
+\index{fill@{fill}!doctest::detail::filldata$<$ T $>$@{doctest::detail::filldata$<$ T $>$}}
+\doxysubsubsection{fill()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void \textbf{ doctest\+::detail\+::filldata}$<$ T $>$\+::fill (\begin{DoxyParamCaption}\item[{\textbf{ std\+::ostream} $\ast$}]{stream,  }\item[{const T \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01152\ \textcolor{preprocessor}{\#if\ defined(\_MSC\_VER)\ \&\&\ \_MSC\_VER\ <=\ 1900 }}
+\DoxyCodeLine{01153\ \ \ \ \ \ \ \ \ insert\_hack\_t<T>::insert(*stream,\ in);}
+\DoxyCodeLine{01154\ \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{01155\ \ \ \ \ \ \ \ \ operator<<(*stream,\ in);}
+\DoxyCodeLine{01156\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{01157\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa estrutura foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\textbf{ doctest.\+h}\end{DoxyCompactItemize}

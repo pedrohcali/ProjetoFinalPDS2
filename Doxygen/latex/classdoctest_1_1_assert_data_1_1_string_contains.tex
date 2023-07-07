@@ -1,0 +1,85 @@
+\doxysection{Referência da Classe doctest\+::Assert\+Data\+::String\+Contains}
+\label{classdoctest_1_1_assert_data_1_1_string_contains}\index{doctest::AssertData::StringContains@{doctest::AssertData::StringContains}}
+
+
+{\ttfamily \#include $<$doctest.\+h$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ String\+Contains} (const \textbf{ String} \&str)
+\item 
+\textbf{ String\+Contains} (\textbf{ Contains} cntn)
+\item 
+bool \textbf{ check} (const \textbf{ String} \&str)
+\item 
+\textbf{ operator const String \&} () const
+\item 
+const char $\ast$ \textbf{ c\+\_\+str} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\label{classdoctest_1_1_assert_data_1_1_string_contains_a6a88dee0e03ef22a1e425696c3070e16} 
+\index{doctest::AssertData::StringContains@{doctest::AssertData::StringContains}!StringContains@{StringContains}}
+\index{StringContains@{StringContains}!doctest::AssertData::StringContains@{doctest::AssertData::StringContains}}
+\doxysubsubsection{StringContains()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily doctest\+::\+Assert\+Data\+::\+String\+Contains\+::\+String\+Contains (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00851\ :\ content(str),\ isContains(\textcolor{keyword}{false})\ \{\ \}}
+
+\end{DoxyCode}
+\label{classdoctest_1_1_assert_data_1_1_string_contains_ae8b0e70648c2863d986b3ca053a78078} 
+\index{doctest::AssertData::StringContains@{doctest::AssertData::StringContains}!StringContains@{StringContains}}
+\index{StringContains@{StringContains}!doctest::AssertData::StringContains@{doctest::AssertData::StringContains}}
+\doxysubsubsection{StringContains()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily doctest\+::\+Assert\+Data\+::\+String\+Contains\+::\+String\+Contains (\begin{DoxyParamCaption}\item[{\textbf{ Contains}}]{cntn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00852\ :\ content(\textcolor{keyword}{static\_cast<}Contains\&\&\textcolor{keyword}{>}(cntn)),\ isContains(\textcolor{keyword}{true})\ \{\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentação das funções}
+\label{classdoctest_1_1_assert_data_1_1_string_contains_a1ced6c89e3694d02717a3ea69746b460} 
+\index{doctest::AssertData::StringContains@{doctest::AssertData::StringContains}!c\_str@{c\_str}}
+\index{c\_str@{c\_str}!doctest::AssertData::StringContains@{doctest::AssertData::StringContains}}
+\doxysubsubsection{c\_str()}
+{\footnotesize\ttfamily const char $\ast$ doctest\+::\+Assert\+Data\+::\+String\+Contains\+::c\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00858\ \{\ \textcolor{keywordflow}{return}\ content.string.c\_str();\ \}}
+
+\end{DoxyCode}
+\label{classdoctest_1_1_assert_data_1_1_string_contains_af784258b8b4f99b8665e090d74610b26} 
+\index{doctest::AssertData::StringContains@{doctest::AssertData::StringContains}!check@{check}}
+\index{check@{check}!doctest::AssertData::StringContains@{doctest::AssertData::StringContains}}
+\doxysubsubsection{check()}
+{\footnotesize\ttfamily bool doctest\+::\+Assert\+Data\+::\+String\+Contains\+::check (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00854\ \{\ \textcolor{keywordflow}{return}\ isContains\ ?\ (content\ ==\ str)\ :\ (content.string\ ==\ str);\ \}}
+
+\end{DoxyCode}
+\label{classdoctest_1_1_assert_data_1_1_string_contains_ab84e1359927f01f0c625b6d405d79e77} 
+\index{doctest::AssertData::StringContains@{doctest::AssertData::StringContains}!operator const String \&@{operator const String \&}}
+\index{operator const String \&@{operator const String \&}!doctest::AssertData::StringContains@{doctest::AssertData::StringContains}}
+\doxysubsubsection{operator const String \&()}
+{\footnotesize\ttfamily doctest\+::\+Assert\+Data\+::\+String\+Contains\+::operator const \textbf{ String} \& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00856\ \{\ \textcolor{keywordflow}{return}\ content.string;\ \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\textbf{ doctest.\+h}\end{DoxyCompactItemize}

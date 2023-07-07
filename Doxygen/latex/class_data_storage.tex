@@ -1,0 +1,214 @@
+\doxysection{Referência da Classe Data\+Storage}
+\label{class_data_storage}\index{DataStorage@{DataStorage}}
+
+
+{\ttfamily \#include $<$Data\+Storage.\+hpp$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Data\+Storage} (const std\+::string \&filename, \textbf{ Task\+Manager} \&task\+Manager)
+\item 
+\textbf{ $\sim$\+Data\+Storage} ()
+\item 
+void \textbf{ save\+Data} ()
+\item 
+void \textbf{ load\+Data} ()
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \textbf{ User} $>$ $>$ \& \textbf{ get\+Users} ()
+\item 
+\textbf{ User} $\ast$ \textbf{ get\+User} (const std\+::string \&username)
+\item 
+void \textbf{ add\+User} (std\+::unique\+\_\+ptr$<$ \textbf{ User} $>$ user)
+\item 
+void \textbf{ remove\+User} (const std\+::string \&username)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\label{class_data_storage_ac73f0ded14e381be22234769798b5cd6} 
+\index{DataStorage@{DataStorage}!DataStorage@{DataStorage}}
+\index{DataStorage@{DataStorage}!DataStorage@{DataStorage}}
+\doxysubsubsection{DataStorage()}
+{\footnotesize\ttfamily Data\+Storage\+::\+Data\+Storage (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{\textbf{ Task\+Manager} \&}]{task\+Manager }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ :\ filename(filename),\ taskManager(taskManager)\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{comment}{//\ if\ (filename.empty())\ \{}}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ throw\ std::invalid\_argument("{}Nome\ do\ arquivo\ nao\ pode\ ser\ vazio."{});}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{00011\ \}}
+
+\end{DoxyCode}
+\label{class_data_storage_adf4ef73e6d368dc7fcd213ba80e1d618} 
+\index{DataStorage@{DataStorage}!````~DataStorage@{$\sim$DataStorage}}
+\index{````~DataStorage@{$\sim$DataStorage}!DataStorage@{DataStorage}}
+\doxysubsubsection{$\sim$DataStorage()}
+{\footnotesize\ttfamily Data\+Storage\+::$\sim$\+Data\+Storage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentação das funções}
+\label{class_data_storage_a6195f71d7b22fcda60407c57cf0d7529} 
+\index{DataStorage@{DataStorage}!addUser@{addUser}}
+\index{addUser@{addUser}!DataStorage@{DataStorage}}
+\doxysubsubsection{addUser()}
+{\footnotesize\ttfamily void Data\+Storage\+::add\+User (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \textbf{ User} $>$}]{user }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{if}\ (!user)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Nao\ eh\ possivel\ adicionar\ um\ usuario\ nulo."{}});}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ Verificar\ se\ o\ usuário\ já\ existe}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{if}\ (getUser(user-\/>getUsername()))\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}O\ usuario\ ja\ existe.\ Tente\ outro\ nickname."{}});}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ users.push\_back(std::move(user));}
+\DoxyCodeLine{00101\ \}}
+
+\end{DoxyCode}
+\label{class_data_storage_a8176d6d7f6d3936983f77f9f650df868} 
+\index{DataStorage@{DataStorage}!getUser@{getUser}}
+\index{getUser@{getUser}!DataStorage@{DataStorage}}
+\doxysubsubsection{getUser()}
+{\footnotesize\ttfamily \textbf{ User} $\ast$ Data\+Storage\+::get\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find\_if(users.begin(),\ users.end(),\ [\&username](\textcolor{keyword}{const}\ std::unique\_ptr<User>\&\ user)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ return\ user-\/>getUsername()\ ==\ username;}
+\DoxyCodeLine{00085\ \ \ \ \ \});}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{return}\ it\ !=\ users.end()\ ?\ it-\/>get()\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00087\ \}}
+
+\end{DoxyCode}
+\label{class_data_storage_afefc72a1e7eb761d56e360fdccf9a54a} 
+\index{DataStorage@{DataStorage}!getUsers@{getUsers}}
+\index{getUsers@{getUsers}!DataStorage@{DataStorage}}
+\doxysubsubsection{getUsers()}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \textbf{ User} $>$ $>$ \& Data\+Storage\+::get\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ users;}
+\DoxyCodeLine{00080\ \}}
+
+\end{DoxyCode}
+\label{class_data_storage_a2e7f34e7e0b752b6bae1f51597403124} 
+\index{DataStorage@{DataStorage}!loadData@{loadData}}
+\index{loadData@{loadData}!DataStorage@{DataStorage}}
+\doxysubsubsection{loadData()}
+{\footnotesize\ttfamily void Data\+Storage\+::load\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ std::ifstream\ file(filename);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Falha\ ao\ abrir\ arquivo\ para\ leitura."{}});}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::string\ username,\ email,\ token;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::getline(iss,\ username,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::getline(iss,\ email,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ user\ =\ std::make\_unique<User>(username,\ email,\ taskManager);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(iss,\ token,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ issBoard(token);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ boardName,\ tasksStr;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(issBoard,\ boardName,\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(issBoard,\ tasksStr,\ \textcolor{charliteral}{'\{'});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(issBoard,\ tasksStr,\ \textcolor{charliteral}{'\}'});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(boardName);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ issTasks(tasksStr);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ taskStr;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(issTasks,\ taskStr,\ \textcolor{charliteral}{';'}))\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ issTask(taskStr);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ taskTitle,\ taskDescription,\ taskDueDate;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(issTask,\ taskTitle,\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(issTask,\ taskDescription,\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(issTask,\ taskDueDate,\ \textcolor{charliteral}{':'});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Task*\ task\ =\ taskManager.createTask(taskTitle,\ taskDescription,\ taskDueDate);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ board-\/>addTask(task);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ user-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ users.push\_back(std::move(user));}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \}}
+
+\end{DoxyCode}
+\label{class_data_storage_ad53ab058f11f9fd45d935ca6476f6082} 
+\index{DataStorage@{DataStorage}!removeUser@{removeUser}}
+\index{removeUser@{removeUser}!DataStorage@{DataStorage}}
+\doxysubsubsection{removeUser()}
+{\footnotesize\ttfamily void Data\+Storage\+::remove\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::remove\_if(users.begin(),\ users.end(),\ [\&username](\textcolor{keyword}{const}\ std::unique\_ptr<User>\&\ user)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ return\ user-\/>getUsername()\ ==\ username;}
+\DoxyCodeLine{00107\ \ \ \ \ \});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ users.end())\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Falha\ ao\ remover\ usuario.\ Usuario\ nao\ encontrado."{}});}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ users.erase(it,\ users.end());}
+\DoxyCodeLine{00114\ \}}
+
+\end{DoxyCode}
+\label{class_data_storage_aebe090ccc75577636554679e3434b71e} 
+\index{DataStorage@{DataStorage}!saveData@{saveData}}
+\index{saveData@{saveData}!DataStorage@{DataStorage}}
+\doxysubsubsection{saveData()}
+{\footnotesize\ttfamily void Data\+Storage\+::save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ std::ofstream\ file(filename);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Falha\ ao\ abrir\ arquivo\ para\ salvamento."{}});}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ user\ :\ users)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ file\ <<\ user-\/>getUsername()\ <<\ \textcolor{charliteral}{','}\ <<\ user-\/>getEmail();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ board\ :\ user-\/>getBoards())\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{charliteral}{','}\ <<\ board-\/>getName()\ <<\ \textcolor{stringliteral}{"{}:\{"{}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ tasks\ =\ board-\/>getTasks();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ tasks.size();\ ++i)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ 0)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{charliteral}{';'};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ tasks[i]-\/>getTitle()\ <<\ \textcolor{charliteral}{':'}\ <<\ tasks[i]-\/>getDescription()\ <<\ \textcolor{charliteral}{':'}\ <<\ tasks[i]-\/>getDueDate();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ file\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/headers/\textbf{ Data\+Storage.\+hpp}\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/\textbf{ Data\+Storage.\+cpp}\end{DoxyCompactItemize}

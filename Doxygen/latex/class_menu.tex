@@ -1,0 +1,89 @@
+\doxysection{Referência da Classe Menu}
+\label{class_menu}\index{Menu@{Menu}}
+
+
+{\ttfamily \#include $<$Menu.\+hpp$>$}
+
+\doxysubsubsection*{Membros públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ display\+Main\+Menu} ()
+\item 
+static void \textbf{ display\+User\+Menu} (const std\+::string \&user\+Name)
+\item 
+static void \textbf{ display\+Board\+Menu} (const std\+::string \&board\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\label{class_menu_a8bd791fd847ae53bc47287f195fcdebd} 
+\index{Menu@{Menu}!displayBoardMenu@{displayBoardMenu}}
+\index{displayBoardMenu@{displayBoardMenu}!Menu@{Menu}}
+\doxysubsubsection{displayBoardMenu()}
+{\footnotesize\ttfamily void Menu\+::display\+Board\+Menu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{board\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n|-\/-\/-\/-\/-\/-\/-\/-\/-\/|MENU\ QUADRO|-\/-\/-\/-\/-\/-\/-\/-\/-\/|\(\backslash\)n"{}}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Menu\ do\ quadro\ ("{}}\ <<\ boardName\ <<\ \textcolor{stringliteral}{"{}):\(\backslash\)n"{}}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}1.\ Adicionar\ uma\ tarefa\ ao\ quadro\(\backslash\)n"{}}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}2.\ Remover\ uma\ tarefa\ do\ quadro\(\backslash\)n"{}}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}3.\ Mover\ uma\ tarefa\ para\ outro\ quadro\(\backslash\)n"{}}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}4.\ Listar\ todas\ as\ tarefas\ no\ quadro\ ordenadas\ por\ adicao\(\backslash\)n"{}}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}5.\ Listar\ todas\ as\ tarefas\ no\ quadro\ ordenadas\ por\ A-\/Z\(\backslash\)n"{}}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}6.\ Listar\ todas\ as\ tarefas\ no\ quadro\ ordenadas\ por\ data\ de\ vencimento\(\backslash\)n"{}}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}7.\ Editar\ uma\ tarefa\(\backslash\)n"{}}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}8.\ Retornar\ ao\ menu\ do\ usuario\(\backslash\)n"{}}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Escolha\ uma\ opcao:\ \(\backslash\)n"{}}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}
+\label{class_menu_a35fd0e99777c5d224ec2f49296002c1d} 
+\index{Menu@{Menu}!displayMainMenu@{displayMainMenu}}
+\index{displayMainMenu@{displayMainMenu}!Menu@{Menu}}
+\doxysubsubsection{displayMainMenu()}
+{\footnotesize\ttfamily void Menu\+::display\+Main\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n|-\/-\/-\/-\/-\/-\/-\/-\/-\/|MENU\ PRINCIPAL|-\/-\/-\/-\/-\/-\/-\/-\/-\/|\(\backslash\)n"{}}}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Menu\ principal:\(\backslash\)n"{}}}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}1.\ Criar\ um\ novo\ usuario\ da\ UFMG\(\backslash\)n"{}}}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}2.\ Excluir\ um\ usuario\ existente\(\backslash\)n"{}}}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}3.\ Acessar\ um\ usuario\ existente\(\backslash\)n"{}}}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}4.\ Sair\(\backslash\)n"{}}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Escolha\ uma\ opcao:\ \(\backslash\)n"{}}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+\label{class_menu_ae1e518520d8172705663518a4bf31fbd} 
+\index{Menu@{Menu}!displayUserMenu@{displayUserMenu}}
+\index{displayUserMenu@{displayUserMenu}!Menu@{Menu}}
+\doxysubsubsection{displayUserMenu()}
+{\footnotesize\ttfamily void Menu\+::display\+User\+Menu (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{user\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n|-\/-\/-\/-\/-\/-\/-\/-\/-\/|MENU\ USUARIO|-\/-\/-\/-\/-\/-\/-\/-\/-\/|\(\backslash\)n"{}}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Menu\ do\ usuario\ ("{}}\ <<\ userName\ <<\ \textcolor{stringliteral}{"{}):\(\backslash\)n"{}}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}1.\ Criar\ um\ novo\ quadro\(\backslash\)n"{}}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}2.\ Excluir\ um\ quadro\ existente\(\backslash\)n"{}}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}3.\ Acessar\ um\ quadro\ existente\(\backslash\)n"{}}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}4.\ Listar\ todos\ os\ quadros\(\backslash\)n"{}}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}5.\ Retornar\ ao\ menu\ principal\(\backslash\)n"{}}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Escolha\ uma\ opcao:\ \(\backslash\)n"{}}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/headers/\textbf{ Menu.\+hpp}\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/\textbf{ Menu.\+cpp}\end{DoxyCompactItemize}

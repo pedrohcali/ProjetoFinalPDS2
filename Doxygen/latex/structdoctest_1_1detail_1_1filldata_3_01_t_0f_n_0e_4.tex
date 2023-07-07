@@ -1,0 +1,38 @@
+\doxysection{Referência do $<$em$>$Template$<$/em$>$ da Estrutura doctest\+::detail\+::filldata$<$ T[N]$>$}
+\label{structdoctest_1_1detail_1_1filldata_3_01_t_0f_n_0e_4}\index{doctest::detail::filldata$<$ T[N]$>$@{doctest::detail::filldata$<$ T[N]$>$}}
+
+
+{\ttfamily \#include $<$doctest.\+h$>$}
+
+\doxysubsubsection*{Membros públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ fill} (\textbf{ std\+::ostream} $\ast$stream, const T(\&in)[N])
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\label{structdoctest_1_1detail_1_1filldata_3_01_t_0f_n_0e_4_a28c8a80e176bede55e829dead140c80a} 
+\index{doctest::detail::filldata$<$ T[N]$>$@{doctest::detail::filldata$<$ T[N]$>$}!fill@{fill}}
+\index{fill@{fill}!doctest::detail::filldata$<$ T[N]$>$@{doctest::detail::filldata$<$ T[N]$>$}}
+\doxysubsubsection{fill()}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N$>$ \\
+static void \textbf{ doctest\+::detail\+::filldata}$<$ T[N]$>$\+::fill (\begin{DoxyParamCaption}\item[{\textbf{ std\+::ostream} $\ast$}]{stream,  }\item[{const T(\&)}]{in[\+N] }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01165\ \ \ \ \ \ \ \ \ \ \ \ \ *stream\ <<\ \textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{01166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ N;\ i++)\ \{}
+\DoxyCodeLine{01167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ 0)\ \{\ *stream\ <<\ \textcolor{stringliteral}{"{},\ "{}};\ \}}
+\DoxyCodeLine{01168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *stream\ <<\ (DOCTEST\_STRINGIFY(in[i]));}
+\DoxyCodeLine{01169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01170\ \ \ \ \ \ \ \ \ \ \ \ \ *stream\ <<\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{01171\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa estrutura foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\textbf{ doctest.\+h}\end{DoxyCompactItemize}

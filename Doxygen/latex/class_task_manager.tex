@@ -1,0 +1,222 @@
+\doxysection{Referência da Classe Task\+Manager}
+\label{class_task_manager}\index{TaskManager@{TaskManager}}
+
+
+{\ttfamily \#include $<$Task\+Manager.\+hpp$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Task\+Manager} ()
+\item 
+\textbf{ Task} $\ast$ \textbf{ create\+Task} (const std\+::string \&title, const std\+::string \&description=\"{}-\/\"{}, const std\+::string \&due\+Date=\"{}\"{})
+\item 
+\textbf{ Task} $\ast$ \textbf{ get\+Task} (\textbf{ Board} $\ast$board, const std\+::string \&task\+Title)
+\item 
+bool \textbf{ add\+Task} (\textbf{ Board} $\ast$board, \textbf{ Task} $\ast$task)
+\item 
+bool \textbf{ remove\+Task} (\textbf{ Board} $\ast$board, \textbf{ Task} $\ast$task)
+\item 
+std\+::vector$<$ \textbf{ Task} $\ast$ $>$ \textbf{ get\+Tasks} (\textbf{ Board} $\ast$board)
+\item 
+std\+::vector$<$ \textbf{ Task} $\ast$ $>$ \textbf{ get\+Tasks\+Sorted\+By\+Name} (\textbf{ Board} $\ast$board)
+\item 
+std\+::vector$<$ \textbf{ Task} $\ast$ $>$ \textbf{ get\+Tasks\+Sorted\+By\+Due\+Date} (\textbf{ Board} $\ast$board)
+\item 
+bool \textbf{ move\+Task} (\textbf{ Task} $\ast$task, \textbf{ Board} $\ast$from\+Board, \textbf{ Board} $\ast$to\+Board)
+\item 
+void \textbf{ edit\+Task} (\textbf{ Task} $\ast$task, const std\+::string \&new\+Title, const std\+::string \&new\+Description, const std\+::string \&new\+Due\+Date)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\label{class_task_manager_a491dc7a77a5381675f614a411755ef64} 
+\index{TaskManager@{TaskManager}!TaskManager@{TaskManager}}
+\index{TaskManager@{TaskManager}!TaskManager@{TaskManager}}
+\doxysubsubsection{TaskManager()}
+{\footnotesize\ttfamily Task\+Manager\+::\+Task\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentação das funções}
+\label{class_task_manager_a0b1e515da0a480ab18d95369246b4f18} 
+\index{TaskManager@{TaskManager}!addTask@{addTask}}
+\index{addTask@{addTask}!TaskManager@{TaskManager}}
+\doxysubsubsection{addTask()}
+{\footnotesize\ttfamily bool Task\+Manager\+::add\+Task (\begin{DoxyParamCaption}\item[{\textbf{ Board} $\ast$}]{board,  }\item[{\textbf{ Task} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (!board\ ||\ !task)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ board-\/>addTask(task);}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+\label{class_task_manager_a04c6b3e007275b5d394e11a081f95983} 
+\index{TaskManager@{TaskManager}!createTask@{createTask}}
+\index{createTask@{createTask}!TaskManager@{TaskManager}}
+\doxysubsubsection{createTask()}
+{\footnotesize\ttfamily \textbf{ Task} $\ast$ Task\+Manager\+::create\+Task (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title,  }\item[{const std\+::string \&}]{description = {\ttfamily \"{}-\/\"{}},  }\item[{const std\+::string \&}]{due\+Date = {\ttfamily \"{}\"{}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (title.empty())\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}O\ titulo\ da\ tarefa\ nao\ pode\ estar\ vazio."{}});}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Verifica\ o\ formato\ correto\ da\ data}}
+\DoxyCodeLine{00016\ \ \ \ \ std::regex\ datePattern(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)d\{4\}-\/\(\backslash\)\(\backslash\)d\{2\}-\/\(\backslash\)\(\backslash\)d\{2\}"{}});}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::regex\_match(dueDate,\ datePattern))\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Data\ de\ vencimento\ nao\ esta\ no\ formato\ YYYY-\/MM-\/DD"{}});}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Task(title,\ description,\ dueDate);}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+\label{class_task_manager_a3ec8a88d114d19d63d207d8b5cca365b} 
+\index{TaskManager@{TaskManager}!editTask@{editTask}}
+\index{editTask@{editTask}!TaskManager@{TaskManager}}
+\doxysubsubsection{editTask()}
+{\footnotesize\ttfamily void Task\+Manager\+::edit\+Task (\begin{DoxyParamCaption}\item[{\textbf{ Task} $\ast$}]{task,  }\item[{const std\+::string \&}]{new\+Title,  }\item[{const std\+::string \&}]{new\+Description,  }\item[{const std\+::string \&}]{new\+Due\+Date }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (!task)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Tarefa\ nao\ pode\ ser\ nula\ para\ edicao."{}});}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{if}\ (newTitle.empty())\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}O\ titulo\ da\ tarefa\ nao\ pode\ estar\ vazio."{}});}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ task-\/>setTitle(newTitle);}
+\DoxyCodeLine{00100\ \ \ \ \ task-\/>setDescription(newDescription);}
+\DoxyCodeLine{00101\ \ \ \ \ task-\/>setDueDate(newDueDate);}
+\DoxyCodeLine{00102\ \}}
+
+\end{DoxyCode}
+\label{class_task_manager_af1ec452e2af73801b3c12c94bfcb3e50} 
+\index{TaskManager@{TaskManager}!getTask@{getTask}}
+\index{getTask@{getTask}!TaskManager@{TaskManager}}
+\doxysubsubsection{getTask()}
+{\footnotesize\ttfamily \textbf{ Task} $\ast$ Task\+Manager\+::get\+Task (\begin{DoxyParamCaption}\item[{\textbf{ Board} $\ast$}]{board,  }\item[{const std\+::string \&}]{task\+Title }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (!board)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ std::vector<Task*>\ tasks\ =\ getTasks(board);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{for}\ (Task*\ task\ :\ tasks)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (task-\/>getTitle()\ ==\ taskTitle)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ task;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+\label{class_task_manager_a786e6a429f1ddf62babb35bd7c2ee930} 
+\index{TaskManager@{TaskManager}!getTasks@{getTasks}}
+\index{getTasks@{getTasks}!TaskManager@{TaskManager}}
+\doxysubsubsection{getTasks()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Task} $\ast$ $>$ Task\+Manager\+::get\+Tasks (\begin{DoxyParamCaption}\item[{\textbf{ Board} $\ast$}]{board }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (!board)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ board-\/>getTasks();}
+\DoxyCodeLine{00058\ \}}
+
+\end{DoxyCode}
+\label{class_task_manager_a1015474765165ee31c27290b99b298a4} 
+\index{TaskManager@{TaskManager}!getTasksSortedByDueDate@{getTasksSortedByDueDate}}
+\index{getTasksSortedByDueDate@{getTasksSortedByDueDate}!TaskManager@{TaskManager}}
+\doxysubsubsection{getTasksSortedByDueDate()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Task} $\ast$ $>$ Task\+Manager\+::get\+Tasks\+Sorted\+By\+Due\+Date (\begin{DoxyParamCaption}\item[{\textbf{ Board} $\ast$}]{board }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ std::vector<Task*>\ tasks\ =\ getTasks(board);}
+\DoxyCodeLine{00072\ \ \ \ \ std::sort(tasks.begin(),\ tasks.end(),\ [](\textcolor{keyword}{const}\ Task*\ lhs,\ \textcolor{keyword}{const}\ Task*\ rhs)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ return\ lhs-\/>getDueDate()\ <\ rhs-\/>getDueDate();}
+\DoxyCodeLine{00074\ \ \ \ \ \});}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{return}\ tasks;}
+\DoxyCodeLine{00076\ \}}
+
+\end{DoxyCode}
+\label{class_task_manager_a6f721ebcbb176639e6ea94a6b6fd306c} 
+\index{TaskManager@{TaskManager}!getTasksSortedByName@{getTasksSortedByName}}
+\index{getTasksSortedByName@{getTasksSortedByName}!TaskManager@{TaskManager}}
+\doxysubsubsection{getTasksSortedByName()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Task} $\ast$ $>$ Task\+Manager\+::get\+Tasks\+Sorted\+By\+Name (\begin{DoxyParamCaption}\item[{\textbf{ Board} $\ast$}]{board }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ std::vector<Task*>\ tasks\ =\ getTasks(board);}
+\DoxyCodeLine{00063\ \ \ \ \ std::sort(tasks.begin(),\ tasks.end(),\ [](\textcolor{keyword}{const}\ Task*\ lhs,\ \textcolor{keyword}{const}\ Task*\ rhs)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ return\ lhs-\/>getTitle()\ <\ rhs-\/>getTitle();}
+\DoxyCodeLine{00065\ \ \ \ \ \});}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ tasks;}
+\DoxyCodeLine{00067\ \}}
+
+\end{DoxyCode}
+\label{class_task_manager_a56d2784a62057a92f70b339005daf488} 
+\index{TaskManager@{TaskManager}!moveTask@{moveTask}}
+\index{moveTask@{moveTask}!TaskManager@{TaskManager}}
+\doxysubsubsection{moveTask()}
+{\footnotesize\ttfamily bool Task\+Manager\+::move\+Task (\begin{DoxyParamCaption}\item[{\textbf{ Task} $\ast$}]{task,  }\item[{\textbf{ Board} $\ast$}]{from\+Board,  }\item[{\textbf{ Board} $\ast$}]{to\+Board }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{if}\ (!task\ ||\ !fromBoard\ ||\ !toBoard)\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{if}\ (fromBoard-\/>removeTask(task))\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ toBoard-\/>addTask(task);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00088\ \}}
+
+\end{DoxyCode}
+\label{class_task_manager_a1d6d9b744fd20e3b0f10f77410fd08e9} 
+\index{TaskManager@{TaskManager}!removeTask@{removeTask}}
+\index{removeTask@{removeTask}!TaskManager@{TaskManager}}
+\doxysubsubsection{removeTask()}
+{\footnotesize\ttfamily bool Task\+Manager\+::remove\+Task (\begin{DoxyParamCaption}\item[{\textbf{ Board} $\ast$}]{board,  }\item[{\textbf{ Task} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (!board\ ||\ !task)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{return}\ board-\/>removeTask(task);}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/headers/\textbf{ Task\+Manager.\+hpp}\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/\textbf{ Task\+Manager.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,539 @@
+\doxysection{Refência do Namespace doctest}
+\label{namespacedoctest}\index{doctest@{doctest}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \textbf{ assert\+Type}
+\item 
+namespace \textbf{ Color}
+\item 
+namespace \textbf{ detail}
+\item 
+namespace \textbf{ Test\+Case\+Failure\+Reason}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Approx}
+\item 
+struct \textbf{ Assert\+Data}
+\item 
+class \textbf{ Contains}
+\item 
+class \textbf{ Context}
+\item 
+struct \textbf{ Context\+Options}
+\begin{DoxyCompactList}\small\item\em OCLINT too many fields. \end{DoxyCompactList}\item 
+struct \textbf{ Current\+Test\+Case\+Stats}
+\item 
+struct \textbf{ IContext\+Scope}
+\item 
+struct \textbf{ IReporter}
+\item 
+struct \textbf{ Is\+NaN}
+\item 
+struct \textbf{ Message\+Data}
+\item 
+struct \textbf{ Query\+Data}
+\item 
+class \textbf{ String}
+\item 
+struct \textbf{ String\+Maker}
+\item 
+struct \textbf{ Subcase\+Signature}
+\item 
+struct \textbf{ Test\+Case\+Data}
+\item 
+struct \textbf{ Test\+Case\+Exception}
+\item 
+struct \textbf{ Test\+Run\+Stats}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ operator+} (const \textbf{ String} \&lhs, const \textbf{ String} \&rhs)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ operator==} (const \textbf{ String} \&lhs, const \textbf{ String} \&rhs)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ operator!=} (const \textbf{ String} \&lhs, const \textbf{ String} \&rhs)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ operator$<$} (const \textbf{ String} \&lhs, const \textbf{ String} \&rhs)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ operator$>$} (const \textbf{ String} \&lhs, const \textbf{ String} \&rhs)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ operator$<$=} (const \textbf{ String} \&lhs, const \textbf{ String} \&rhs)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ operator$>$=} (const \textbf{ String} \&lhs, const \textbf{ String} \&rhs)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (const \textbf{ Contains} \&in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ operator==} (const \textbf{ String} \&lhs, const \textbf{ Contains} \&rhs)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ operator==} (const \textbf{ Contains} \&lhs, const \textbf{ String} \&rhs)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ operator!=} (const \textbf{ String} \&lhs, const \textbf{ Contains} \&rhs)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ operator!=} (const \textbf{ Contains} \&lhs, const \textbf{ String} \&rhs)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} const char $\ast$ \textbf{ assert\+String} (\textbf{ assert\+Type\+::\+Enum} at)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} const char $\ast$ \textbf{ failure\+String} (\textbf{ assert\+Type\+::\+Enum} at)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} const char $\ast$ \textbf{ skip\+Path\+From\+Filename} (const char $\ast$file)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\textbf{ String} \textbf{ to\+String} ()
+\item 
+{\footnotesize template$<$typename T , typename \textbf{ detail\+::types\+::enable\+\_\+if}$<$!\textbf{ detail\+::should\+\_\+stringify\+\_\+as\+\_\+underlying\+\_\+type}$<$ T $>$\+::value, bool $>$\+::type  = true$>$ }\\\textbf{ String} \textbf{ to\+String} (const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(T) value)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (\textbf{ String} in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (\textbf{ std\+::nullptr\+\_\+t})
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (bool in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (float in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (double in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (double long in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (char in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (char signed in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (char unsigned in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (short in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (short unsigned in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (signed in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (unsigned in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (long in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (long unsigned in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (long long in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (long long unsigned in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (const \textbf{ Approx} \&in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} const \textbf{ Context\+Options} $\ast$ \textbf{ get\+Context\+Options} ()
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (\textbf{ Is\+NaN}$<$ float $>$ in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (\textbf{ Is\+NaN}$<$ double $>$ in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ to\+String} (\textbf{ Is\+NaN}$<$ double long $>$ in)
+\item 
+\textbf{ DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR} (test\+\_\+suite, const char $\ast$, \"{}\"{})
+\item 
+\textbf{ DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR} (description, const char $\ast$, \"{}\"{})
+\item 
+\textbf{ DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR} (skip, bool, true)
+\item 
+\textbf{ DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR} (no\+\_\+breaks, bool, true)
+\item 
+\textbf{ DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR} (no\+\_\+output, bool, true)
+\item 
+\textbf{ DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR} (timeout, double, 0)
+\item 
+\textbf{ DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR} (may\+\_\+fail, bool, true)
+\item 
+\textbf{ DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR} (should\+\_\+fail, bool, true)
+\item 
+\textbf{ DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR} (expected\+\_\+failures, int, 0)
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \textbf{ register\+Exception\+Translator} (\textbf{ String}($\ast$translate\+Function)(T))
+\item 
+{\footnotesize template$<$typename Reporter $>$ }\\int \textbf{ register\+Reporter} (const char $\ast$name, int priority, bool is\+Reporter)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ is\+\_\+running\+\_\+in\+\_\+test}
+\item 
+template struct \textbf{ DOCTEST\+\_\+\+INTERFACE\+\_\+\+DECL} \textbf{ Is\+Na\+N$<$ float $>$}
+\item 
+template struct \textbf{ DOCTEST\+\_\+\+INTERFACE\+\_\+\+DECL} \textbf{ Is\+Na\+N$<$ double $>$}
+\item 
+template struct \textbf{ DOCTEST\+\_\+\+INTERFACE\+\_\+\+DECL} \textbf{ Is\+Na\+N$<$ long double $>$}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Funções}
+\label{namespacedoctest_a44bf1260a82383247d446170810493cf} 
+\index{doctest@{doctest}!assertString@{assertString}}
+\index{assertString@{assertString}!doctest@{doctest}}
+\doxysubsubsection{assertString()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} const char $\ast$ doctest\+::assert\+String (\begin{DoxyParamCaption}\item[{\textbf{ assert\+Type\+::\+Enum}}]{at }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a07f4a26e2b7cce41abb7d71124951792} 
+\index{doctest@{doctest}!DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}}
+\index{DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}!doctest@{doctest}}
+\doxysubsubsection{DOCTEST\_DEFINE\_DECORATOR()\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily doctest\+::\+DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR (\begin{DoxyParamCaption}\item[{description}]{,  }\item[{const char $\ast$}]{,  }\item[{\"{}\"{}}]{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_ab1678966da9d93629130f083220403da} 
+\index{doctest@{doctest}!DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}}
+\index{DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}!doctest@{doctest}}
+\doxysubsubsection{DOCTEST\_DEFINE\_DECORATOR()\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily doctest\+::\+DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR (\begin{DoxyParamCaption}\item[{expected\+\_\+failures}]{,  }\item[{int}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a44ea7d81a1561f2222b8ffa69eecc599} 
+\index{doctest@{doctest}!DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}}
+\index{DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}!doctest@{doctest}}
+\doxysubsubsection{DOCTEST\_DEFINE\_DECORATOR()\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily doctest\+::\+DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR (\begin{DoxyParamCaption}\item[{may\+\_\+fail}]{,  }\item[{bool}]{,  }\item[{true}]{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a676e4a5ac5927180d445cf8d15d5e723} 
+\index{doctest@{doctest}!DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}}
+\index{DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}!doctest@{doctest}}
+\doxysubsubsection{DOCTEST\_DEFINE\_DECORATOR()\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily doctest\+::\+DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR (\begin{DoxyParamCaption}\item[{no\+\_\+breaks}]{,  }\item[{bool}]{,  }\item[{true}]{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_affa95f6124caa21081e93dc81eee67d6} 
+\index{doctest@{doctest}!DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}}
+\index{DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}!doctest@{doctest}}
+\doxysubsubsection{DOCTEST\_DEFINE\_DECORATOR()\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily doctest\+::\+DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR (\begin{DoxyParamCaption}\item[{no\+\_\+output}]{,  }\item[{bool}]{,  }\item[{true}]{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a0da07f59e77fcb14943788b2c85e2355} 
+\index{doctest@{doctest}!DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}}
+\index{DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}!doctest@{doctest}}
+\doxysubsubsection{DOCTEST\_DEFINE\_DECORATOR()\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily doctest\+::\+DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR (\begin{DoxyParamCaption}\item[{should\+\_\+fail}]{,  }\item[{bool}]{,  }\item[{true}]{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a0ce903d8e37a8fdc185f6e8c73f9b1dd} 
+\index{doctest@{doctest}!DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}}
+\index{DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}!doctest@{doctest}}
+\doxysubsubsection{DOCTEST\_DEFINE\_DECORATOR()\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily doctest\+::\+DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR (\begin{DoxyParamCaption}\item[{skip}]{,  }\item[{bool}]{,  }\item[{true}]{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a104a0e533475e45acbddd9266c4d687e} 
+\index{doctest@{doctest}!DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}}
+\index{DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}!doctest@{doctest}}
+\doxysubsubsection{DOCTEST\_DEFINE\_DECORATOR()\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily doctest\+::\+DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR (\begin{DoxyParamCaption}\item[{test\+\_\+suite}]{,  }\item[{const char $\ast$}]{,  }\item[{\"{}\"{}}]{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a09d01a6e97677b7bb508bf925e421963} 
+\index{doctest@{doctest}!DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}}
+\index{DOCTEST\_DEFINE\_DECORATOR@{DOCTEST\_DEFINE\_DECORATOR}!doctest@{doctest}}
+\doxysubsubsection{DOCTEST\_DEFINE\_DECORATOR()\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily doctest\+::\+DOCTEST\+\_\+\+DEFINE\+\_\+\+DECORATOR (\begin{DoxyParamCaption}\item[{timeout}]{,  }\item[{double}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a3fcfa9f7f479ad1b46d142e210c8ca75} 
+\index{doctest@{doctest}!failureString@{failureString}}
+\index{failureString@{failureString}!doctest@{doctest}}
+\doxysubsubsection{failureString()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} const char $\ast$ doctest\+::failure\+String (\begin{DoxyParamCaption}\item[{\textbf{ assert\+Type\+::\+Enum}}]{at }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a13c02a469cfc2264d547fc0fc3a55569} 
+\index{doctest@{doctest}!getContextOptions@{getContextOptions}}
+\index{getContextOptions@{getContextOptions}!doctest@{doctest}}
+\doxysubsubsection{getContextOptions()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} const \textbf{ Context\+Options} $\ast$ doctest\+::get\+Context\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a820c5e748e427ef3f5ccf48da73abf5c} 
+\index{doctest@{doctest}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!doctest@{doctest}}
+\doxysubsubsection{operator"!=()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::operator!= (\begin{DoxyParamCaption}\item[{const \textbf{ Contains} \&}]{lhs,  }\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_abd38f81ff821b9296e768e834af13ae0} 
+\index{doctest@{doctest}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!doctest@{doctest}}
+\doxysubsubsection{operator"!=()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::operator!= (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{lhs,  }\item[{const \textbf{ Contains} \&}]{rhs }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_ab9a88e4c19857cd86a0f037d27bcad72} 
+\index{doctest@{doctest}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!doctest@{doctest}}
+\doxysubsubsection{operator"!=()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::operator!= (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{lhs,  }\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a4e6e927e850a36fa569c08011fde2a49} 
+\index{doctest@{doctest}!operator+@{operator+}}
+\index{operator+@{operator+}!doctest@{doctest}}
+\doxysubsubsection{operator+()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{lhs,  }\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_afa15b277b9a277793b7adf129e0128d9} 
+\index{doctest@{doctest}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!doctest@{doctest}}
+\doxysubsubsection{operator$<$()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{lhs,  }\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a27c6c308e814ad9384499bafc03f9e39} 
+\index{doctest@{doctest}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!doctest@{doctest}}
+\doxysubsubsection{operator$<$=()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{lhs,  }\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a0607d91cd645129372a57329cdd0e4a8} 
+\index{doctest@{doctest}!operator==@{operator==}}
+\index{operator==@{operator==}!doctest@{doctest}}
+\doxysubsubsection{operator==()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Contains} \&}]{lhs,  }\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_ab014e201f8c86823a763beaf8da5dbf1} 
+\index{doctest@{doctest}!operator==@{operator==}}
+\index{operator==@{operator==}!doctest@{doctest}}
+\doxysubsubsection{operator==()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{lhs,  }\item[{const \textbf{ Contains} \&}]{rhs }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_ae332e5e775f83a532884303780f79f9f} 
+\index{doctest@{doctest}!operator==@{operator==}}
+\index{operator==@{operator==}!doctest@{doctest}}
+\doxysubsubsection{operator==()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{lhs,  }\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_acef5990b03a973c74ff2dd6cfc112913} 
+\index{doctest@{doctest}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!doctest@{doctest}}
+\doxysubsubsection{operator$>$()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{lhs,  }\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_ac32accb42e937cf870de2f6865ea236a} 
+\index{doctest@{doctest}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!doctest@{doctest}}
+\doxysubsubsection{operator$>$=()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{lhs,  }\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a8e23e6bb4c6982688652060dbe41385d} 
+\index{doctest@{doctest}!registerExceptionTranslator@{registerExceptionTranslator}}
+\index{registerExceptionTranslator@{registerExceptionTranslator}!doctest@{doctest}}
+\doxysubsubsection{registerExceptionTranslator()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int doctest\+::register\+Exception\+Translator (\begin{DoxyParamCaption}\item[{\textbf{ String}($\ast$)(T)}]{translate\+Function }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01935\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01936\ \ \ \ \ DOCTEST\_CLANG\_SUPPRESS\_WARNING\_WITH\_PUSH(\textcolor{stringliteral}{"{}-\/Wexit-\/time-\/destructors"{}})}
+\DoxyCodeLine{01937\ \ \ \ \ static\ detail::ExceptionTranslator<T>\ exceptionTranslator(translateFunction);}
+\DoxyCodeLine{01938\ \ \ \ \ DOCTEST\_CLANG\_SUPPRESS\_WARNING\_POP}
+\DoxyCodeLine{01939\ \ \ \ \ detail::registerExceptionTranslatorImpl(\&exceptionTranslator);}
+\DoxyCodeLine{01940\ \ \ \ \ return\ 0;}
+\DoxyCodeLine{01941\ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_a9e878a811f7bf0a615b3a39de3004673} 
+\index{doctest@{doctest}!registerReporter@{registerReporter}}
+\index{registerReporter@{registerReporter}!doctest@{doctest}}
+\doxysubsubsection{registerReporter()}
+{\footnotesize\ttfamily template$<$typename Reporter $>$ \\
+int doctest\+::register\+Reporter (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{int}]{priority,  }\item[{bool}]{is\+Reporter }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02111\ \ \ \ \ detail::registerReporterImpl(name,\ priority,\ detail::reporterCreator<Reporter>,\ isReporter);}
+\DoxyCodeLine{02112\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{02113\ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_a31b19b71f2b30f77f84b6a8bb4943925} 
+\index{doctest@{doctest}!skipPathFromFilename@{skipPathFromFilename}}
+\index{skipPathFromFilename@{skipPathFromFilename}!doctest@{doctest}}
+\doxysubsubsection{skipPathFromFilename()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} const char $\ast$ doctest\+::skip\+Path\+From\+Filename (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_ad4b29418fb58bb6c7cfdbefe2d8f7714} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [1/24]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01094\ \textcolor{preprocessor}{\#if\ DOCTEST\_CLANG\ ==\ 0\ \&\&\ DOCTEST\_GCC\ ==\ 0\ \&\&\ DOCTEST\_ICC\ ==\ 0 }}
+\DoxyCodeLine{01095\ \ \ \ \ String\ ret\ =\ \_\_FUNCSIG\_\_;\ \textcolor{comment}{//\ class\ doctest::String\ \_\_cdecl\ doctest::toString<TYPE>(void)}}
+\DoxyCodeLine{01096\ \ \ \ \ String::size\_type\ beginPos\ =\ ret.find(\textcolor{charliteral}{'<'});}
+\DoxyCodeLine{01097\ \ \ \ \ \textcolor{keywordflow}{return}\ ret.substr(beginPos\ +\ 1,\ ret.size()\ -\/\ beginPos\ -\/\ \textcolor{keyword}{static\_cast<}String::size\_type\textcolor{keyword}{>}(\textcolor{keyword}{sizeof}(\textcolor{stringliteral}{"{}>(void)"{}})));}
+\DoxyCodeLine{01098\ \textcolor{preprocessor}{\#else }}
+\DoxyCodeLine{01099\ \ \ \ \ String\ ret\ =\ \_\_PRETTY\_FUNCTION\_\_;\ \textcolor{comment}{//\ doctest::String\ toString()\ [with\ T\ =\ TYPE]}}
+\DoxyCodeLine{01100\ \ \ \ \ String::size\_type\ begin\ =\ ret.find(\textcolor{charliteral}{'='})\ +\ 2;}
+\DoxyCodeLine{01101\ \ \ \ \ \textcolor{keywordflow}{return}\ ret.substr(begin,\ ret.size()\ -\/\ begin\ -\/\ 1);}
+\DoxyCodeLine{01102\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{01103\ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_a70fd23e88074d38b9d61476005305df5} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [2/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{bool}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_af106dff2a0c068d301349b754c466378} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [3/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{char}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a1f910fdc13d84a538090b959a97a6fa5} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [4/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{char signed}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_ae2c3e60e3ee32da5d8fc4f778b7a225a} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [5/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{char unsigned}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a63aa06a8555c5aa34a7a6e76e87a3bca} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [6/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{const \textbf{ Approx} \&}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_af8d23a352e257456ffed49cb3ac11b4e} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [7/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{const \textbf{ Contains} \&}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a468ff6c2b0a692bcf88a7a97a5de0a53} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [8/24]}}
+{\footnotesize\ttfamily template$<$typename T , typename \textbf{ detail\+::types\+::enable\+\_\+if}$<$!\textbf{ detail\+::should\+\_\+stringify\+\_\+as\+\_\+underlying\+\_\+type}$<$ T $>$\+::value, bool $>$\+::type  = true$>$ \\
+\textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(T)}]{value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01107\ \ \ \ \ \textcolor{keywordflow}{return}\ StringMaker<T>::convert(value);}
+\DoxyCodeLine{01108\ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_a43b51978c9505f682cbff9462a02f8af} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [9/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{double}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_ae4e12dd9865bb31f417f9df0c41813cf} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [10/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{double long}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a68660ce630bd88a551ab3108709e6592} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [11/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{float}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a5e0bd449e6b10c53aab4af2957a1f45f} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [12/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{\textbf{ Is\+NaN}$<$ double $>$}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_afa7161751ef3e45340183ada2b8b11bc} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [13/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{\textbf{ Is\+NaN}$<$ double long $>$}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a542bab2e5cb29a07cf5939362d2e6bdc} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [14/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{\textbf{ Is\+NaN}$<$ float $>$}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a042e53409374cba1ba423c57d3a58a6f} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [15/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{long}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a0a5486a03f9ff2a7c311df0dc6c1b149} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [16/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{long long}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a13e028fb8470e4f87fe8e41f5300364e} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [17/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{long long unsigned}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a6ebcd3a7a6807c5bd2b960736851225c} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [18/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{long unsigned}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a03688f50a1c6c85c68d24d1280f66626} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [19/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{short}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a952f661f63e4c76d8025da928632e98c} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [20/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{short unsigned}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_abd1337b597e5968eb9be5b585a16ea8f} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [21/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{signed}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_a6bb27d33f7b25b3ff5fc6872f47f329b} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [22/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{\textbf{ std\+::nullptr\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_ab501200c3c97a66dd592acafcc6f1a95} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [23/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{\textbf{ String}}]{in }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_ad2e7368b576fc0ca420b92c0042498e8} 
+\index{doctest@{doctest}!toString@{toString}}
+\index{toString@{toString}!doctest@{doctest}}
+\doxysubsubsection{toString()\hspace{0.1cm}{\footnotesize\ttfamily [24/24]}}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::to\+String (\begin{DoxyParamCaption}\item[{unsigned}]{in }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variáveis}
+\label{namespacedoctest_a0b03060093b3894c976b6ae84e55f3f2} 
+\index{doctest@{doctest}!is\_running\_in\_test@{is\_running\_in\_test}}
+\index{is\_running\_in\_test@{is\_running\_in\_test}!doctest@{doctest}}
+\doxysubsubsection{is\_running\_in\_test}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::is\+\_\+running\+\_\+in\+\_\+test\hspace{0.3cm}{\ttfamily [extern]}}
+
+\label{namespacedoctest_a4084d3d9bcaef83013a4789c1f41666b} 
+\index{doctest@{doctest}!IsNaN$<$ double $>$@{IsNaN$<$ double $>$}}
+\index{IsNaN$<$ double $>$@{IsNaN$<$ double $>$}!doctest@{doctest}}
+\doxysubsubsection{IsNaN$<$ double $>$}
+{\footnotesize\ttfamily template struct \textbf{ DOCTEST\+\_\+\+INTERFACE\+\_\+\+DECL} \textbf{ doctest\+::\+Is\+NaN}$<$ double $>$\hspace{0.3cm}{\ttfamily [extern]}}
+
+\label{namespacedoctest_ae635964db555b85aefd7874bc9cc7b51} 
+\index{doctest@{doctest}!IsNaN$<$ float $>$@{IsNaN$<$ float $>$}}
+\index{IsNaN$<$ float $>$@{IsNaN$<$ float $>$}!doctest@{doctest}}
+\doxysubsubsection{IsNaN$<$ float $>$}
+{\footnotesize\ttfamily template struct \textbf{ DOCTEST\+\_\+\+INTERFACE\+\_\+\+DECL} \textbf{ doctest\+::\+Is\+NaN}$<$ float $>$\hspace{0.3cm}{\ttfamily [extern]}}
+
+\label{namespacedoctest_a82230b0925bdd6dffac05c78f8f2d1b9} 
+\index{doctest@{doctest}!IsNaN$<$ long double $>$@{IsNaN$<$ long double $>$}}
+\index{IsNaN$<$ long double $>$@{IsNaN$<$ long double $>$}!doctest@{doctest}}
+\doxysubsubsection{IsNaN$<$ long double $>$}
+{\footnotesize\ttfamily template struct \textbf{ DOCTEST\+\_\+\+INTERFACE\+\_\+\+DECL} \textbf{ doctest\+::\+Is\+NaN}$<$ long double $>$\hspace{0.3cm}{\ttfamily [extern]}}
+

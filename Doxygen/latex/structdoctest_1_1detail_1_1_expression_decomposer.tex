@@ -1,0 +1,74 @@
+\doxysection{Referência da Estrutura doctest\+::detail\+::Expression\+Decomposer}
+\label{structdoctest_1_1detail_1_1_expression_decomposer}\index{doctest::detail::ExpressionDecomposer@{doctest::detail::ExpressionDecomposer}}
+
+
+{\ttfamily \#include $<$doctest.\+h$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Expression\+Decomposer} (\textbf{ assert\+Type\+::\+Enum} at)
+\item 
+{\footnotesize template$<$typename L $>$ }\\\textbf{ Expression\+\_\+lhs}$<$ L $>$ \textbf{ operator$<$$<$} (L \&\&operand)
+\item 
+{\footnotesize template$<$typename L , typename \textbf{ types\+::enable\+\_\+if}$<$!\textbf{ doctest\+::detail\+::types\+::is\+\_\+rvalue\+\_\+reference}$<$ L $>$\+::value, void $>$\+::type $\ast$  = nullptr$>$ }\\\textbf{ Expression\+\_\+lhs}$<$ const L \& $>$ \textbf{ operator$<$$<$} (const L \&operand)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ assert\+Type\+::\+Enum} \textbf{ m\+\_\+at}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\label{structdoctest_1_1detail_1_1_expression_decomposer_a6bf2c46ebf0dc68106be801a90776e65} 
+\index{doctest::detail::ExpressionDecomposer@{doctest::detail::ExpressionDecomposer}!ExpressionDecomposer@{ExpressionDecomposer}}
+\index{ExpressionDecomposer@{ExpressionDecomposer}!doctest::detail::ExpressionDecomposer@{doctest::detail::ExpressionDecomposer}}
+\doxysubsubsection{ExpressionDecomposer()}
+{\footnotesize\ttfamily doctest\+::detail\+::\+Expression\+Decomposer\+::\+Expression\+Decomposer (\begin{DoxyParamCaption}\item[{\textbf{ assert\+Type\+::\+Enum}}]{at }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Documentação das funções}
+\label{structdoctest_1_1detail_1_1_expression_decomposer_aa857085c7464071de5c158299858e4ff} 
+\index{doctest::detail::ExpressionDecomposer@{doctest::detail::ExpressionDecomposer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!doctest::detail::ExpressionDecomposer@{doctest::detail::ExpressionDecomposer}}
+\doxysubsubsection{operator$<$$<$()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename L , typename \textbf{ types\+::enable\+\_\+if}$<$!\textbf{ doctest\+::detail\+::types\+::is\+\_\+rvalue\+\_\+reference}$<$ L $>$\+::value, void $>$\+::type $\ast$  = nullptr$>$ \\
+\textbf{ Expression\+\_\+lhs}$<$ const L \& $>$ doctest\+::detail\+::\+Expression\+Decomposer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const L \&}]{operand }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01587\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Expression\_lhs<const\ L\&>(operand,\ m\_at);}
+\DoxyCodeLine{01588\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{structdoctest_1_1detail_1_1_expression_decomposer_a12ecf2b1fce2471b4c60faffd4aad075} 
+\index{doctest::detail::ExpressionDecomposer@{doctest::detail::ExpressionDecomposer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!doctest::detail::ExpressionDecomposer@{doctest::detail::ExpressionDecomposer}}
+\doxysubsubsection{operator$<$$<$()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ Expression\+\_\+lhs}$<$ L $>$ doctest\+::detail\+::\+Expression\+Decomposer\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{L \&\&}]{operand }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01581\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01582\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Expression\_lhs<L>(\textcolor{keyword}{static\_cast<}L\&\&\textcolor{keyword}{>}(operand),\ m\_at);}
+\DoxyCodeLine{01583\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Atributos}
+\label{structdoctest_1_1detail_1_1_expression_decomposer_a1a71b19bd41d2cbd1c8b4006412870c4} 
+\index{doctest::detail::ExpressionDecomposer@{doctest::detail::ExpressionDecomposer}!m\_at@{m\_at}}
+\index{m\_at@{m\_at}!doctest::detail::ExpressionDecomposer@{doctest::detail::ExpressionDecomposer}}
+\doxysubsubsection{m\_at}
+{\footnotesize\ttfamily \textbf{ assert\+Type\+::\+Enum} doctest\+::detail\+::\+Expression\+Decomposer\+::m\+\_\+at}
+
+
+
+A documentação para essa estrutura foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\textbf{ doctest.\+h}\end{DoxyCompactItemize}

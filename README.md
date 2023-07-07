@@ -10,6 +10,7 @@ Este é um sistema de gerenciamento de tarefas escrito em C++. Ele permite que o
 - [Compilação](#compilação)
 - [Testes](#testes)
 - [Cobertura de Código](#cobertura-de-código)
+- [Doxygen](#doxygen)
 
 ## Recursos
 
@@ -115,3 +116,7 @@ gcovr -r .
 ```
 
 Observação: A cobertura no código está em torno de 72% (última atualização: 06/07/2023, às 23:20), tirando o arquivo test/doctest.h.
+
+## Doxygen
+
+Para acessar a documentação Doxygen, acesse o arquivo "index.html" na pasta html dentro da pasta "Doxygen".

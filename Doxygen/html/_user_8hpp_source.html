@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação Task UFManager: Código-Fonte de C:/Users/pedro/Videos/ProjetoFinalPDS2/src/headers/User.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="LOGO UFMGANAGER.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Documentação Task UFManager<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e9523ca587f751a0cb8f7dfa5726b50f.html">Videos</a></li><li class="navelem"><a class="el" href="dir_c9790f277574d368db1d53717db2073f.html">ProjetoFinalPDS2</a></li><li class="navelem"><a class="el" href="dir_baad87af49350d3197e3762837d6f9ac.html">src</a></li><li class="navelem"><a class="el" href="dir_8419a3ec4de495ae58878fb5294f711e.html">headers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">User.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_user_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef USER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define USER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_task_manager_8hpp.html">TaskManager.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="class_board.html">Board</a>; <span class="comment">// Incluindo antes para usar na classe</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_user.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_user.html">User</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="class_user.html">User</a>(<span class="keyword">const</span> std::string&amp; username, <span class="keyword">const</span> std::string&amp; email, <a class="code hl_class" href="class_task_manager.html">TaskManager</a>&amp; taskManager);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="class_user.html#ac00b72ad64eb4149f7b21b9f5468c2b2">~User</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_user.html#a0bdca63ed72fc8ffcee690a0119c2104">getUsername</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_user.html#a7abee4d4937156ba0c1a657b9b84ddef">setUsername</a>(<span class="keyword">const</span> std::string&amp; username);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_user.html#a230e84b6c76c0e8483ce3c0b36292297">getEmail</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_user.html#a11a1d37fde91df2330f69c3c24de056b">setEmail</a>(<span class="keyword">const</span> std::string&amp; email);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">const</span> std::vector&lt;std::unique_ptr&lt;Board&gt;&gt;&amp; <a class="code hl_function" href="class_user.html#af8627f6b5723a6ee88aa521db699f311">getBoards</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_user.html#a0b6622eb310f6157ea01638af68131bc">addBoard</a>(std::unique_ptr&lt;Board&gt; board);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_user.html#a248fe7def4a8c86dcd53441d2d2ce040">removeBoard</a>(<span class="keyword">const</span> std::string&amp; boardName);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_user.html#a49ddb5499094ed6a16297ddeb087e3b6">moveTask</a>(<a class="code hl_class" href="class_board.html">Board</a>* fromBoard, <a class="code hl_class" href="class_board.html">Board</a>* toBoard, <a class="code hl_class" href="class_task.html">Task</a>* task);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="class_board.html">Board</a>* <a class="code hl_function" href="class_user.html#a6324d0e825d7aa6e9b79b9759b8514c4">getBoard</a>(<span class="keyword">const</span> std::string&amp; boardName) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::string username;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::string email;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::vector&lt;std::unique_ptr&lt;Board&gt;&gt; boards;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_class" href="class_task_manager.html">TaskManager</a>&amp; taskManager;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif </span><span class="comment">// USER_H</span></div>
+<div class="ttc" id="a_task_manager_8hpp_html"><div class="ttname"><a href="_task_manager_8hpp.html">TaskManager.hpp</a></div></div>
+<div class="ttc" id="aclass_board_html"><div class="ttname"><a href="class_board.html">Board</a></div><div class="ttdef"><b>Definição</b> Board.hpp:8</div></div>
+<div class="ttc" id="aclass_task_html"><div class="ttname"><a href="class_task.html">Task</a></div><div class="ttdef"><b>Definição</b> Task.hpp:6</div></div>
+<div class="ttc" id="aclass_task_manager_html"><div class="ttname"><a href="class_task_manager.html">TaskManager</a></div><div class="ttdef"><b>Definição</b> TaskManager.hpp:10</div></div>
+<div class="ttc" id="aclass_user_html"><div class="ttname"><a href="class_user.html">User</a></div><div class="ttdef"><b>Definição</b> User.hpp:11</div></div>
+<div class="ttc" id="aclass_user_html_a0b6622eb310f6157ea01638af68131bc"><div class="ttname"><a href="class_user.html#a0b6622eb310f6157ea01638af68131bc">User::addBoard</a></div><div class="ttdeci">void addBoard(std::unique_ptr&lt; Board &gt; board)</div><div class="ttdef"><b>Definição</b> User.cpp:43</div></div>
+<div class="ttc" id="aclass_user_html_a0bdca63ed72fc8ffcee690a0119c2104"><div class="ttname"><a href="class_user.html#a0bdca63ed72fc8ffcee690a0119c2104">User::getUsername</a></div><div class="ttdeci">const std::string &amp; getUsername() const</div><div class="ttdef"><b>Definição</b> User.cpp:15</div></div>
+<div class="ttc" id="aclass_user_html_a11a1d37fde91df2330f69c3c24de056b"><div class="ttname"><a href="class_user.html#a11a1d37fde91df2330f69c3c24de056b">User::setEmail</a></div><div class="ttdeci">void setEmail(const std::string &amp;email)</div><div class="ttdef"><b>Definição</b> User.cpp:32</div></div>
+<div class="ttc" id="aclass_user_html_a230e84b6c76c0e8483ce3c0b36292297"><div class="ttname"><a href="class_user.html#a230e84b6c76c0e8483ce3c0b36292297">User::getEmail</a></div><div class="ttdeci">const std::string &amp; getEmail() const</div><div class="ttdef"><b>Definição</b> User.cpp:27</div></div>
+<div class="ttc" id="aclass_user_html_a248fe7def4a8c86dcd53441d2d2ce040"><div class="ttname"><a href="class_user.html#a248fe7def4a8c86dcd53441d2d2ce040">User::removeBoard</a></div><div class="ttdeci">void removeBoard(const std::string &amp;boardName)</div><div class="ttdef"><b>Definição</b> User.cpp:57</div></div>
+<div class="ttc" id="aclass_user_html_a49ddb5499094ed6a16297ddeb087e3b6"><div class="ttname"><a href="class_user.html#a49ddb5499094ed6a16297ddeb087e3b6">User::moveTask</a></div><div class="ttdeci">void moveTask(Board *fromBoard, Board *toBoard, Task *task)</div><div class="ttdef"><b>Definição</b> User.cpp:69</div></div>
+<div class="ttc" id="aclass_user_html_a6324d0e825d7aa6e9b79b9759b8514c4"><div class="ttname"><a href="class_user.html#a6324d0e825d7aa6e9b79b9759b8514c4">User::getBoard</a></div><div class="ttdeci">Board * getBoard(const std::string &amp;boardName) const</div><div class="ttdef"><b>Definição</b> User.cpp:80</div></div>
+<div class="ttc" id="aclass_user_html_a7abee4d4937156ba0c1a657b9b84ddef"><div class="ttname"><a href="class_user.html#a7abee4d4937156ba0c1a657b9b84ddef">User::setUsername</a></div><div class="ttdeci">void setUsername(const std::string &amp;username)</div><div class="ttdef"><b>Definição</b> User.cpp:20</div></div>
+<div class="ttc" id="aclass_user_html_ac00b72ad64eb4149f7b21b9f5468c2b2"><div class="ttname"><a href="class_user.html#ac00b72ad64eb4149f7b21b9f5468c2b2">User::~User</a></div><div class="ttdeci">~User()</div><div class="ttdef"><b>Definição</b> User.cpp:13</div></div>
+<div class="ttc" id="aclass_user_html_af8627f6b5723a6ee88aa521db699f311"><div class="ttname"><a href="class_user.html#af8627f6b5723a6ee88aa521db699f311">User::getBoards</a></div><div class="ttdeci">const std::vector&lt; std::unique_ptr&lt; Board &gt; &gt; &amp; getBoards() const</div><div class="ttdef"><b>Definição</b> User.cpp:39</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

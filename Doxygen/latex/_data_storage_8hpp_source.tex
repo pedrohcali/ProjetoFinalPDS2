@@ -1,0 +1,45 @@
+\doxysection{Data\+Storage.\+hpp}
+\label{_data_storage_8hpp_source}\index{C:/Users/pedro/Videos/ProjetoFinalPDS2/src/headers/DataStorage.hpp@{C:/Users/pedro/Videos/ProjetoFinalPDS2/src/headers/DataStorage.hpp}}
+\textbf{ Ir para a documentação desse arquivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATASTORAGE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATASTORAGE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}User.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}TaskManager.hpp"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }DataStorage\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ filename;}
+\DoxyCodeLine{00014\ \ \ \ \ std::vector<std::unique\_ptr<User>>\ users;}
+\DoxyCodeLine{00015\ \ \ \ \ TaskManager\&\ taskManager;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Pode\ lançar\ std::invalid\_argument\ se\ filename\ for\ vazio.}}
+\DoxyCodeLine{00018\ \ \ \ \ DataStorage(\textcolor{keyword}{const}\ std::string\&\ filename,\ TaskManager\&\ taskManager);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \string~DataStorage();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Pode\ lançar\ std::runtime\_error\ se\ o\ arquivo\ não\ puder\ ser\ aberto\ para\ escrita.}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ saveData();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Pode\ lançar\ std::runtime\_error\ se\ o\ arquivo\ não\ puder\ ser\ aberto\ para\ leitura\ ou\ se\ o\ formato\ do\ arquivo\ for\ inválido.}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ loadData();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ std::vector<std::unique\_ptr<User>>\&\ getUsers();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ User*\ getUser(\textcolor{keyword}{const}\ std::string\&\ username);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Pode\ lançar\ std::invalid\_argument\ se\ user\ for\ nulo.}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ addUser(std::unique\_ptr<User>\ user);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Pode\ lançar\ std::runtime\_error\ se\ o\ usuário\ não\ for\ encontrado.}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ removeUser(\textcolor{keyword}{const}\ std::string\&\ username);}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATASTORAGE\_H}}
+
+\end{DoxyCode}

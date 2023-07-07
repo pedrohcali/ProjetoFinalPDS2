@@ -1,0 +1,42 @@
+\doxysection{Referência do $<$em$>$Template$<$/em$>$ da Estrutura doctest\+::detail\+::filldata$<$ T $\ast$ $>$}
+\label{structdoctest_1_1detail_1_1filldata_3_01_t_01_5_01_4}\index{doctest::detail::filldata$<$ T $\ast$ $>$@{doctest::detail::filldata$<$ T $\ast$ $>$}}
+
+
+{\ttfamily \#include $<$doctest.\+h$>$}
+
+\doxysubsubsection*{Membros públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ fill} (\textbf{ std\+::ostream} $\ast$stream, const T $\ast$in)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\label{structdoctest_1_1detail_1_1filldata_3_01_t_01_5_01_4_a1d84a050e15d9380ccc4f04288cab504} 
+\index{doctest::detail::filldata$<$ T $\ast$ $>$@{doctest::detail::filldata$<$ T $\ast$ $>$}!fill@{fill}}
+\index{fill@{fill}!doctest::detail::filldata$<$ T $\ast$ $>$@{doctest::detail::filldata$<$ T $\ast$ $>$}}
+\doxysubsubsection{fill()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void \textbf{ doctest\+::detail\+::filldata}$<$ T $\ast$ $>$\+::fill (\begin{DoxyParamCaption}\item[{\textbf{ std\+::ostream} $\ast$}]{stream,  }\item[{const T $\ast$}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01195\ DOCTEST\_MSVC\_SUPPRESS\_WARNING\_POP}
+\DoxyCodeLine{01196\ DOCTEST\_CLANG\_SUPPRESS\_WARNING\_WITH\_PUSH(\textcolor{stringliteral}{"{}-\/Wmicrosoft-\/cast"{}})}
+\DoxyCodeLine{01197\ \ \ \ \ \ \ \ \ \ \ \ \ filldata<const\ \textcolor{keywordtype}{void}*>::fill(stream,}
+\DoxyCodeLine{01198\ \textcolor{preprocessor}{\#if\ DOCTEST\_GCC\ ==\ 0\ ||\ DOCTEST\_GCC\ >=\ DOCTEST\_COMPILER(4,\ 9,\ 0) }}
+\DoxyCodeLine{01199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(in)}
+\DoxyCodeLine{01200\ \#\textcolor{keywordflow}{else}}
+\DoxyCodeLine{01201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{void}*\ const*\textcolor{keyword}{>}(\&in)}
+\DoxyCodeLine{01202\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{01203\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{01204\ DOCTEST\_CLANG\_SUPPRESS\_WARNING\_POP}
+\DoxyCodeLine{01205\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa estrutura foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\textbf{ doctest.\+h}\end{DoxyCompactItemize}

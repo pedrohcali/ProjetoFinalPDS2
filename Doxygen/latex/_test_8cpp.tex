@@ -1,0 +1,531 @@
+\doxysection{Referência do Arquivo C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\+Test.cpp}
+\label{_test_8cpp}\index{C:/Users/pedro/Videos/ProjetoFinalPDS2/src/test/Test.cpp@{C:/Users/pedro/Videos/ProjetoFinalPDS2/src/test/Test.cpp}}
+{\ttfamily \#include \"{}doctest.\+h\"{}}\newline
+{\ttfamily \#include \"{}User.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Board.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Task.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Task\+Manager.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Data\+Storage.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Menu.\+hpp\"{}}\newline
+\doxysubsubsection*{Definições e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ TEST\+\_\+\+CASE} (\"{}Teste existencia e criacao de boards\"{})
+\item 
+\textbf{ TEST\+\_\+\+CASE} (\"{}Teste remocao de board\"{})
+\item 
+\textbf{ TEST\+\_\+\+CASE} (\"{}Teste lista boards\"{})
+\item 
+\textbf{ TEST\+\_\+\+CASE} (\"{}Teste existencia e criacao de tasks\"{})
+\item 
+\textbf{ TEST\+\_\+\+CASE} (\"{}Teste remocao de task\"{})
+\item 
+\textbf{ TEST\+\_\+\+CASE} (\"{}Teste lista de tasks\"{})
+\item 
+\textbf{ TEST\+\_\+\+CASE} (\"{}Teste ordenacao de tasks\"{})
+\item 
+\textbf{ TEST\+\_\+\+CASE} (\"{}Teste movimentacao de tasks\"{})
+\item 
+\textbf{ TEST\+\_\+\+CASE} (\"{}Teste edicao de tasks\"{})
+\item 
+\textbf{ TEST\+\_\+\+CASE} (\"{}Teste existencia e criacao de usuarios\"{})
+\item 
+\textbf{ TEST\+\_\+\+CASE} (\"{}Teste remocao de usuario\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Definições e macros}
+\label{_test_8cpp_a623b8690a262536536a43eab2d7df03d} 
+\index{Test.cpp@{Test.cpp}!DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN@{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}}
+\index{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN@{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}!Test.cpp@{Test.cpp}}
+\doxysubsubsection{DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}
+{\footnotesize\ttfamily \#define DOCTEST\+\_\+\+CONFIG\+\_\+\+IMPLEMENT\+\_\+\+WITH\+\_\+\+MAIN}
+
+
+
+\doxysubsection{Funções}
+\label{_test_8cpp_a2c8ce8cf6168e92d5358d33ca767ad22} 
+\index{Test.cpp@{Test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!Test.cpp@{Test.cpp}}
+\doxysubsubsection{TEST\_CASE()\hspace{0.1cm}{\footnotesize\ttfamily [1/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\"{}Teste edicao de tasks\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00315\ \ \ \ \ TaskManager\ taskManager;}
+\DoxyCodeLine{00316\ \ \ \ \ DataStorage\ dataStorage(\textcolor{stringliteral}{"{}output/BancoDados.txt"{}},\ taskManager);}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{comment}{//\ Carregar\ dados\ dos\ usuários\ em\ arquivo\ externo}}
+\DoxyCodeLine{00319\ \ \ \ \ dataStorage.loadData();}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordflow}{if}(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ user\ =\ std::make\_unique<User>(\textcolor{stringliteral}{"{}Teste2"{}},\ \textcolor{stringliteral}{"{}m@ufmg.br"{}},\ taskManager);}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ dataStorage.addUser(std::move(user));}
+\DoxyCodeLine{00324\ \ \ \ \ \}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ User*\ user2\ =\ dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}});}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste2"{}});}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00331\ \ \ \ \ \}}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste3"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste3"{}});}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00336\ \ \ \ \ \}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ Board*\ board2\ =\ user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste2"{}});}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordflow}{if}(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ task\ =\ taskManager.createTask(\textcolor{stringliteral}{"{}TesteTitulo"{}},\ \textcolor{stringliteral}{"{}TesteDescricao"{}},\ \textcolor{stringliteral}{"{}2003-\/08-\/25"{}});}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ board2-\/>addTask(task);}
+\DoxyCodeLine{00343\ \ \ \ \ \}}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \ \ \ \ Task*\ task\ =\ taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}});}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \ \ \ \ CHECK(task-\/>getTitle()\ ==\ \textcolor{stringliteral}{"{}TesteTitulo"{}});}
+\DoxyCodeLine{00348\ \ \ \ \ CHECK(task-\/>getDescription()\ ==\ \textcolor{stringliteral}{"{}TesteDescricao"{}});}
+\DoxyCodeLine{00349\ \ \ \ \ CHECK(task-\/>getDueDate()\ ==\ \textcolor{stringliteral}{"{}2003-\/08-\/25"{}});}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ \ \ taskManager.editTask(task,\ \textcolor{stringliteral}{"{}TesteTituloNovo"{}},\ \textcolor{stringliteral}{"{}TesteDescricaoNovo"{}},\ \textcolor{stringliteral}{"{}2003-\/08-\/26"{}});}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \ \ \ \ CHECK(task-\/>getTitle()\ ==\ \textcolor{stringliteral}{"{}TesteTituloNovo"{}});}
+\DoxyCodeLine{00354\ \ \ \ \ CHECK(task-\/>getDescription()\ ==\ \textcolor{stringliteral}{"{}TesteDescricaoNovo"{}});}
+\DoxyCodeLine{00355\ \ \ \ \ CHECK(task-\/>getDueDate()\ ==\ \textcolor{stringliteral}{"{}2003-\/08-\/26"{}});}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{comment}{//CHECK(task-\/>getTitle()\ ==\ "{}TesteTituloNovo"{}\ \&\&\ task-\/>getDescription()\ ==\ "{}TesteDescricaoNovo"{}\ \&\&\ task-\/>getDueDate()\ ==\ "{}2003-\/08-\/26"{});}}
+\DoxyCodeLine{00358\ \}}
+
+\end{DoxyCode}
+\label{_test_8cpp_af2b0eb8058332eef77fd8295411d3f64} 
+\index{Test.cpp@{Test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!Test.cpp@{Test.cpp}}
+\doxysubsubsection{TEST\_CASE()\hspace{0.1cm}{\footnotesize\ttfamily [2/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\"{}Teste existencia e criacao de boards\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ TaskManager\ taskManager;}
+\DoxyCodeLine{00014\ \ \ \ \ DataStorage\ dataStorage(\textcolor{stringliteral}{"{}output/BancoDados.txt"{}},\ taskManager);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Carregar\ dados\ dos\ usuários\ em\ arquivo\ externo}}
+\DoxyCodeLine{00017\ \ \ \ \ dataStorage.loadData();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ user\ =\ std::make\_unique<User>(\textcolor{stringliteral}{"{}Teste2"{}},\ \textcolor{stringliteral}{"{}m@ufmg.br"{}},\ taskManager);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ dataStorage.addUser(std::move(user));}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ User*\ user2\ =\ dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}});}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ CHECK(user2-\/>getBoard(\textcolor{stringliteral}{"{}"{}})\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ CHECK(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}})\ !=\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ CHECK(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTesteNAOEXISTE"{}})\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+\label{_test_8cpp_a90f3fbdd3459702696917fd88a7cd6e7} 
+\index{Test.cpp@{Test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!Test.cpp@{Test.cpp}}
+\doxysubsubsection{TEST\_CASE()\hspace{0.1cm}{\footnotesize\ttfamily [3/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\"{}Teste existencia e criacao de tasks\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ TaskManager\ taskManager;}
+\DoxyCodeLine{00105\ \ \ \ \ DataStorage\ dataStorage(\textcolor{stringliteral}{"{}output/BancoDados.txt"{}},\ taskManager);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//\ Carregar\ dados\ dos\ usuários\ em\ arquivo\ externo}}
+\DoxyCodeLine{00108\ \ \ \ \ dataStorage.loadData();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{if}(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ user\ =\ std::make\_unique<User>(\textcolor{stringliteral}{"{}Teste2"{}},\ \textcolor{stringliteral}{"{}m@ufmg.br"{}},\ taskManager);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ dataStorage.addUser(std::move(user));}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ User*\ user2\ =\ dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}});}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ Board*\ board2\ =\ user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{if}(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ Task*\ task\ =\ taskManager.createTask(\textcolor{stringliteral}{"{}TesteTitulo"{}},\ \textcolor{stringliteral}{"{}TesteDescricao"{}},\ \textcolor{stringliteral}{"{}2003-\/08-\/25"{}});}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ board2-\/>addTask(task);}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ CHECK(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}"{}})\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ CHECK(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}})\ !=\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ CHECK(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTituloNAOEXISTE"{}})\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00134\ \}}
+
+\end{DoxyCode}
+\label{_test_8cpp_a1e9586be7e0a6e328d20f8a56ea01565} 
+\index{Test.cpp@{Test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!Test.cpp@{Test.cpp}}
+\doxysubsubsection{TEST\_CASE()\hspace{0.1cm}{\footnotesize\ttfamily [4/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\"{}Teste existencia e criacao de usuarios\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00363\ \ \ \ \ TaskManager\ taskManager;}
+\DoxyCodeLine{00364\ \ \ \ \ DataStorage\ dataStorage(\textcolor{stringliteral}{"{}output/BancoDados.txt"{}},\ taskManager);}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{comment}{//\ Carregar\ dados\ dos\ usuários\ em\ arquivo\ externo}}
+\DoxyCodeLine{00367\ \ \ \ \ dataStorage.loadData();}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordflow}{if}(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ user\ =\ std::make\_unique<User>(\textcolor{stringliteral}{"{}Teste2"{}},\ \textcolor{stringliteral}{"{}m@ufmg.br"{}},\ taskManager);}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ dataStorage.addUser(std::move(user));}
+\DoxyCodeLine{00372\ \ \ \ \ \}}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ CHECK(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ !=\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ CHECK(dataStorage.getUser(\textcolor{stringliteral}{"{}USUARIOQUENAOEXISTE000"{}})\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00377\ \}}
+
+\end{DoxyCode}
+\label{_test_8cpp_a66fe7557cab130621fa6a68ac8423cf5} 
+\index{Test.cpp@{Test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!Test.cpp@{Test.cpp}}
+\doxysubsubsection{TEST\_CASE()\hspace{0.1cm}{\footnotesize\ttfamily [5/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\"{}Teste lista boards\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ TaskManager\ taskManager;}
+\DoxyCodeLine{00068\ \ \ \ \ DataStorage\ dataStorage(\textcolor{stringliteral}{"{}output/BancoDados.txt"{}},\ taskManager);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ Carregar\ dados\ dos\ usuários\ em\ arquivo\ externo}}
+\DoxyCodeLine{00071\ \ \ \ \ dataStorage.loadData();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{if}(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ user\ =\ std::make\_unique<User>(\textcolor{stringliteral}{"{}Teste2"{}},\ \textcolor{stringliteral}{"{}m@ufmg.br"{}},\ taskManager);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ dataStorage.addUser(std::move(user));}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ User*\ user2\ =\ dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste2"{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste3"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste3"{}});}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::unique\_ptr<Board>>\&\ boards\ =\ user2-\/>getBoards();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ CHECK(boards[0]-\/>getName()\ ==\ \textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00098\ \ \ \ \ CHECK(boards[1]-\/>getName()\ ==\ \textcolor{stringliteral}{"{}QuadroTeste2"{}});}
+\DoxyCodeLine{00099\ \ \ \ \ CHECK(boards[2]-\/>getName()\ ==\ \textcolor{stringliteral}{"{}QuadroTeste3"{}});}
+\DoxyCodeLine{00100\ \}}
+
+\end{DoxyCode}
+\label{_test_8cpp_a51ccf01686a8d6ea33a68ac725d30a2a} 
+\index{Test.cpp@{Test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!Test.cpp@{Test.cpp}}
+\doxysubsubsection{TEST\_CASE()\hspace{0.1cm}{\footnotesize\ttfamily [6/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\"{}Teste lista de tasks\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ TaskManager\ taskManager;}
+\DoxyCodeLine{00171\ \ \ \ \ DataStorage\ dataStorage(\textcolor{stringliteral}{"{}output/BancoDados.txt"{}},\ taskManager);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{//\ Carregar\ dados\ dos\ usuários\ em\ arquivo\ externo}}
+\DoxyCodeLine{00174\ \ \ \ \ dataStorage.loadData();}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordflow}{if}(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ user\ =\ std::make\_unique<User>(\textcolor{stringliteral}{"{}Teste2"{}},\ \textcolor{stringliteral}{"{}m@ufmg.br"{}},\ taskManager);}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ dataStorage.addUser(std::move(user));}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ User*\ user2\ =\ dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}});}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00186\ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ Board*\ board2\ =\ user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{if}(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ Task*\ task\ =\ taskManager.createTask(\textcolor{stringliteral}{"{}TesteTitulo"{}},\ \textcolor{stringliteral}{"{}TesteDescricao"{}},\ \textcolor{stringliteral}{"{}2003-\/08-\/25"{}});}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ board2-\/>addTask(task);}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordflow}{if}(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ Task*\ task\ =\ taskManager.createTask(\textcolor{stringliteral}{"{}TesteTitulo2"{}},\ \textcolor{stringliteral}{"{}TesteDescricao2"{}},\ \textcolor{stringliteral}{"{}2001-\/08-\/24"{}});}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ board2-\/>addTask(task);}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{if}(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo3"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ Task*\ task\ =\ taskManager.createTask(\textcolor{stringliteral}{"{}TesteTitulo3"{}},\ \textcolor{stringliteral}{"{}TesteDescricao3"{}},\ \textcolor{stringliteral}{"{}2002-\/08-\/24"{}});}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ board2-\/>addTask(task);}
+\DoxyCodeLine{00203\ \ \ \ \ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ std::vector<Task*>\ tasks\ =\ taskManager.getTasks(board2);}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ CHECK(tasks[0]-\/>getTitle()\ ==\ \textcolor{stringliteral}{"{}TesteTitulo"{}});}
+\DoxyCodeLine{00208\ \ \ \ \ CHECK(tasks[1]-\/>getTitle()\ ==\ \textcolor{stringliteral}{"{}TesteTitulo2"{}});}
+\DoxyCodeLine{00209\ \ \ \ \ CHECK(tasks[2]-\/>getTitle()\ ==\ \textcolor{stringliteral}{"{}TesteTitulo3"{}});}
+\DoxyCodeLine{00210\ \}}
+
+\end{DoxyCode}
+\label{_test_8cpp_aa1a5dd7d411409e9b52c8cc4305f6b04} 
+\index{Test.cpp@{Test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!Test.cpp@{Test.cpp}}
+\doxysubsubsection{TEST\_CASE()\hspace{0.1cm}{\footnotesize\ttfamily [7/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\"{}Teste movimentacao de tasks\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ TaskManager\ taskManager;}
+\DoxyCodeLine{00263\ \ \ \ \ DataStorage\ dataStorage(\textcolor{stringliteral}{"{}output/BancoDados.txt"{}},\ taskManager);}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{comment}{//\ Carregar\ dados\ dos\ usuários\ em\ arquivo\ externo}}
+\DoxyCodeLine{00266\ \ \ \ \ dataStorage.loadData();}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordflow}{if}(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ user\ =\ std::make\_unique<User>(\textcolor{stringliteral}{"{}Teste2"{}},\ \textcolor{stringliteral}{"{}m@ufmg.br"{}},\ taskManager);}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ dataStorage.addUser(std::move(user));}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ User*\ user2\ =\ dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}});}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste2"{}});}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00278\ \ \ \ \ \}}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste3"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste3"{}});}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00283\ \ \ \ \ \}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \ \ Board*\ board2\ =\ user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste2"{}});}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ Board*\ board3\ =\ user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste3"{}});}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordflow}{if}(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ task\ =\ taskManager.createTask(\textcolor{stringliteral}{"{}TesteTitulo"{}},\ \textcolor{stringliteral}{"{}TesteDescricao"{}},\ \textcolor{stringliteral}{"{}2003-\/08-\/25"{}});}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ board2-\/>addTask(task);}
+\DoxyCodeLine{00292\ \ \ \ \ \}}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordflow}{if}(taskManager.getTask(board3,\ \textcolor{stringliteral}{"{}TesteTitulo2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ task\ =\ taskManager.createTask(\textcolor{stringliteral}{"{}TesteTitulo2"{}},\ \textcolor{stringliteral}{"{}TesteDescricao2"{}},\ \textcolor{stringliteral}{"{}2001-\/08-\/24"{}});}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ board3-\/>addTask(task);}
+\DoxyCodeLine{00297\ \ \ \ \ \}}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ Task*\ task\ =\ taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}});}
+\DoxyCodeLine{00300\ \ \ \ \ Task*\ task2\ =\ taskManager.getTask(board3,\ \textcolor{stringliteral}{"{}TesteTitulo2"{}});}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \ \ \ \ }
+\DoxyCodeLine{00303\ \ \ \ \ taskManager.moveTask(task,\ board2,\ board3);}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ CHECK(taskManager.getTask(board3,\ \textcolor{stringliteral}{"{}TesteTitulo"{}})\ !=\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00306\ \ \ \ \ CHECK(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}})\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00307\ \ \ \ \ }
+\DoxyCodeLine{00308\ \ \ \ \ taskManager.moveTask(task2,\ board3,\ board2);}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ CHECK(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo2"{}})\ !=\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00311\ \ \ \ \ CHECK(taskManager.getTask(board3,\ \textcolor{stringliteral}{"{}TesteTitulo2"{}})\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00312\ \}}
+
+\end{DoxyCode}
+\label{_test_8cpp_a27351a2eaf3b94527424085b684d1d4a} 
+\index{Test.cpp@{Test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!Test.cpp@{Test.cpp}}
+\doxysubsubsection{TEST\_CASE()\hspace{0.1cm}{\footnotesize\ttfamily [8/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\"{}Teste ordenacao de tasks\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ TaskManager\ taskManager;}
+\DoxyCodeLine{00214\ \ \ \ \ DataStorage\ dataStorage(\textcolor{stringliteral}{"{}output/BancoDados.txt"{}},\ taskManager);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{comment}{//\ Carregar\ dados\ dos\ usuários\ em\ arquivo\ externo}}
+\DoxyCodeLine{00217\ \ \ \ \ dataStorage.loadData();}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{if}(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ user\ =\ std::make\_unique<User>(\textcolor{stringliteral}{"{}Teste2"{}},\ \textcolor{stringliteral}{"{}m@ufmg.br"{}},\ taskManager);}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ dataStorage.addUser(std::move(user));}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ User*\ user2\ =\ dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}});}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00229\ \ \ \ \ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ Board*\ board2\ =\ user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordflow}{if}(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ Task*\ task\ =\ taskManager.createTask(\textcolor{stringliteral}{"{}TesteTitulo"{}},\ \textcolor{stringliteral}{"{}TesteDescricao"{}},\ \textcolor{stringliteral}{"{}2003-\/08-\/25"{}});}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ board2-\/>addTask(task);}
+\DoxyCodeLine{00236\ \ \ \ \ \}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordflow}{if}(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ Task*\ task\ =\ taskManager.createTask(\textcolor{stringliteral}{"{}TesteTitulo2"{}},\ \textcolor{stringliteral}{"{}TesteDescricao2"{}},\ \textcolor{stringliteral}{"{}2001-\/08-\/24"{}});}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ board2-\/>addTask(task);}
+\DoxyCodeLine{00241\ \ \ \ \ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordflow}{if}(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo3"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ Task*\ task\ =\ taskManager.createTask(\textcolor{stringliteral}{"{}TesteTitulo3"{}},\ \textcolor{stringliteral}{"{}TesteDescricao3"{}},\ \textcolor{stringliteral}{"{}2002-\/08-\/24"{}});}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ board2-\/>addTask(task);}
+\DoxyCodeLine{00246\ \ \ \ \ \}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ std::vector<Task*>\ tasksByName\ =\ taskManager.getTasksSortedByName(board2);}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ std::vector<Task*>\ tasksByDueDate\ =\ taskManager.getTasksSortedByDueDate(board2);}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ CHECK(tasksByName[0]-\/>getTitle()\ ==\ \textcolor{stringliteral}{"{}TesteTitulo"{}});}
+\DoxyCodeLine{00253\ \ \ \ \ CHECK(tasksByName[1]-\/>getTitle()\ ==\ \textcolor{stringliteral}{"{}TesteTitulo2"{}});}
+\DoxyCodeLine{00254\ \ \ \ \ CHECK(tasksByName[2]-\/>getTitle()\ ==\ \textcolor{stringliteral}{"{}TesteTitulo3"{}});}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ CHECK(tasksByDueDate[0]-\/>getTitle()\ ==\ \textcolor{stringliteral}{"{}TesteTitulo2"{}});}
+\DoxyCodeLine{00257\ \ \ \ \ CHECK(tasksByDueDate[1]-\/>getTitle()\ ==\ \textcolor{stringliteral}{"{}TesteTitulo3"{}});}
+\DoxyCodeLine{00258\ \ \ \ \ CHECK(tasksByDueDate[2]-\/>getTitle()\ ==\ \textcolor{stringliteral}{"{}TesteTitulo"{}});}
+\DoxyCodeLine{00259\ \}}
+
+\end{DoxyCode}
+\label{_test_8cpp_af5ccf9f76b77df21fdd9275ba358c6a1} 
+\index{Test.cpp@{Test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!Test.cpp@{Test.cpp}}
+\doxysubsubsection{TEST\_CASE()\hspace{0.1cm}{\footnotesize\ttfamily [9/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\"{}Teste remocao de board\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ TaskManager\ taskManager;}
+\DoxyCodeLine{00042\ \ \ \ \ DataStorage\ dataStorage(\textcolor{stringliteral}{"{}output/BancoDados.txt"{}},\ taskManager);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Carregar\ dados\ dos\ usuários\ em\ arquivo\ externo}}
+\DoxyCodeLine{00045\ \ \ \ \ dataStorage.loadData();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ user\ =\ std::make\_unique<User>(\textcolor{stringliteral}{"{}Teste2"{}},\ \textcolor{stringliteral}{"{}m@ufmg.br"{}},\ taskManager);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ dataStorage.addUser(std::move(user));}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ User*\ user2\ =\ dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ CHECK(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}})\ !=\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ user2-\/>removeBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ CHECK(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}})\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}
+\label{_test_8cpp_a019dc9bf243c57e31cdc45b889e34609} 
+\index{Test.cpp@{Test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!Test.cpp@{Test.cpp}}
+\doxysubsubsection{TEST\_CASE()\hspace{0.1cm}{\footnotesize\ttfamily [10/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\"{}Teste remocao de task\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ TaskManager\ taskManager;}
+\DoxyCodeLine{00138\ \ \ \ \ DataStorage\ dataStorage(\textcolor{stringliteral}{"{}output/BancoDados.txt"{}},\ taskManager);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{comment}{//\ Carregar\ dados\ dos\ usuários\ em\ arquivo\ externo}}
+\DoxyCodeLine{00141\ \ \ \ \ dataStorage.loadData();}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{if}(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ user\ =\ std::make\_unique<User>(\textcolor{stringliteral}{"{}Teste2"{}},\ \textcolor{stringliteral}{"{}m@ufmg.br"{}},\ taskManager);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ dataStorage.addUser(std::move(user));}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ User*\ user2\ =\ dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}});}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{if}(user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ board\ =\ std::make\_unique<Board>(\textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ user2-\/>addBoard(std::move(board));}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ Board*\ board2\ =\ user2-\/>getBoard(\textcolor{stringliteral}{"{}QuadroTeste"{}});}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{if}(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ Task*\ task\ =\ taskManager.createTask(\textcolor{stringliteral}{"{}TesteTitulo"{}},\ \textcolor{stringliteral}{"{}TesteDescricao"{}},\ \textcolor{stringliteral}{"{}2003-\/08-\/25"{}});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ board2-\/>addTask(task);}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ CHECK(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}})\ !=\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ board2-\/>removeTask(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}}));}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ CHECK(taskManager.getTask(board2,\ \textcolor{stringliteral}{"{}TesteTitulo"{}})\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00167\ \}}
+
+\end{DoxyCode}
+\label{_test_8cpp_a9b9dc958d5f6c617275d88a8ef6f0db7} 
+\index{Test.cpp@{Test.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!Test.cpp@{Test.cpp}}
+\doxysubsubsection{TEST\_CASE()\hspace{0.1cm}{\footnotesize\ttfamily [11/11]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\"{}Teste remocao de usuario\"{}}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00380\ \ \ \ \ TaskManager\ taskManager;}
+\DoxyCodeLine{00381\ \ \ \ \ DataStorage\ dataStorage(\textcolor{stringliteral}{"{}output/BancoDados.txt"{}},\ taskManager);}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{comment}{//\ Carregar\ dados\ dos\ usuários\ em\ arquivo\ externo}}
+\DoxyCodeLine{00384\ \ \ \ \ dataStorage.loadData();}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordflow}{if}(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ user\ =\ std::make\_unique<User>(\textcolor{stringliteral}{"{}Teste2"{}},\ \textcolor{stringliteral}{"{}m@ufmg.br"{}},\ taskManager);}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ dataStorage.addUser(std::move(user));}
+\DoxyCodeLine{00389\ \ \ \ \ \}}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00391\ \ \ \ \ CHECK(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ !=\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \ \ \ \ dataStorage.removeUser(\textcolor{stringliteral}{"{}Teste2"{}});}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ CHECK(dataStorage.getUser(\textcolor{stringliteral}{"{}Teste2"{}})\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00396\ \}}
+
+\end{DoxyCode}

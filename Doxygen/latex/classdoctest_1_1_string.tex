@@ -1,0 +1,265 @@
+\doxysection{Referência da Classe doctest\+::String}
+\label{classdoctest_1_1_string}\index{doctest::String@{doctest::String}}
+
+
+{\ttfamily \#include $<$doctest.\+h$>$}
+
+\doxysubsubsection*{Tipos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ size\+\_\+type} = \textbf{ DOCTEST\+\_\+\+CONFIG\+\_\+\+STRING\+\_\+\+SIZE\+\_\+\+TYPE}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ String} () noexcept
+\item 
+\textbf{ $\sim$\+String} ()
+\item 
+\textbf{ String} (const char $\ast$in)
+\item 
+\textbf{ String} (const char $\ast$in, \textbf{ size\+\_\+type} in\+\_\+size)
+\item 
+\textbf{ String} (\textbf{ std\+::istream} \&in, \textbf{ size\+\_\+type} in\+\_\+size)
+\item 
+\textbf{ String} (const \textbf{ String} \&other)
+\item 
+\textbf{ String} \& \textbf{ operator=} (const \textbf{ String} \&other)
+\item 
+\textbf{ String} \& \textbf{ operator+=} (const \textbf{ String} \&other)
+\item 
+\textbf{ String} (\textbf{ String} \&\&other) noexcept
+\item 
+\textbf{ String} \& \textbf{ operator=} (\textbf{ String} \&\&other) noexcept
+\item 
+char \textbf{ operator[$\,$]} (\textbf{ size\+\_\+type} i) const
+\item 
+char \& \textbf{ operator[$\,$]} (\textbf{ size\+\_\+type} i)
+\item 
+const char $\ast$ \textbf{ c\+\_\+str} () const
+\item 
+char $\ast$ \textbf{ c\+\_\+str} ()
+\item 
+\textbf{ size\+\_\+type} \textbf{ size} () const
+\item 
+\textbf{ size\+\_\+type} \textbf{ capacity} () const
+\item 
+\textbf{ String} \textbf{ substr} (\textbf{ size\+\_\+type} pos, \textbf{ size\+\_\+type} cnt=\textbf{ npos}) \&\&
+\item 
+\textbf{ String} \textbf{ substr} (\textbf{ size\+\_\+type} pos, \textbf{ size\+\_\+type} cnt=\textbf{ npos}) const \&
+\item 
+\textbf{ size\+\_\+type} \textbf{ find} (char ch, \textbf{ size\+\_\+type} pos=0) const
+\item 
+\textbf{ size\+\_\+type} \textbf{ rfind} (char ch, \textbf{ size\+\_\+type} pos=\textbf{ npos}) const
+\item 
+int \textbf{ compare} (const char $\ast$other, bool no\+\_\+case=false) const
+\item 
+int \textbf{ compare} (const \textbf{ String} \&other, bool no\+\_\+case=false) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos Públicos Estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ DOCTEST\+\_\+\+CONSTEXPR} \textbf{ size\+\_\+type} \textbf{ npos} = static\+\_\+cast$<$\textbf{ size\+\_\+type}$>$(-\/1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Amigos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ std\+::ostream} \& \textbf{ operator$<$$<$} (\textbf{ std\+::ostream} \&s, const \textbf{ String} \&in)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das definições de tipos}
+\label{classdoctest_1_1_string_a955471ce254dca78b33f8167bad6b0f0} 
+\index{doctest::String@{doctest::String}!size\_type@{size\_type}}
+\index{size\_type@{size\_type}!doctest::String@{doctest::String}}
+\doxysubsubsection{size\_type}
+{\footnotesize\ttfamily using \textbf{ doctest\+::\+String\+::size\+\_\+type} =  \textbf{ DOCTEST\+\_\+\+CONFIG\+\_\+\+STRING\+\_\+\+SIZE\+\_\+\+TYPE}}
+
+
+
+\doxysubsection{Construtores e Destrutores}
+\label{classdoctest_1_1_string_ac458ccc54bb0f2d66fe8ca14146ec5f0} 
+\index{doctest::String@{doctest::String}!String@{String}}
+\index{String@{String}!doctest::String@{doctest::String}}
+\doxysubsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily doctest\+::\+String\+::\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\label{classdoctest_1_1_string_af5dce5deeb8f25a4866efdff75e92975} 
+\index{doctest::String@{doctest::String}!````~String@{$\sim$String}}
+\index{````~String@{$\sim$String}!doctest::String@{doctest::String}}
+\doxysubsubsection{$\sim$String()}
+{\footnotesize\ttfamily doctest\+::\+String\+::$\sim$\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\label{classdoctest_1_1_string_abb4449cbc613cd973ae774c704fca5dd} 
+\index{doctest::String@{doctest::String}!String@{String}}
+\index{String@{String}!doctest::String@{doctest::String}}
+\doxysubsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily doctest\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{in }\end{DoxyParamCaption})}
+
+\label{classdoctest_1_1_string_a0ce0a3e6a00b63b0a219a988fc42cec3} 
+\index{doctest::String@{doctest::String}!String@{String}}
+\index{String@{String}!doctest::String@{doctest::String}}
+\doxysubsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily doctest\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{in,  }\item[{\textbf{ size\+\_\+type}}]{in\+\_\+size }\end{DoxyParamCaption})}
+
+\label{classdoctest_1_1_string_ac6e38dd40b68e19ef6898a13f60d2a07} 
+\index{doctest::String@{doctest::String}!String@{String}}
+\index{String@{String}!doctest::String@{doctest::String}}
+\doxysubsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily doctest\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{\textbf{ std\+::istream} \&}]{in,  }\item[{\textbf{ size\+\_\+type}}]{in\+\_\+size }\end{DoxyParamCaption})}
+
+\label{classdoctest_1_1_string_a27ca7976da20bdebbf225fa496c38ad1} 
+\index{doctest::String@{doctest::String}!String@{String}}
+\index{String@{String}!doctest::String@{doctest::String}}
+\doxysubsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily doctest\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{other }\end{DoxyParamCaption})}
+
+\label{classdoctest_1_1_string_a2a0aa72649d92cb8da5b89b98bcff752} 
+\index{doctest::String@{doctest::String}!String@{String}}
+\index{String@{String}!doctest::String@{doctest::String}}
+\doxysubsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily doctest\+::\+String\+::\+String (\begin{DoxyParamCaption}\item[{\textbf{ String} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Documentação das funções}
+\label{classdoctest_1_1_string_a4a59b9aa0980d93e15a4cf459dab7f7e} 
+\index{doctest::String@{doctest::String}!c\_str@{c\_str}}
+\index{c\_str@{c\_str}!doctest::String@{doctest::String}}
+\doxysubsubsection{c\_str()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily char $\ast$ doctest\+::\+String\+::c\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isOnStack())\ \{}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(buf);}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data.ptr;}
+\DoxyCodeLine{00648\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{classdoctest_1_1_string_a59fcdcf1abd7d66572158049c1b4a8c0} 
+\index{doctest::String@{doctest::String}!c\_str@{c\_str}}
+\index{c\_str@{c\_str}!doctest::String@{doctest::String}}
+\doxysubsubsection{c\_str()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const char $\ast$ doctest\+::\+String\+::c\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00642\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}String*\textcolor{keyword}{>}(\textcolor{keyword}{this})-\/>c\_str();\ \}\ \textcolor{comment}{//\ NOLINT}}
+
+\end{DoxyCode}
+\label{classdoctest_1_1_string_a1592b42fc76438d5a87a94654a828ced} 
+\index{doctest::String@{doctest::String}!capacity@{capacity}}
+\index{capacity@{capacity}!doctest::String@{doctest::String}}
+\doxysubsubsection{capacity()}
+{\footnotesize\ttfamily \textbf{ size\+\_\+type} doctest\+::\+String\+::capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\label{classdoctest_1_1_string_aef87d1f106d32d8c31af87335b44164d} 
+\index{doctest::String@{doctest::String}!compare@{compare}}
+\index{compare@{compare}!doctest::String@{doctest::String}}
+\doxysubsubsection{compare()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int doctest\+::\+String\+::compare (\begin{DoxyParamCaption}\item[{const char $\ast$}]{other,  }\item[{bool}]{no\+\_\+case = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+\label{classdoctest_1_1_string_adb57becb56e054d981e7c2b967a7e359} 
+\index{doctest::String@{doctest::String}!compare@{compare}}
+\index{compare@{compare}!doctest::String@{doctest::String}}
+\doxysubsubsection{compare()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int doctest\+::\+String\+::compare (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{other,  }\item[{bool}]{no\+\_\+case = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+\label{classdoctest_1_1_string_aa7b27b07ca5bf081b3ec25a3224a7a05} 
+\index{doctest::String@{doctest::String}!find@{find}}
+\index{find@{find}!doctest::String@{doctest::String}}
+\doxysubsubsection{find()}
+{\footnotesize\ttfamily \textbf{ size\+\_\+type} doctest\+::\+String\+::find (\begin{DoxyParamCaption}\item[{char}]{ch,  }\item[{\textbf{ size\+\_\+type}}]{pos = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+\label{classdoctest_1_1_string_a3025142a313b3d9bacb6bfd32c1bc36f} 
+\index{doctest::String@{doctest::String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!doctest::String@{doctest::String}}
+\doxysubsubsection{operator+=()}
+{\footnotesize\ttfamily \textbf{ String} \& doctest\+::\+String\+::operator+= (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{other }\end{DoxyParamCaption})}
+
+\label{classdoctest_1_1_string_a43d58193ddd859ffc1dbd8ea4d263103} 
+\index{doctest::String@{doctest::String}!operator=@{operator=}}
+\index{operator=@{operator=}!doctest::String@{doctest::String}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ String} \& doctest\+::\+String\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{other }\end{DoxyParamCaption})}
+
+\label{classdoctest_1_1_string_afc06e2f0bc08246c54d12cb5c2ece4ed} 
+\index{doctest::String@{doctest::String}!operator=@{operator=}}
+\index{operator=@{operator=}!doctest::String@{doctest::String}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ String} \& doctest\+::\+String\+::operator= (\begin{DoxyParamCaption}\item[{\textbf{ String} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\label{classdoctest_1_1_string_a538ea195bcaba01af86d3492ca32ec5a} 
+\index{doctest::String@{doctest::String}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!doctest::String@{doctest::String}}
+\doxysubsubsection{operator[]()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily char \& doctest\+::\+String\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+type}}]{i }\end{DoxyParamCaption})}
+
+\label{classdoctest_1_1_string_a15633c5d68057a07bccdadadd6acae05} 
+\index{doctest::String@{doctest::String}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!doctest::String@{doctest::String}}
+\doxysubsubsection{operator[]()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily char doctest\+::\+String\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+type}}]{i }\end{DoxyParamCaption}) const}
+
+\label{classdoctest_1_1_string_a6e22f4f3820de5ffdf82e0acc6646759} 
+\index{doctest::String@{doctest::String}!rfind@{rfind}}
+\index{rfind@{rfind}!doctest::String@{doctest::String}}
+\doxysubsubsection{rfind()}
+{\footnotesize\ttfamily \textbf{ size\+\_\+type} doctest\+::\+String\+::rfind (\begin{DoxyParamCaption}\item[{char}]{ch,  }\item[{\textbf{ size\+\_\+type}}]{pos = {\ttfamily \textbf{ npos}} }\end{DoxyParamCaption}) const}
+
+\label{classdoctest_1_1_string_acc9888303b7330a8dc78d3d79eadcf7c} 
+\index{doctest::String@{doctest::String}!size@{size}}
+\index{size@{size}!doctest::String@{doctest::String}}
+\doxysubsubsection{size()}
+{\footnotesize\ttfamily \textbf{ size\+\_\+type} doctest\+::\+String\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\label{classdoctest_1_1_string_a6fd53b95d33900d8a38a3a33c43c928e} 
+\index{doctest::String@{doctest::String}!substr@{substr}}
+\index{substr@{substr}!doctest::String@{doctest::String}}
+\doxysubsubsection{substr()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ String} doctest\+::\+String\+::substr (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+type}}]{pos,  }\item[{\textbf{ size\+\_\+type}}]{cnt = {\ttfamily \textbf{ npos}} }\end{DoxyParamCaption}) \&\&}
+
+\label{classdoctest_1_1_string_ace5bc90d48d52944412addef185de9a6} 
+\index{doctest::String@{doctest::String}!substr@{substr}}
+\index{substr@{substr}!doctest::String@{doctest::String}}
+\doxysubsubsection{substr()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ String} doctest\+::\+String\+::substr (\begin{DoxyParamCaption}\item[{\textbf{ size\+\_\+type}}]{pos,  }\item[{\textbf{ size\+\_\+type}}]{cnt = {\ttfamily \textbf{ npos}} }\end{DoxyParamCaption}) const \&}
+
+
+
+\doxysubsection{Documentação dos símbolos amigos e relacionados}
+\label{classdoctest_1_1_string_a782c199b9e7c3bdf94579410c8a82fc3} 
+\index{doctest::String@{doctest::String}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!doctest::String@{doctest::String}}
+\doxysubsubsection{operator$<$$<$}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ std\+::ostream} \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\textbf{ std\+::ostream} \&}]{s,  }\item[{const \textbf{ String} \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Atributos}
+\label{classdoctest_1_1_string_a7e031ced488588936a540eba26facf67} 
+\index{doctest::String@{doctest::String}!buf@{buf}}
+\index{buf@{buf}!doctest::String@{doctest::String}}
+\doxysubsubsection{buf}
+{\footnotesize\ttfamily char doctest\+::\+String\+::buf[len]}
+
+\label{classdoctest_1_1_string_a5c77ed634a1b81aea739a73fb01d986a} 
+\index{doctest::String@{doctest::String}!data@{data}}
+\index{data@{data}!doctest::String@{doctest::String}}
+\doxysubsubsection{data}
+{\footnotesize\ttfamily view doctest\+::\+String\+::data}
+
+\label{classdoctest_1_1_string_a29d41bba3eb99eb895aaf8227da09f3e} 
+\index{doctest::String@{doctest::String}!npos@{npos}}
+\index{npos@{npos}!doctest::String@{doctest::String}}
+\doxysubsubsection{npos}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+CONSTEXPR} \textbf{ size\+\_\+type} doctest\+::\+String\+::npos = static\+\_\+cast$<$\textbf{ size\+\_\+type}$>$(-\/1)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\textbf{ doctest.\+h}\end{DoxyCompactItemize}

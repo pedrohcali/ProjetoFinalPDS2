@@ -1,0 +1,220 @@
+\doxysection{Referência da Classe User}
+\label{class_user}\index{User@{User}}
+
+
+{\ttfamily \#include $<$User.\+hpp$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ User} (const std\+::string \&username, const std\+::string \&email, \textbf{ Task\+Manager} \&task\+Manager)
+\item 
+\textbf{ $\sim$\+User} ()
+\item 
+const std\+::string \& \textbf{ get\+Username} () const
+\item 
+void \textbf{ set\+Username} (const std\+::string \&username)
+\item 
+const std\+::string \& \textbf{ get\+Email} () const
+\item 
+void \textbf{ set\+Email} (const std\+::string \&email)
+\item 
+const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \textbf{ Board} $>$ $>$ \& \textbf{ get\+Boards} () const
+\item 
+void \textbf{ add\+Board} (std\+::unique\+\_\+ptr$<$ \textbf{ Board} $>$ board)
+\item 
+void \textbf{ remove\+Board} (const std\+::string \&board\+Name)
+\item 
+void \textbf{ move\+Task} (\textbf{ Board} $\ast$from\+Board, \textbf{ Board} $\ast$to\+Board, \textbf{ Task} $\ast$task)
+\item 
+\textbf{ Board} $\ast$ \textbf{ get\+Board} (const std\+::string \&board\+Name) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\label{class_user_a7bd464c4b884d35a9004321a1157937f} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{User()}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{email,  }\item[{\textbf{ Task\+Manager} \&}]{task\+Manager }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ :\ taskManager(taskManager)\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ setUsername(username);}
+\DoxyCodeLine{00010\ \ \ \ \ setEmail(email);}
+\DoxyCodeLine{00011\ \}}
+
+\end{DoxyCode}
+\label{class_user_ac00b72ad64eb4149f7b21b9f5468c2b2} 
+\index{User@{User}!````~User@{$\sim$User}}
+\index{````~User@{$\sim$User}!User@{User}}
+\doxysubsubsection{$\sim$User()}
+{\footnotesize\ttfamily User\+::$\sim$\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentação das funções}
+\label{class_user_a0b6622eb310f6157ea01638af68131bc} 
+\index{User@{User}!addBoard@{addBoard}}
+\index{addBoard@{addBoard}!User@{User}}
+\doxysubsubsection{addBoard()}
+{\footnotesize\ttfamily void User\+::add\+Board (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \textbf{ Board} $>$}]{board }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (!board)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Quadro\ nao\ pode\ ser\ nulo."{}});}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ b\ :\ boards)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b-\/>getName()\ ==\ board-\/>getName())\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Ja\ existe\ um\ quadro\ com\ o\ mesmo\ nome."{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ boards.push\_back(std::move(board));}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}
+\label{class_user_a6324d0e825d7aa6e9b79b9759b8514c4} 
+\index{User@{User}!getBoard@{getBoard}}
+\index{getBoard@{getBoard}!User@{User}}
+\doxysubsubsection{getBoard()}
+{\footnotesize\ttfamily \textbf{ Board} $\ast$ User\+::get\+Board (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{board\+Name }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\&\ board\ :\ boards)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(board-\/>getName()\ ==\ boardName)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ board.get();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00087\ \}}
+
+\end{DoxyCode}
+\label{class_user_af8627f6b5723a6ee88aa521db699f311} 
+\index{User@{User}!getBoards@{getBoards}}
+\index{getBoards@{getBoards}!User@{User}}
+\doxysubsubsection{getBoards()}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \textbf{ Board} $>$ $>$ \& User\+::get\+Boards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ boards;}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}
+\label{class_user_a230e84b6c76c0e8483ce3c0b36292297} 
+\index{User@{User}!getEmail@{getEmail}}
+\index{getEmail@{getEmail}!User@{User}}
+\doxysubsubsection{getEmail()}
+{\footnotesize\ttfamily const std\+::string \& User\+::get\+Email (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{return}\ email;}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+\label{class_user_a0bdca63ed72fc8ffcee690a0119c2104} 
+\index{User@{User}!getUsername@{getUsername}}
+\index{getUsername@{getUsername}!User@{User}}
+\doxysubsubsection{getUsername()}
+{\footnotesize\ttfamily const std\+::string \& User\+::get\+Username (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{return}\ username;}
+\DoxyCodeLine{00017\ \}}
+
+\end{DoxyCode}
+\label{class_user_a49ddb5499094ed6a16297ddeb087e3b6} 
+\index{User@{User}!moveTask@{moveTask}}
+\index{moveTask@{moveTask}!User@{User}}
+\doxysubsubsection{moveTask()}
+{\footnotesize\ttfamily void User\+::move\+Task (\begin{DoxyParamCaption}\item[{\textbf{ Board} $\ast$}]{from\+Board,  }\item[{\textbf{ Board} $\ast$}]{to\+Board,  }\item[{\textbf{ Task} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (!fromBoard\ ||\ !toBoard\ ||\ !task)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Quadros\ e\ tarefa\ nao\ podem\ ser\ nulos."{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (!taskManager.moveTask(task,\ fromBoard,\ toBoard))\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Falha\ ao\ mover\ a\ tarefa."{}});}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+\label{class_user_a248fe7def4a8c86dcd53441d2d2ce040} 
+\index{User@{User}!removeBoard@{removeBoard}}
+\index{removeBoard@{removeBoard}!User@{User}}
+\doxysubsubsection{removeBoard()}
+{\footnotesize\ttfamily void User\+::remove\+Board (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{board\+Name }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find\_if(boards.begin(),\ boards.end(),\ [\&boardName](\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ board)\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ return\ board-\/>getName()\ ==\ boardName;}
+\DoxyCodeLine{00060\ \ \ \ \ \});}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ boards.end())\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Quadro\ nao\ encontrado."{}});}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ boards.erase(it);}
+\DoxyCodeLine{00067\ \}}
+
+\end{DoxyCode}
+\label{class_user_a11a1d37fde91df2330f69c3c24de056b} 
+\index{User@{User}!setEmail@{setEmail}}
+\index{setEmail@{setEmail}!User@{User}}
+\doxysubsubsection{setEmail()}
+{\footnotesize\ttfamily void User\+::set\+Email (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{email }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (email.empty()\ ||\ email.find(\textcolor{stringliteral}{"{}@ufmg.br"{}})\ ==\ std::string::npos)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}O\ endereco\ de\ e-\/mail\ fornecido\ eh\ invalido\ ou\ nao\ eh\ da\ UFMG."{}});}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ this-\/>email\ =\ email;}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+\label{class_user_a7abee4d4937156ba0c1a657b9b84ddef} 
+\index{User@{User}!setUsername@{setUsername}}
+\index{setUsername@{setUsername}!User@{User}}
+\doxysubsubsection{setUsername()}
+{\footnotesize\ttfamily void User\+::set\+Username (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (username.empty())\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}O\ nome\ de\ usuario\ nao\ pode\ estar\ vazio."{}});}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ this-\/>username\ =\ username;}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/headers/\textbf{ User.\+hpp}\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/\textbf{ User.\+cpp}\end{DoxyCompactItemize}

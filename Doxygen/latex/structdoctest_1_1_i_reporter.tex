@@ -1,0 +1,148 @@
+\doxysection{Referência da Estrutura doctest\+::IReporter}
+\label{structdoctest_1_1_i_reporter}\index{doctest::IReporter@{doctest::IReporter}}
+
+
+{\ttfamily \#include $<$doctest.\+h$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ report\+\_\+query} (const \textbf{ Query\+Data} \&)=0
+\item 
+virtual void \textbf{ test\+\_\+run\+\_\+start} ()=0
+\item 
+virtual void \textbf{ test\+\_\+run\+\_\+end} (const \textbf{ Test\+Run\+Stats} \&)=0
+\item 
+virtual void \textbf{ test\+\_\+case\+\_\+start} (const \textbf{ Test\+Case\+Data} \&)=0
+\item 
+virtual void \textbf{ test\+\_\+case\+\_\+reenter} (const \textbf{ Test\+Case\+Data} \&)=0
+\item 
+virtual void \textbf{ test\+\_\+case\+\_\+end} (const \textbf{ Current\+Test\+Case\+Stats} \&)=0
+\item 
+virtual void \textbf{ test\+\_\+case\+\_\+exception} (const \textbf{ Test\+Case\+Exception} \&)=0
+\item 
+virtual void \textbf{ subcase\+\_\+start} (const \textbf{ Subcase\+Signature} \&)=0
+\item 
+virtual void \textbf{ subcase\+\_\+end} ()=0
+\item 
+virtual void \textbf{ log\+\_\+assert} (const \textbf{ Assert\+Data} \&)=0
+\item 
+virtual void \textbf{ log\+\_\+message} (const \textbf{ Message\+Data} \&)=0
+\item 
+virtual void \textbf{ test\+\_\+case\+\_\+skipped} (const \textbf{ Test\+Case\+Data} \&)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Membros públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static int \textbf{ get\+\_\+num\+\_\+active\+\_\+contexts} ()
+\item 
+static const \textbf{ IContext\+Scope} $\ast$const $\ast$ \textbf{ get\+\_\+active\+\_\+contexts} ()
+\item 
+static int \textbf{ get\+\_\+num\+\_\+stringified\+\_\+contexts} ()
+\item 
+static const \textbf{ String} $\ast$ \textbf{ get\+\_\+stringified\+\_\+contexts} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\label{structdoctest_1_1_i_reporter_ad34f2f1954ff43b6e8fe2dc595cec53a} 
+\index{doctest::IReporter@{doctest::IReporter}!get\_active\_contexts@{get\_active\_contexts}}
+\index{get\_active\_contexts@{get\_active\_contexts}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{get\_active\_contexts()}
+{\footnotesize\ttfamily static const \textbf{ IContext\+Scope} $\ast$const  $\ast$ doctest\+::\+IReporter\+::get\+\_\+active\+\_\+contexts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\label{structdoctest_1_1_i_reporter_a7d520de46d9104c0eeb02375fabad32d} 
+\index{doctest::IReporter@{doctest::IReporter}!get\_num\_active\_contexts@{get\_num\_active\_contexts}}
+\index{get\_num\_active\_contexts@{get\_num\_active\_contexts}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{get\_num\_active\_contexts()}
+{\footnotesize\ttfamily static int doctest\+::\+IReporter\+::get\+\_\+num\+\_\+active\+\_\+contexts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\label{structdoctest_1_1_i_reporter_ac8b96fef046edc609a3374a61b84797d} 
+\index{doctest::IReporter@{doctest::IReporter}!get\_num\_stringified\_contexts@{get\_num\_stringified\_contexts}}
+\index{get\_num\_stringified\_contexts@{get\_num\_stringified\_contexts}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{get\_num\_stringified\_contexts()}
+{\footnotesize\ttfamily static int doctest\+::\+IReporter\+::get\+\_\+num\+\_\+stringified\+\_\+contexts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\label{structdoctest_1_1_i_reporter_a6db31e528efe08c9bc9b4037a2143c3a} 
+\index{doctest::IReporter@{doctest::IReporter}!get\_stringified\_contexts@{get\_stringified\_contexts}}
+\index{get\_stringified\_contexts@{get\_stringified\_contexts}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{get\_stringified\_contexts()}
+{\footnotesize\ttfamily static const \textbf{ String} $\ast$ doctest\+::\+IReporter\+::get\+\_\+stringified\+\_\+contexts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\label{structdoctest_1_1_i_reporter_a5bb54923eab233bb02f2fcfc178fa12a} 
+\index{doctest::IReporter@{doctest::IReporter}!log\_assert@{log\_assert}}
+\index{log\_assert@{log\_assert}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{log\_assert()}
+{\footnotesize\ttfamily virtual void doctest\+::\+IReporter\+::log\+\_\+assert (\begin{DoxyParamCaption}\item[{const \textbf{ Assert\+Data} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\label{structdoctest_1_1_i_reporter_a2b2cb4f15aa7417d4903a0edc3147018} 
+\index{doctest::IReporter@{doctest::IReporter}!log\_message@{log\_message}}
+\index{log\_message@{log\_message}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{log\_message()}
+{\footnotesize\ttfamily virtual void doctest\+::\+IReporter\+::log\+\_\+message (\begin{DoxyParamCaption}\item[{const \textbf{ Message\+Data} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\label{structdoctest_1_1_i_reporter_ae7e30d1c2cd332094c66d39bf3a85e52} 
+\index{doctest::IReporter@{doctest::IReporter}!report\_query@{report\_query}}
+\index{report\_query@{report\_query}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{report\_query()}
+{\footnotesize\ttfamily virtual void doctest\+::\+IReporter\+::report\+\_\+query (\begin{DoxyParamCaption}\item[{const \textbf{ Query\+Data} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\label{structdoctest_1_1_i_reporter_a05196dd1a5f7e40e8c734cd2a37d4e1e} 
+\index{doctest::IReporter@{doctest::IReporter}!subcase\_end@{subcase\_end}}
+\index{subcase\_end@{subcase\_end}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{subcase\_end()}
+{\footnotesize\ttfamily virtual void doctest\+::\+IReporter\+::subcase\+\_\+end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\label{structdoctest_1_1_i_reporter_a03ef82d6fb9afe8b0e3bbe24f28dd268} 
+\index{doctest::IReporter@{doctest::IReporter}!subcase\_start@{subcase\_start}}
+\index{subcase\_start@{subcase\_start}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{subcase\_start()}
+{\footnotesize\ttfamily virtual void doctest\+::\+IReporter\+::subcase\+\_\+start (\begin{DoxyParamCaption}\item[{const \textbf{ Subcase\+Signature} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\label{structdoctest_1_1_i_reporter_a43f8f19681dd5d42218ecb4fd935cda7} 
+\index{doctest::IReporter@{doctest::IReporter}!test\_case\_end@{test\_case\_end}}
+\index{test\_case\_end@{test\_case\_end}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{test\_case\_end()}
+{\footnotesize\ttfamily virtual void doctest\+::\+IReporter\+::test\+\_\+case\+\_\+end (\begin{DoxyParamCaption}\item[{const \textbf{ Current\+Test\+Case\+Stats} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\label{structdoctest_1_1_i_reporter_a40b0cdf1ad59dabc736e35fde63d516f} 
+\index{doctest::IReporter@{doctest::IReporter}!test\_case\_exception@{test\_case\_exception}}
+\index{test\_case\_exception@{test\_case\_exception}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{test\_case\_exception()}
+{\footnotesize\ttfamily virtual void doctest\+::\+IReporter\+::test\+\_\+case\+\_\+exception (\begin{DoxyParamCaption}\item[{const \textbf{ Test\+Case\+Exception} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\label{structdoctest_1_1_i_reporter_a46c2fe41e5fa3d6930a3cb26d81ed764} 
+\index{doctest::IReporter@{doctest::IReporter}!test\_case\_reenter@{test\_case\_reenter}}
+\index{test\_case\_reenter@{test\_case\_reenter}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{test\_case\_reenter()}
+{\footnotesize\ttfamily virtual void doctest\+::\+IReporter\+::test\+\_\+case\+\_\+reenter (\begin{DoxyParamCaption}\item[{const \textbf{ Test\+Case\+Data} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\label{structdoctest_1_1_i_reporter_ab4ecfea9cd9582aad4a5e90e0c8ba45d} 
+\index{doctest::IReporter@{doctest::IReporter}!test\_case\_skipped@{test\_case\_skipped}}
+\index{test\_case\_skipped@{test\_case\_skipped}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{test\_case\_skipped()}
+{\footnotesize\ttfamily virtual void doctest\+::\+IReporter\+::test\+\_\+case\+\_\+skipped (\begin{DoxyParamCaption}\item[{const \textbf{ Test\+Case\+Data} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\label{structdoctest_1_1_i_reporter_afa107df2d0230607e2f86f1876f48526} 
+\index{doctest::IReporter@{doctest::IReporter}!test\_case\_start@{test\_case\_start}}
+\index{test\_case\_start@{test\_case\_start}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{test\_case\_start()}
+{\footnotesize\ttfamily virtual void doctest\+::\+IReporter\+::test\+\_\+case\+\_\+start (\begin{DoxyParamCaption}\item[{const \textbf{ Test\+Case\+Data} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\label{structdoctest_1_1_i_reporter_a610495b7caa29e36b5ea62bff62952ed} 
+\index{doctest::IReporter@{doctest::IReporter}!test\_run\_end@{test\_run\_end}}
+\index{test\_run\_end@{test\_run\_end}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{test\_run\_end()}
+{\footnotesize\ttfamily virtual void doctest\+::\+IReporter\+::test\+\_\+run\+\_\+end (\begin{DoxyParamCaption}\item[{const \textbf{ Test\+Run\+Stats} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\label{structdoctest_1_1_i_reporter_a7f4a4b654726d4b266c91cc0e1569f96} 
+\index{doctest::IReporter@{doctest::IReporter}!test\_run\_start@{test\_run\_start}}
+\index{test\_run\_start@{test\_run\_start}!doctest::IReporter@{doctest::IReporter}}
+\doxysubsubsection{test\_run\_start()}
+{\footnotesize\ttfamily virtual void doctest\+::\+IReporter\+::test\+\_\+run\+\_\+start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+A documentação para essa estrutura foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\textbf{ doctest.\+h}\end{DoxyCompactItemize}

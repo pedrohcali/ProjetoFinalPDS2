@@ -79,6 +79,12 @@ make
 ./taskufmanager
 ```
 
+ou
+
+```
+make run
+```
+
 ## Testes
 
 Para executar os testes unitários, siga as instruções abaixo:

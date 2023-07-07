@@ -1,11 +1,12 @@
 # Definindo variáveis
 CXX = g++
 CXXFLAGS = -Wall -std=c++17 -Iheaders -fprofile-arcs -ftest-coverage
-SOURCES = User.cpp Board.cpp Task.cpp TaskManager.cpp DataStorage.cpp Menu.cpp main.cpp
+SOURCES = User.cpp Board.cpp Task.cpp TaskManager.cpp DataStorage.cpp Menu.cpp
 OBJECTS = $(addprefix build/,$(SOURCES:.cpp=.o))
+MAIN_OBJECT = build/main.o
 TARGET = taskufmanager
 
-TEST_SOURCES = test/BoardTest.cpp test/TaskTest.cpp test/UserTest.cpp
+TEST_SOURCES = test/Test.cpp
 TEST_OBJECTS = $(addprefix build/,$(TEST_SOURCES:.cpp=.o))
 TEST_TARGET = build/runtests
 
@@ -16,7 +17,7 @@ $(shell mkdir -p build/test)
 all: $(TARGET)
 
 # Regra para gerar o executável
-$(TARGET): $(OBJECTS)
+$(TARGET): $(OBJECTS) $(MAIN_OBJECT)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 # Regra para gerar os objetos
@@ -25,7 +26,7 @@ build/%.o: %.cpp
 
 # Regra para limpar os arquivos compilados
 clean:
-	rm -f $(OBJECTS) $(TARGET) $(TEST_OBJECTS) $(TEST_TARGET)
+	rm -f $(OBJECTS) $(TARGET) $(TEST_OBJECTS) $(TEST_TARGET) $(MAIN_OBJECT)
 
 # Regra para executar testes
 test: $(TEST_TARGET)
@@ -35,6 +36,6 @@ test: $(TEST_TARGET)
 $(TEST_TARGET): $(TEST_OBJECTS) $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-# Regra para rodar o programa
+# Regra para executar o programa
 run: $(TARGET)
 	./$(TARGET)

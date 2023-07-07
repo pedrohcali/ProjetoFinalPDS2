@@ -9,6 +9,7 @@ Este é um sistema de gerenciamento de tarefas escrito em C++. Ele permite que o
 - [Pré-Requisitos](#pré-requisitos)
 - [Compilação](#compilação)
 - [Testes](#testes)
+- [Cobertura de Código](#cobertura-de-código)
 
 ## Recursos
 
@@ -91,3 +92,26 @@ make test
 ```
 ./build/runtests
 ```
+
+## Cobertura de Código
+
+Usamos o gcovr para gerar relatórios de cobertura de código. 
+
+**NOTA**: O gcovr pode não estar instalado no seu sistema. Para instalá-lo, use o seguinte comando:
+```
+pip install gcovr
+```
+ou, se estiver em um sistema Linux,
+```
+sudo apt install gcovr
+```
+
+Para gerar um relatório de cobertura de código, siga as etapas abaixo:
+
+1. Certifique-se de estar no diretório do projeto
+2. Compile o projeto com a opção de cobertura para checar a %
+```
+gcovr -r .
+```
+
+Observação: A cobertura no código está em torno de 72% (última atualização: 06/07/2023, às 23:20), tirando o arquivo test/doctest.h.

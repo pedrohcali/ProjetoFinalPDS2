@@ -1,0 +1,37 @@
+\doxysection{Referência do $<$em$>$Template$<$/em$>$ da Estrutura doctest\+::detail\+::String\+Maker\+Base$<$ C $>$}
+\label{structdoctest_1_1detail_1_1_string_maker_base}\index{doctest::detail::StringMakerBase$<$ C $>$@{doctest::detail::StringMakerBase$<$ C $>$}}
+
+
+{\ttfamily \#include $<$doctest.\+h$>$}
+
+\doxysubsubsection*{Membros públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static \textbf{ String} \textbf{ convert} (const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(T))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\label{structdoctest_1_1detail_1_1_string_maker_base_a67d29f2a5de9a522d8e8607c1a39db9b} 
+\index{doctest::detail::StringMakerBase$<$ C $>$@{doctest::detail::StringMakerBase$<$ C $>$}!convert@{convert}}
+\index{convert@{convert}!doctest::detail::StringMakerBase$<$ C $>$@{doctest::detail::StringMakerBase$<$ C $>$}}
+\doxysubsubsection{convert()}
+{\footnotesize\ttfamily template$<$bool C$>$ \\
+template$<$typename T $>$ \\
+static \textbf{ String} \textbf{ doctest\+::detail\+::\+String\+Maker\+Base}$<$ C $>$\+::convert (\begin{DoxyParamCaption}\item[{const }]{DOCTEST\+\_\+\+REF\+\_\+\+WRAPT }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01041\ \textcolor{preprocessor}{\#ifdef\ DOCTEST\_CONFIG\_REQUIRE\_STRINGIFICATION\_FOR\_ALL\_USED\_TYPES }}
+\DoxyCodeLine{01042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(deferred\_false<T>::value,\ \textcolor{stringliteral}{"{}No\ stringification\ detected\ for\ type\ T.\ See\ string\ conversion\ manual"{}});}
+\DoxyCodeLine{01043\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{01044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}\{?\}"{}};}
+\DoxyCodeLine{01045\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa estrutura foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\textbf{ doctest.\+h}\end{DoxyCompactItemize}

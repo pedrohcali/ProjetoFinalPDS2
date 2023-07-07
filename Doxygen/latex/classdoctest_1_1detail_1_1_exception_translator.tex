@@ -1,0 +1,84 @@
+\doxysection{Referência do $<$em$>$Template$<$/em$>$ da Classe doctest\+::detail\+::Exception\+Translator$<$ T $>$}
+\label{classdoctest_1_1detail_1_1_exception_translator}\index{doctest::detail::ExceptionTranslator$<$ T $>$@{doctest::detail::ExceptionTranslator$<$ T $>$}}
+
+
+OCLINT destructor of virtual class.  
+
+
+
+
+{\ttfamily \#include $<$doctest.\+h$>$}
+
+Diagrama de hierarquia da classe doctest\+::detail\+::Exception\+Translator$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdoctest_1_1detail_1_1_exception_translator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Exception\+Translator} (\textbf{ String}($\ast$translate\+Function)(T))
+\item 
+bool \textbf{ translate} (\textbf{ String} \&res) const override
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \textbf{ translate} (\textbf{ String} \&) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+\subsubsection*{template$<$typename T$>$\newline
+class doctest\+::detail\+::\+Exception\+Translator$<$ T $>$}
+OCLINT destructor of virtual class. 
+
+\doxysubsection{Construtores e Destrutores}
+\label{classdoctest_1_1detail_1_1_exception_translator_a3ac05488993c40c6ba55ce51a6bf7eae} 
+\index{doctest::detail::ExceptionTranslator$<$ T $>$@{doctest::detail::ExceptionTranslator$<$ T $>$}!ExceptionTranslator@{ExceptionTranslator}}
+\index{ExceptionTranslator@{ExceptionTranslator}!doctest::detail::ExceptionTranslator$<$ T $>$@{doctest::detail::ExceptionTranslator$<$ T $>$}}
+\doxysubsubsection{ExceptionTranslator()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ doctest\+::detail\+::\+Exception\+Translator}$<$ T $>$\+::\+Exception\+Translator (\begin{DoxyParamCaption}\item[{\textbf{ String}($\ast$)(T)}]{translate\+Function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01806\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ m\_translateFunction(translateFunction)\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentação das funções}
+\label{classdoctest_1_1detail_1_1_exception_translator_a56484c4218a06bbbd1548335a8b64110} 
+\index{doctest::detail::ExceptionTranslator$<$ T $>$@{doctest::detail::ExceptionTranslator$<$ T $>$}!translate@{translate}}
+\index{translate@{translate}!doctest::detail::ExceptionTranslator$<$ T $>$@{doctest::detail::ExceptionTranslator$<$ T $>$}}
+\doxysubsubsection{translate()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \textbf{ doctest\+::detail\+::\+Exception\+Translator}$<$ T $>$\+::translate (\begin{DoxyParamCaption}\item[{\textbf{ String} \&}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementa \textbf{ doctest\+::detail\+::\+IException\+Translator} \doxyref{}{p.}{structdoctest_1_1detail_1_1_i_exception_translator_a9c56005e4c83c13b859cc2e31102bfbc}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01808\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01809\ \textcolor{preprocessor}{\#ifndef\ DOCTEST\_CONFIG\_NO\_EXCEPTIONS }}
+\DoxyCodeLine{01810\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{01811\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};\ \textcolor{comment}{//\ lgtm\ [cpp/rethrow-\/no-\/exception]}}
+\DoxyCodeLine{01812\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ catchExceptionByValue}}
+\DoxyCodeLine{01813\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(\textcolor{keyword}{const}\ T\&\ ex)\ \{}
+\DoxyCodeLine{01814\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res\ =\ m\_translateFunction(ex);\ }
+\DoxyCodeLine{01815\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01816\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(...)\ \{\}\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01817\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ DOCTEST\_CONFIG\_NO\_EXCEPTIONS}}
+\DoxyCodeLine{01818\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(res);\ \textcolor{comment}{//\ to\ silence\ -\/Wunused-\/parameter}}
+\DoxyCodeLine{01819\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01820\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\textbf{ doctest.\+h}\end{DoxyCompactItemize}

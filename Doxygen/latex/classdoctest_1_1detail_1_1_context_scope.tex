@@ -1,0 +1,156 @@
+\doxysection{Referência do $<$em$>$Template$<$/em$>$ da Classe doctest\+::detail\+::Context\+Scope$<$ L $>$}
+\label{classdoctest_1_1detail_1_1_context_scope}\index{doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}}
+
+
+{\ttfamily \#include $<$doctest.\+h$>$}
+
+Diagrama de hierarquia da classe doctest\+::detail\+::Context\+Scope$<$ L $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classdoctest_1_1detail_1_1_context_scope}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Context\+Scope} (const L \&lambda)
+\item 
+\textbf{ Context\+Scope} (L \&\&lambda)
+\item 
+\textbf{ Context\+Scope} (const \textbf{ Context\+Scope} \&)=delete
+\item 
+\textbf{ Context\+Scope} (\textbf{ Context\+Scope} \&\&) noexcept=default
+\item 
+\textbf{ Context\+Scope} \& \textbf{ operator=} (const \textbf{ Context\+Scope} \&)=delete
+\item 
+\textbf{ Context\+Scope} \& \textbf{ operator=} (\textbf{ Context\+Scope} \&\&)=delete
+\item 
+void \textbf{ stringify} (\textbf{ std\+::ostream} $\ast$s) const override
+\item 
+\textbf{ $\sim$\+Context\+Scope} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Membros Públicos herdados de \textbf{ doctest\+::detail\+::\+Context\+Scope\+Base}}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Context\+Scope\+Base} (const \textbf{ Context\+Scope\+Base} \&)=delete
+\item 
+\textbf{ Context\+Scope\+Base} \& \textbf{ operator=} (const \textbf{ Context\+Scope\+Base} \&)=delete
+\item 
+\textbf{ Context\+Scope\+Base} \& \textbf{ operator=} (\textbf{ Context\+Scope\+Base} \&\&)=delete
+\item 
+\textbf{ $\sim$\+Context\+Scope\+Base} () override=default
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ stringify} (\textbf{ std\+::ostream} $\ast$) const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Outros membros herdados}
+\doxysubsection*{Membros protegidos herdados de \textbf{ doctest\+::detail\+::\+Context\+Scope\+Base}}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Context\+Scope\+Base} ()
+\item 
+\textbf{ Context\+Scope\+Base} (\textbf{ Context\+Scope\+Base} \&\&other) noexcept
+\item 
+void \textbf{ destroy} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Protegidos herdados de \textbf{ doctest\+::detail\+::\+Context\+Scope\+Base}}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ need\+\_\+to\+\_\+destroy} \{true\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\label{classdoctest_1_1detail_1_1_context_scope_a344c76a0374615d567a084c0a0ffd215} 
+\index{doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}!ContextScope@{ContextScope}}
+\index{ContextScope@{ContextScope}!doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}}
+\doxysubsubsection{ContextScope()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ doctest\+::detail\+::\+Context\+Scope}$<$ L $>$\+::\+Context\+Scope (\begin{DoxyParamCaption}\item[{const L \&}]{lambda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01851\ :\ lambda\_(lambda)\ \{\}}
+
+\end{DoxyCode}
+\label{classdoctest_1_1detail_1_1_context_scope_aea8b6a27c0f1257529f9912ec2ab2991} 
+\index{doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}!ContextScope@{ContextScope}}
+\index{ContextScope@{ContextScope}!doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}}
+\doxysubsubsection{ContextScope()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ doctest\+::detail\+::\+Context\+Scope}$<$ L $>$\+::\+Context\+Scope (\begin{DoxyParamCaption}\item[{L \&\&}]{lambda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01852\ :\ lambda\_(\textcolor{keyword}{static\_cast<}L\&\&\textcolor{keyword}{>}(lambda))\ \{\ \}}
+
+\end{DoxyCode}
+\label{classdoctest_1_1detail_1_1_context_scope_aa2bc8edd40e227d9028b0cfca4911465} 
+\index{doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}!ContextScope@{ContextScope}}
+\index{ContextScope@{ContextScope}!doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}}
+\doxysubsubsection{ContextScope()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ doctest\+::detail\+::\+Context\+Scope}$<$ L $>$\+::\+Context\+Scope (\begin{DoxyParamCaption}\item[{const \textbf{ Context\+Scope}$<$ L $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\label{classdoctest_1_1detail_1_1_context_scope_aa6ab9a99670766e8ee26631cea4148f9} 
+\index{doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}!ContextScope@{ContextScope}}
+\index{ContextScope@{ContextScope}!doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}}
+\doxysubsubsection{ContextScope()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ doctest\+::detail\+::\+Context\+Scope}$<$ L $>$\+::\+Context\+Scope (\begin{DoxyParamCaption}\item[{\textbf{ Context\+Scope}$<$ L $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\label{classdoctest_1_1detail_1_1_context_scope_a1ee7d4702398ee8d0e80ab843aa260d7} 
+\index{doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}!````~ContextScope@{$\sim$ContextScope}}
+\index{````~ContextScope@{$\sim$ContextScope}!doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}}
+\doxysubsubsection{$\sim$ContextScope()}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ doctest\+::detail\+::\+Context\+Scope}$<$ L $>$\+::$\sim$\textbf{ Context\+Scope} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01862\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01863\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (need\_to\_destroy)\ \{}
+\DoxyCodeLine{01864\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ destroy();}
+\DoxyCodeLine{01865\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01866\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentação das funções}
+\label{classdoctest_1_1detail_1_1_context_scope_a1dceac21fa5e3e5887367323552b43e9} 
+\index{doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ Context\+Scope} \& \textbf{ doctest\+::detail\+::\+Context\+Scope}$<$ L $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ Context\+Scope}$<$ L $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\label{classdoctest_1_1detail_1_1_context_scope_a54765c91a0b8c554a5b4ad26d05b14f0} 
+\index{doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}}
+\doxysubsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ Context\+Scope} \& \textbf{ doctest\+::detail\+::\+Context\+Scope}$<$ L $>$\+::operator= (\begin{DoxyParamCaption}\item[{\textbf{ Context\+Scope}$<$ L $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\label{classdoctest_1_1detail_1_1_context_scope_a4636ac32ae41ae108c7ada4a164ffaeb} 
+\index{doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}!stringify@{stringify}}
+\index{stringify@{stringify}!doctest::detail::ContextScope$<$ L $>$@{doctest::detail::ContextScope$<$ L $>$}}
+\doxysubsubsection{stringify()}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+void \textbf{ doctest\+::detail\+::\+Context\+Scope}$<$ L $>$\+::stringify (\begin{DoxyParamCaption}\item[{\textbf{ std\+::ostream} $\ast$}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementa \textbf{ doctest\+::\+IContext\+Scope} \doxyref{}{p.}{structdoctest_1_1_i_context_scope_affbf0f9bf8107a4a8a805d237288141d}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01860\ \{\ lambda\_(s);\ \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\textbf{ doctest.\+h}\end{DoxyCompactItemize}

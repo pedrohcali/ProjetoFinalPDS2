@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação Task UFManager: Código-Fonte de C:/Users/pedro/Videos/ProjetoFinalPDS2/src/headers/TaskManager.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="LOGO UFMGANAGER.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Documentação Task UFManager<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e9523ca587f751a0cb8f7dfa5726b50f.html">Videos</a></li><li class="navelem"><a class="el" href="dir_c9790f277574d368db1d53717db2073f.html">ProjetoFinalPDS2</a></li><li class="navelem"><a class="el" href="dir_baad87af49350d3197e3762837d6f9ac.html">src</a></li><li class="navelem"><a class="el" href="dir_8419a3ec4de495ae58878fb5294f711e.html">headers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">TaskManager.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_task_manager_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// TaskManager.hpp</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef TASK_MANAGER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define TASK_MANAGER_H</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_task_8hpp.html">Task.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_board_8hpp.html">Board.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_task_manager.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_task_manager.html">TaskManager</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_function" href="class_task_manager.html#a491dc7a77a5381675f614a411755ef64">TaskManager</a>();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// Cria uma nova tarefa com o título, descrição e data de vencimento fornecidos</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_class" href="class_task.html">Task</a>* <a class="code hl_function" href="class_task_manager.html#a04c6b3e007275b5d394e11a081f95983">createTask</a>(<span class="keyword">const</span> std::string&amp; title, <span class="keyword">const</span> std::string&amp; description = <span class="stringliteral">&quot;-&quot;</span>, <span class="keyword">const</span> std::string&amp; dueDate = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">// Obtém uma tarefa com base em seu título e no objeto Board especificado</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_class" href="class_task.html">Task</a>* <a class="code hl_function" href="class_task_manager.html#af1ec452e2af73801b3c12c94bfcb3e50">getTask</a>(<a class="code hl_class" href="class_board.html">Board</a>* board, <span class="keyword">const</span> std::string&amp; taskTitle);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// Adiciona uma tarefa ao objeto Board especificado. Retorna true se a tarefa for adicionada com sucesso, ou false caso contrário</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_task_manager.html#a0b1e515da0a480ab18d95369246b4f18">addTask</a>(<a class="code hl_class" href="class_board.html">Board</a>* board, <a class="code hl_class" href="class_task.html">Task</a>* task);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// Remove uma tarefa do objeto Board especificado. Retorna true se a tarefa for removida com sucesso, ou false caso contrário</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_task_manager.html#a1d6d9b744fd20e3b0f10f77410fd08e9">removeTask</a>(<a class="code hl_class" href="class_board.html">Board</a>* board, <a class="code hl_class" href="class_task.html">Task</a>* task);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// Obtém todas as tarefas do objeto Board especificado. Retorna um vetor de ponteiros para as tarefas.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    std::vector&lt;Task*&gt; <a class="code hl_function" href="class_task_manager.html#a786e6a429f1ddf62babb35bd7c2ee930">getTasks</a>(<a class="code hl_class" href="class_board.html">Board</a>* board);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>     <span class="comment">// Obtém todas as tarefas do objeto Board especificado, ordenadas por nome.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::vector&lt;Task*&gt; <a class="code hl_function" href="class_task_manager.html#a6f721ebcbb176639e6ea94a6b6fd306c">getTasksSortedByName</a>(<a class="code hl_class" href="class_board.html">Board</a>* board);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// Obtém todas as tarefas do objeto Board especificado, ordenadas por data de vencimento.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::vector&lt;Task*&gt; <a class="code hl_function" href="class_task_manager.html#a1015474765165ee31c27290b99b298a4">getTasksSortedByDueDate</a>(<a class="code hl_class" href="class_board.html">Board</a>* board);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// Move uma tarefa de um objeto Board de origem para um objeto Board de destino</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_task_manager.html#a56d2784a62057a92f70b339005daf488">moveTask</a>(<a class="code hl_class" href="class_task.html">Task</a>* task, <a class="code hl_class" href="class_board.html">Board</a>* fromBoard, <a class="code hl_class" href="class_board.html">Board</a>* toBoard);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// Edita uma tarefa com base em um novo título, nova descrição e nova data de vencimento fornecidos.</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_task_manager.html#a3ec8a88d114d19d63d207d8b5cca365b">editTask</a>(<a class="code hl_class" href="class_task.html">Task</a>* task, <span class="keyword">const</span> std::string&amp; newTitle, <span class="keyword">const</span> std::string&amp; newDescription, <span class="keyword">const</span> std::string&amp; newDueDate);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif </span><span class="comment">// TASK_MANAGER_H</span></div>
+<div class="ttc" id="a_board_8hpp_html"><div class="ttname"><a href="_board_8hpp.html">Board.hpp</a></div></div>
+<div class="ttc" id="a_task_8hpp_html"><div class="ttname"><a href="_task_8hpp.html">Task.hpp</a></div></div>
+<div class="ttc" id="aclass_board_html"><div class="ttname"><a href="class_board.html">Board</a></div><div class="ttdef"><b>Definição</b> Board.hpp:8</div></div>
+<div class="ttc" id="aclass_task_html"><div class="ttname"><a href="class_task.html">Task</a></div><div class="ttdef"><b>Definição</b> Task.hpp:6</div></div>
+<div class="ttc" id="aclass_task_manager_html"><div class="ttname"><a href="class_task_manager.html">TaskManager</a></div><div class="ttdef"><b>Definição</b> TaskManager.hpp:10</div></div>
+<div class="ttc" id="aclass_task_manager_html_a04c6b3e007275b5d394e11a081f95983"><div class="ttname"><a href="class_task_manager.html#a04c6b3e007275b5d394e11a081f95983">TaskManager::createTask</a></div><div class="ttdeci">Task * createTask(const std::string &amp;title, const std::string &amp;description=&quot;-&quot;, const std::string &amp;dueDate=&quot;&quot;)</div><div class="ttdef"><b>Definição</b> TaskManager.cpp:10</div></div>
+<div class="ttc" id="aclass_task_manager_html_a0b1e515da0a480ab18d95369246b4f18"><div class="ttname"><a href="class_task_manager.html#a0b1e515da0a480ab18d95369246b4f18">TaskManager::addTask</a></div><div class="ttdeci">bool addTask(Board *board, Task *task)</div><div class="ttdef"><b>Definição</b> TaskManager.cpp:38</div></div>
+<div class="ttc" id="aclass_task_manager_html_a1015474765165ee31c27290b99b298a4"><div class="ttname"><a href="class_task_manager.html#a1015474765165ee31c27290b99b298a4">TaskManager::getTasksSortedByDueDate</a></div><div class="ttdeci">std::vector&lt; Task * &gt; getTasksSortedByDueDate(Board *board)</div><div class="ttdef"><b>Definição</b> TaskManager.cpp:70</div></div>
+<div class="ttc" id="aclass_task_manager_html_a1d6d9b744fd20e3b0f10f77410fd08e9"><div class="ttname"><a href="class_task_manager.html#a1d6d9b744fd20e3b0f10f77410fd08e9">TaskManager::removeTask</a></div><div class="ttdeci">bool removeTask(Board *board, Task *task)</div><div class="ttdef"><b>Definição</b> TaskManager.cpp:45</div></div>
+<div class="ttc" id="aclass_task_manager_html_a3ec8a88d114d19d63d207d8b5cca365b"><div class="ttname"><a href="class_task_manager.html#a3ec8a88d114d19d63d207d8b5cca365b">TaskManager::editTask</a></div><div class="ttdeci">void editTask(Task *task, const std::string &amp;newTitle, const std::string &amp;newDescription, const std::string &amp;newDueDate)</div><div class="ttdef"><b>Definição</b> TaskManager.cpp:91</div></div>
+<div class="ttc" id="aclass_task_manager_html_a491dc7a77a5381675f614a411755ef64"><div class="ttname"><a href="class_task_manager.html#a491dc7a77a5381675f614a411755ef64">TaskManager::TaskManager</a></div><div class="ttdeci">TaskManager()</div><div class="ttdef"><b>Definição</b> TaskManager.cpp:7</div></div>
+<div class="ttc" id="aclass_task_manager_html_a56d2784a62057a92f70b339005daf488"><div class="ttname"><a href="class_task_manager.html#a56d2784a62057a92f70b339005daf488">TaskManager::moveTask</a></div><div class="ttdeci">bool moveTask(Task *task, Board *fromBoard, Board *toBoard)</div><div class="ttdef"><b>Definição</b> TaskManager.cpp:79</div></div>
+<div class="ttc" id="aclass_task_manager_html_a6f721ebcbb176639e6ea94a6b6fd306c"><div class="ttname"><a href="class_task_manager.html#a6f721ebcbb176639e6ea94a6b6fd306c">TaskManager::getTasksSortedByName</a></div><div class="ttdeci">std::vector&lt; Task * &gt; getTasksSortedByName(Board *board)</div><div class="ttdef"><b>Definição</b> TaskManager.cpp:61</div></div>
+<div class="ttc" id="aclass_task_manager_html_a786e6a429f1ddf62babb35bd7c2ee930"><div class="ttname"><a href="class_task_manager.html#a786e6a429f1ddf62babb35bd7c2ee930">TaskManager::getTasks</a></div><div class="ttdeci">std::vector&lt; Task * &gt; getTasks(Board *board)</div><div class="ttdef"><b>Definição</b> TaskManager.cpp:53</div></div>
+<div class="ttc" id="aclass_task_manager_html_af1ec452e2af73801b3c12c94bfcb3e50"><div class="ttname"><a href="class_task_manager.html#af1ec452e2af73801b3c12c94bfcb3e50">TaskManager::getTask</a></div><div class="ttdeci">Task * getTask(Board *board, const std::string &amp;taskTitle)</div><div class="ttdef"><b>Definição</b> TaskManager.cpp:25</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

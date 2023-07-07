@@ -1,0 +1,100 @@
+\doxysection{Referência do $<$em$>$Template$<$/em$>$ da Estrutura doctest\+::detail\+::Expression\+\_\+lhs$<$ L $>$}
+\label{structdoctest_1_1detail_1_1_expression__lhs}\index{doctest::detail::Expression\_lhs$<$ L $>$@{doctest::detail::Expression\_lhs$<$ L $>$}}
+
+
+{\ttfamily \#include $<$doctest.\+h$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Expression\+\_\+lhs} (L \&\&in, \textbf{ assert\+Type\+::\+Enum} at)
+\item 
+\textbf{ DOCTEST\+\_\+\+NOINLINE} \textbf{ operator Result} ()
+\item 
+\textbf{ operator L} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+L \textbf{ lhs}
+\item 
+\textbf{ assert\+Type\+::\+Enum} \textbf{ m\+\_\+at}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\label{structdoctest_1_1detail_1_1_expression__lhs_ab5d05d371e81dd7724592174afbfeba1} 
+\index{doctest::detail::Expression\_lhs$<$ L $>$@{doctest::detail::Expression\_lhs$<$ L $>$}!Expression\_lhs@{Expression\_lhs}}
+\index{Expression\_lhs@{Expression\_lhs}!doctest::detail::Expression\_lhs$<$ L $>$@{doctest::detail::Expression\_lhs$<$ L $>$}}
+\doxysubsubsection{Expression\_lhs()}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ doctest\+::detail\+::\+Expression\+\_\+lhs}$<$ L $>$\+::\+Expression\+\_\+lhs (\begin{DoxyParamCaption}\item[{L \&\&}]{in,  }\item[{\textbf{ assert\+Type\+::\+Enum}}]{at }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ lhs(\textcolor{keyword}{static\_cast<}L\&\&\textcolor{keyword}{>}(in))}
+\DoxyCodeLine{01506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,\ m\_at(at)\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentação das funções}
+\label{structdoctest_1_1detail_1_1_expression__lhs_a91995fa4e81b8712868bee7ef9931cc8} 
+\index{doctest::detail::Expression\_lhs$<$ L $>$@{doctest::detail::Expression\_lhs$<$ L $>$}!operator L@{operator L}}
+\index{operator L@{operator L}!doctest::detail::Expression\_lhs$<$ L $>$@{doctest::detail::Expression\_lhs$<$ L $>$}}
+\doxysubsubsection{operator L()}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ doctest\+::detail\+::\+Expression\+\_\+lhs}$<$ L $>$\+::operator L (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01524\ \{\ \textcolor{keywordflow}{return}\ lhs;\ \}}
+
+\end{DoxyCode}
+\label{structdoctest_1_1detail_1_1_expression__lhs_aa0ab4a18aac56bfb02fba8970ed304b3} 
+\index{doctest::detail::Expression\_lhs$<$ L $>$@{doctest::detail::Expression\_lhs$<$ L $>$}!operator Result@{operator Result}}
+\index{operator Result@{operator Result}!doctest::detail::Expression\_lhs$<$ L $>$@{doctest::detail::Expression\_lhs$<$ L $>$}}
+\doxysubsubsection{operator Result()}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ DOCTEST\+\_\+\+NOINLINE} \textbf{ doctest\+::detail\+::\+Expression\+\_\+lhs}$<$ L $>$\+::operator \textbf{ Result} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+OCLINT bitwise operator in conditional
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01509\ \textcolor{comment}{//\ this\ is\ needed\ only\ for\ MSVC\ 2015}}
+\DoxyCodeLine{01510\ DOCTEST\_MSVC\_SUPPRESS\_WARNING\_WITH\_PUSH(4800)\ \textcolor{comment}{//\ 'int':\ forcing\ value\ to\ bool}}
+\DoxyCodeLine{01511\ \ \ \ \ \ \ \ \ \ \ \ \ bool\ res\ =\ static\_cast<\textcolor{keywordtype}{bool}>(lhs);}
+\DoxyCodeLine{01512\ DOCTEST\_MSVC\_SUPPRESS\_WARNING\_POP}
+\DoxyCodeLine{01513\ \ \ \ \ \ \ \ \ \ \ \ \ if(m\_at\ \&\ assertType::is\_false)\ \{\ }
+\DoxyCodeLine{01514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res\ =\ !res;}
+\DoxyCodeLine{01515\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01516\ }
+\DoxyCodeLine{01517\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!res\ ||\ getContextOptions()-\/>success)\ \{}
+\DoxyCodeLine{01518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ res,\ (DOCTEST\_STRINGIFY(lhs))\ \};}
+\DoxyCodeLine{01519\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01520\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\ res\ \};}
+\DoxyCodeLine{01521\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Atributos}
+\label{structdoctest_1_1detail_1_1_expression__lhs_ab9a46f4dcddaea288b56f8247d9d9886} 
+\index{doctest::detail::Expression\_lhs$<$ L $>$@{doctest::detail::Expression\_lhs$<$ L $>$}!lhs@{lhs}}
+\index{lhs@{lhs}!doctest::detail::Expression\_lhs$<$ L $>$@{doctest::detail::Expression\_lhs$<$ L $>$}}
+\doxysubsubsection{lhs}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+L \textbf{ doctest\+::detail\+::\+Expression\+\_\+lhs}$<$ L $>$\+::lhs}
+
+\label{structdoctest_1_1detail_1_1_expression__lhs_a38ccbab9077915fdd2e7f8ae9f008a71} 
+\index{doctest::detail::Expression\_lhs$<$ L $>$@{doctest::detail::Expression\_lhs$<$ L $>$}!m\_at@{m\_at}}
+\index{m\_at@{m\_at}!doctest::detail::Expression\_lhs$<$ L $>$@{doctest::detail::Expression\_lhs$<$ L $>$}}
+\doxysubsubsection{m\_at}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ assert\+Type\+::\+Enum} \textbf{ doctest\+::detail\+::\+Expression\+\_\+lhs}$<$ L $>$\+::m\+\_\+at}
+
+
+
+A documentação para essa estrutura foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/test/\textbf{ doctest.\+h}\end{DoxyCompactItemize}

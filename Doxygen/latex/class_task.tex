@@ -1,0 +1,131 @@
+\doxysection{Referência da Classe Task}
+\label{class_task}\index{Task@{Task}}
+
+
+{\ttfamily \#include $<$Task.\+hpp$>$}
+
+\doxysubsubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Task} (const std\+::string \&title, const std\+::string \&description, const std\+::string \&due\+Date)
+\item 
+std\+::string \textbf{ get\+Title} () const
+\item 
+void \textbf{ set\+Title} (const std\+::string \&title)
+\item 
+std\+::string \textbf{ get\+Description} () const
+\item 
+void \textbf{ set\+Description} (const std\+::string \&description)
+\item 
+std\+::string \textbf{ get\+Due\+Date} () const
+\item 
+void \textbf{ set\+Due\+Date} (const std\+::string \&due\+Date)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\label{class_task_a4ce4fb716126728ba6c3aae91f1c7d20} 
+\index{Task@{Task}!Task@{Task}}
+\index{Task@{Task}!Task@{Task}}
+\doxysubsubsection{Task()}
+{\footnotesize\ttfamily Task\+::\+Task (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title,  }\item[{const std\+::string \&}]{description,  }\item[{const std\+::string \&}]{due\+Date }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ :\ title(title),\ description(description),\ dueDate(dueDate)\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentação das funções}
+\label{class_task_aecbe79dd5334c9969320695b5a82e32a} 
+\index{Task@{Task}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!Task@{Task}}
+\doxysubsubsection{getDescription()}
+{\footnotesize\ttfamily std\+::string Task\+::get\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{return}\ description;}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+\label{class_task_acec67768c5b96c344fbe6cb53a54477a} 
+\index{Task@{Task}!getDueDate@{getDueDate}}
+\index{getDueDate@{getDueDate}!Task@{Task}}
+\doxysubsubsection{getDueDate()}
+{\footnotesize\ttfamily std\+::string Task\+::get\+Due\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ dueDate;}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+\label{class_task_a85c31b536e5c92719636e1c65b7b74de} 
+\index{Task@{Task}!getTitle@{getTitle}}
+\index{getTitle@{getTitle}!Task@{Task}}
+\doxysubsubsection{getTitle()}
+{\footnotesize\ttfamily std\+::string Task\+::get\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordflow}{return}\ title;}
+\DoxyCodeLine{00010\ \}}
+
+\end{DoxyCode}
+\label{class_task_a1701cf243ecc756dcffd0686b7772fca} 
+\index{Task@{Task}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!Task@{Task}}
+\doxysubsubsection{setDescription()}
+{\footnotesize\ttfamily void Task\+::set\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{description }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ this-\/>description\ =\ description;}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+\label{class_task_a92111b6630643ed75392b9afe0ccff0d} 
+\index{Task@{Task}!setDueDate@{setDueDate}}
+\index{setDueDate@{setDueDate}!Task@{Task}}
+\doxysubsubsection{setDueDate()}
+{\footnotesize\ttfamily void Task\+::set\+Due\+Date (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{due\+Date }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ std::regex\ datePattern(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)d\{4\}-\/\(\backslash\)\(\backslash\)d\{2\}-\/\(\backslash\)\(\backslash\)d\{2\}"{}});}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::regex\_match(dueDate,\ datePattern))\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Data\ de\ vencimento\ nao\ esta\ no\ formato\ YYYY-\/MM-\/DD"{}});}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ this-\/>dueDate\ =\ dueDate;}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}
+\label{class_task_a3dfb0d0f271349b7acc69848fba1e626} 
+\index{Task@{Task}!setTitle@{setTitle}}
+\index{setTitle@{setTitle}!Task@{Task}}
+\doxysubsubsection{setTitle()}
+{\footnotesize\ttfamily void Task\+::set\+Title (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (title.empty())\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Titulo\ nao\ pode\ ser\ vazio"{}});}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ \ \ \ \ this-\/>title\ =\ title;}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/headers/\textbf{ Task.\+hpp}\item 
+C\+:/\+Users/pedro/\+Videos/\+Projeto\+Final\+PDS2/src/\textbf{ Task.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,408 @@
+\doxysection{Refência do Namespace doctest\+::detail}
+\label{namespacedoctest_1_1detail}\index{doctest::detail@{doctest::detail}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \textbf{ assert\+Action}
+\item 
+namespace \textbf{ binary\+Assert\+Comparison}
+\item 
+namespace \textbf{ types}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Context\+Scope}
+\item 
+struct \textbf{ Context\+Scope\+Base}
+\item 
+struct \textbf{ deferred\+\_\+false}
+\item 
+class \textbf{ Exception\+Translator}
+\begin{DoxyCompactList}\small\item\em OCLINT destructor of virtual class. \end{DoxyCompactList}\item 
+struct \textbf{ Expression\+\_\+lhs}
+\item 
+struct \textbf{ Expression\+Decomposer}
+\item 
+struct \textbf{ filldata}
+\item 
+struct \textbf{ filldata$<$ const char[\+N]$>$}
+\item 
+struct \textbf{ filldata$<$ const void $\ast$ $>$}
+\item 
+struct \textbf{ filldata$<$ T $\ast$ $>$}
+\item 
+struct \textbf{ filldata$<$ T[\+N]$>$}
+\item 
+struct \textbf{ has\+\_\+insertion\+\_\+operator}
+\item 
+struct \textbf{ has\+\_\+insertion\+\_\+operator$<$ T, decltype(operator$<$$<$(declval$<$ std\+::ostream \& $>$(), declval$<$ const T \& $>$()), void())$>$}
+\item 
+struct \textbf{ IException\+Translator}
+\item 
+struct \textbf{ Message\+Builder}
+\item 
+struct \textbf{ Relational\+Comparator}
+\item 
+struct \textbf{ Result}
+\item 
+struct \textbf{ Result\+Builder}
+\item 
+struct \textbf{ should\+\_\+stringify\+\_\+as\+\_\+underlying\+\_\+type}
+\item 
+struct \textbf{ String\+Maker\+Base}
+\item 
+struct \textbf{ String\+Maker\+Base$<$ true $>$}
+\item 
+struct \textbf{ Subcase}
+\item 
+struct \textbf{ Test\+Case}
+\item 
+struct \textbf{ Test\+Failure\+Exception}
+\item 
+struct \textbf{ Test\+Suite}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Definições de Tipos}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ func\+Type} = void($\ast$)()
+\item 
+using \textbf{ assert\+\_\+handler} = void($\ast$)(const \textbf{ Assert\+Data} \&)
+\item 
+using \textbf{ reporter\+Creator\+Func} = \textbf{ IReporter} $\ast$($\ast$)(const \textbf{ Context\+Options} \&)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \&\& \textbf{ declval} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\\textbf{ DOCTEST\+\_\+\+CONSTEXPR\+\_\+\+FUNC} T \&\& \textbf{ forward} (typename \textbf{ types\+::remove\+\_\+reference}$<$ T $>$\+::type \&t) \textbf{ DOCTEST\+\_\+\+NOEXCEPT}
+\item 
+{\footnotesize template$<$class T $>$ }\\\textbf{ DOCTEST\+\_\+\+CONSTEXPR\+\_\+\+FUNC} T \&\& \textbf{ forward} (typename \textbf{ types\+::remove\+\_\+reference}$<$ T $>$\+::type \&\&t) \textbf{ DOCTEST\+\_\+\+NOEXCEPT}
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ std\+::ostream} $\ast$ \textbf{ tlss\+Push} ()
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} \textbf{ tlss\+Pop} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \textbf{ filloss} (\textbf{ std\+::ostream} $\ast$stream, const T \&in)
+\item 
+{\footnotesize template$<$typename T , size\+\_\+t N$>$ }\\void \textbf{ filloss} (\textbf{ std\+::ostream} $\ast$stream, const T(\&in)[N])
+\item 
+{\footnotesize template$<$typename T $>$ }\\\textbf{ String} \textbf{ to\+Stream} (const T \&in)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ check\+If\+Should\+Throw} (\textbf{ assert\+Type\+::\+Enum} at)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} void \textbf{ throw\+Exception} ()
+\item 
+{\footnotesize template$<$typename L , typename R $>$ }\\\textbf{ String} \textbf{ stringify\+Binary\+Expr} (const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(L) lhs, const char $\ast$op, const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(R) rhs)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} int \textbf{ reg\+Test} (const \textbf{ Test\+Case} \&tc)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} int \textbf{ set\+Test\+Suite} (const \textbf{ Test\+Suite} \&ts)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ is\+Debugger\+Active} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \textbf{ instantiation\+Helper} (const T \&)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} void \textbf{ failed\+\_\+out\+\_\+of\+\_\+a\+\_\+testing\+\_\+context} (const \textbf{ Assert\+Data} \&ad)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} bool \textbf{ decomp\+\_\+assert} (\textbf{ assert\+Type\+::\+Enum} at, const char $\ast$file, int line, const char $\ast$expr, const \textbf{ Result} \&result)
+\item 
+{\footnotesize template$<$int comparison, typename L , typename R $>$ }\\\textbf{ DOCTEST\+\_\+\+NOINLINE} bool \textbf{ binary\+\_\+assert} (\textbf{ assert\+Type\+::\+Enum} at, const char $\ast$file, int line, const char $\ast$expr, const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(L) lhs, const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(R) rhs)
+\item 
+{\footnotesize template$<$typename L $>$ }\\\textbf{ DOCTEST\+\_\+\+NOINLINE} bool \textbf{ unary\+\_\+assert} (\textbf{ assert\+Type\+::\+Enum} at, const char $\ast$file, int line, const char $\ast$expr, const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(L) val)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} void \textbf{ register\+Exception\+Translator\+Impl} (const \textbf{ IException\+Translator} $\ast$et)
+\item 
+{\footnotesize template$<$typename L $>$ }\\\textbf{ Context\+Scope}$<$ L $>$ \textbf{ Make\+Context\+Scope} (const L \&lambda)
+\item 
+\textbf{ DOCTEST\+\_\+\+INTERFACE} void \textbf{ register\+Reporter\+Impl} (const char $\ast$name, int prio, \textbf{ reporter\+Creator\+Func} c, bool is\+Reporter)
+\item 
+{\footnotesize template$<$typename Reporter $>$ }\\\textbf{ IReporter} $\ast$ \textbf{ reporter\+Creator} (const \textbf{ Context\+Options} \&o)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ Test\+Case}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Definições dos tipos}
+\label{namespacedoctest_1_1detail_a296151d397b21a9ce755b0e6ed2d1f0a} 
+\index{doctest::detail@{doctest::detail}!assert\_handler@{assert\_handler}}
+\index{assert\_handler@{assert\_handler}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{assert\_handler}
+{\footnotesize\ttfamily using \textbf{ doctest\+::detail\+::assert\+\_\+handler} = typedef void ($\ast$)(const \textbf{ Assert\+Data}\&)}
+
+\label{namespacedoctest_1_1detail_a25b5e019078af59a5e84982fddfbc9c1} 
+\index{doctest::detail@{doctest::detail}!funcType@{funcType}}
+\index{funcType@{funcType}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{funcType}
+{\footnotesize\ttfamily using \textbf{ doctest\+::detail\+::func\+Type} = typedef void ($\ast$)()}
+
+\label{namespacedoctest_1_1detail_ae874422747acbc77c0d512f11800fdf9} 
+\index{doctest::detail@{doctest::detail}!reporterCreatorFunc@{reporterCreatorFunc}}
+\index{reporterCreatorFunc@{reporterCreatorFunc}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{reporterCreatorFunc}
+{\footnotesize\ttfamily using \textbf{ doctest\+::detail\+::reporter\+Creator\+Func} = typedef \textbf{ IReporter}$\ast$ ($\ast$)(const \textbf{ Context\+Options}\&)}
+
+
+
+\doxysubsection{Funções}
+\label{namespacedoctest_1_1detail_a1e295c708d2de0e47ac89c1632211159} 
+\index{doctest::detail@{doctest::detail}!binary\_assert@{binary\_assert}}
+\index{binary\_assert@{binary\_assert}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{binary\_assert()}
+{\footnotesize\ttfamily template$<$int comparison, typename L , typename R $>$ \\
+\textbf{ DOCTEST\+\_\+\+NOINLINE} bool doctest\+::detail\+::binary\+\_\+assert (\begin{DoxyParamCaption}\item[{\textbf{ assert\+Type\+::\+Enum}}]{at,  }\item[{const char $\ast$}]{file,  }\item[{int}]{line,  }\item[{const char $\ast$}]{expr,  }\item[{const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(L)}]{lhs,  }\item[{const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(R)}]{rhs }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01766\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01767\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ failed\ =\ !RelationalComparator<comparison,\ L,\ R>()(lhs,\ rhs);}
+\DoxyCodeLine{01768\ }
+\DoxyCodeLine{01769\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{01770\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ IF\ THE\ DEBUGGER\ BREAKS\ HERE\ -\/\ GO\ 1\ LEVEL\ UP\ IN\ THE\ CALLSTACK\ FOR\ THE\ FAILING\ ASSERT}}
+\DoxyCodeLine{01771\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ THIS\ IS\ THE\ EFFECT\ OF\ HAVING\ 'DOCTEST\_CONFIG\_SUPER\_FAST\_ASSERTS'\ DEFINED}}
+\DoxyCodeLine{01772\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{01773\ \ \ \ \ \ \ \ \ DOCTEST\_ASSERT\_OUT\_OF\_TESTS(stringifyBinaryExpr(lhs,\ \textcolor{stringliteral}{"{},\ "{}},\ rhs));}
+\DoxyCodeLine{01774\ \ \ \ \ \ \ \ \ DOCTEST\_ASSERT\_IN\_TESTS(stringifyBinaryExpr(lhs,\ \textcolor{stringliteral}{"{},\ "{}},\ rhs));}
+\DoxyCodeLine{01775\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !failed;}
+\DoxyCodeLine{01776\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_1_1detail_acec9ff072dd86af95225a8beb9c57298} 
+\index{doctest::detail@{doctest::detail}!checkIfShouldThrow@{checkIfShouldThrow}}
+\index{checkIfShouldThrow@{checkIfShouldThrow}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{checkIfShouldThrow()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::detail\+::check\+If\+Should\+Throw (\begin{DoxyParamCaption}\item[{\textbf{ assert\+Type\+::\+Enum}}]{at }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_1_1detail_aa1b8f66e23790ed5d9643075197eaf5f} 
+\index{doctest::detail@{doctest::detail}!declval@{declval}}
+\index{declval@{declval}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{declval()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \&\& doctest\+::detail\+::declval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_1_1detail_a2a562fae1586f144b6aa1506bb6f07bd} 
+\index{doctest::detail@{doctest::detail}!decomp\_assert@{decomp\_assert}}
+\index{decomp\_assert@{decomp\_assert}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{decomp\_assert()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::detail\+::decomp\+\_\+assert (\begin{DoxyParamCaption}\item[{\textbf{ assert\+Type\+::\+Enum}}]{at,  }\item[{const char $\ast$}]{file,  }\item[{int}]{line,  }\item[{const char $\ast$}]{expr,  }\item[{const \textbf{ Result} \&}]{result }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_1_1detail_a0ff832be68bf666d856aefd539e1ce81} 
+\index{doctest::detail@{doctest::detail}!failed\_out\_of\_a\_testing\_context@{failed\_out\_of\_a\_testing\_context}}
+\index{failed\_out\_of\_a\_testing\_context@{failed\_out\_of\_a\_testing\_context}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{failed\_out\_of\_a\_testing\_context()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} void doctest\+::detail\+::failed\+\_\+out\+\_\+of\+\_\+a\+\_\+testing\+\_\+context (\begin{DoxyParamCaption}\item[{const \textbf{ Assert\+Data} \&}]{ad }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_1_1detail_a2d66bdaf42017e18b4a08849c13a72bf} 
+\index{doctest::detail@{doctest::detail}!filloss@{filloss}}
+\index{filloss@{filloss}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{filloss()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void doctest\+::detail\+::filloss (\begin{DoxyParamCaption}\item[{\textbf{ std\+::ostream} $\ast$}]{stream,  }\item[{const T \&}]{in }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01053\ \ \ \ \ \ \ \ \ filldata<T>::fill(stream,\ in);}
+\DoxyCodeLine{01054\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_1_1detail_a8c9475de1a743a6c4dcc991b979fad78} 
+\index{doctest::detail@{doctest::detail}!filloss@{filloss}}
+\index{filloss@{filloss}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{filloss()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , size\+\_\+t N$>$ \\
+void doctest\+::detail\+::filloss (\begin{DoxyParamCaption}\item[{\textbf{ std\+::ostream} $\ast$}]{stream,  }\item[{const T(\&)}]{in[\+N] }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//\ NOLINT(*-\/avoid-\/c-\/arrays)}}
+\DoxyCodeLine{01058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ T[N],\ T(\&)[N],\ T(\&\&)[N]\ have\ same\ behaviour.}}
+\DoxyCodeLine{01059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hence\ remove\ reference.}}
+\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ filloss<\textcolor{keyword}{typename}\ types::remove\_reference<\textcolor{keyword}{decltype}(in)>::type>(stream,\ in);}
+\DoxyCodeLine{01061\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_1_1detail_ad42cee23421e314311418eb529855a0b} 
+\index{doctest::detail@{doctest::detail}!forward@{forward}}
+\index{forward@{forward}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{forward()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\textbf{ DOCTEST\+\_\+\+CONSTEXPR\+\_\+\+FUNC} T \&\& doctest\+::detail\+::forward (\begin{DoxyParamCaption}\item[{typename \textbf{ types\+::remove\+\_\+reference}$<$ T $>$\+::type \&\&}]{t }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\&\&\textcolor{keyword}{>}(t);}
+\DoxyCodeLine{00990\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_1_1detail_abbc953c3dbd6ccfa4097de9b68529187} 
+\index{doctest::detail@{doctest::detail}!forward@{forward}}
+\index{forward@{forward}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{forward()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\textbf{ DOCTEST\+\_\+\+CONSTEXPR\+\_\+\+FUNC} T \&\& doctest\+::detail\+::forward (\begin{DoxyParamCaption}\item[{typename \textbf{ types\+::remove\+\_\+reference}$<$ T $>$\+::type \&}]{t }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00983\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00984\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\&\&\textcolor{keyword}{>}(t);}
+\DoxyCodeLine{00985\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_1_1detail_aad401b097a9af4df1d4a9d0911957c0f} 
+\index{doctest::detail@{doctest::detail}!instantiationHelper@{instantiationHelper}}
+\index{instantiationHelper@{instantiationHelper}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{instantiationHelper()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int doctest\+::detail\+::instantiation\+Helper (\begin{DoxyParamCaption}\item[{const T \&}]{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01653\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_1_1detail_a013828c4e677241cc26aeea33f762710} 
+\index{doctest::detail@{doctest::detail}!isDebuggerActive@{isDebuggerActive}}
+\index{isDebuggerActive@{isDebuggerActive}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{isDebuggerActive()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} bool doctest\+::detail\+::is\+Debugger\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_1_1detail_af15c2ff0484248d0966fc38a4b0d3a66} 
+\index{doctest::detail@{doctest::detail}!MakeContextScope@{MakeContextScope}}
+\index{MakeContextScope@{MakeContextScope}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{MakeContextScope()}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ Context\+Scope}$<$ L $>$ doctest\+::detail\+::\+Make\+Context\+Scope (\begin{DoxyParamCaption}\item[{const L \&}]{lambda }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01909\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01910\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ContextScope<L>(lambda);}
+\DoxyCodeLine{01911\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_1_1detail_a3887426da16e0d12e6f0e270a767a6a5} 
+\index{doctest::detail@{doctest::detail}!registerExceptionTranslatorImpl@{registerExceptionTranslatorImpl}}
+\index{registerExceptionTranslatorImpl@{registerExceptionTranslatorImpl}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{registerExceptionTranslatorImpl()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} void doctest\+::detail\+::register\+Exception\+Translator\+Impl (\begin{DoxyParamCaption}\item[{const \textbf{ IException\+Translator} $\ast$}]{et }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_1_1detail_a828e011bb6028ab94eb14a3c7d8bd2c4} 
+\index{doctest::detail@{doctest::detail}!registerReporterImpl@{registerReporterImpl}}
+\index{registerReporterImpl@{registerReporterImpl}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{registerReporterImpl()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} void doctest\+::detail\+::register\+Reporter\+Impl (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{int}]{prio,  }\item[{\textbf{ reporter\+Creator\+Func}}]{c,  }\item[{bool}]{is\+Reporter }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_1_1detail_a00f99edefb8490a8e2602d58c96431f4} 
+\index{doctest::detail@{doctest::detail}!regTest@{regTest}}
+\index{regTest@{regTest}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{regTest()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} int doctest\+::detail\+::reg\+Test (\begin{DoxyParamCaption}\item[{const \textbf{ Test\+Case} \&}]{tc }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_1_1detail_ac78a52271e895d8485356c4516a18685} 
+\index{doctest::detail@{doctest::detail}!reporterCreator@{reporterCreator}}
+\index{reporterCreator@{reporterCreator}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{reporterCreator()}
+{\footnotesize\ttfamily template$<$typename Reporter $>$ \\
+\textbf{ IReporter} $\ast$ doctest\+::detail\+::reporter\+Creator (\begin{DoxyParamCaption}\item[{const \textbf{ Context\+Options} \&}]{o }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{02104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{02105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Reporter(o);}
+\DoxyCodeLine{02106\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_1_1detail_ae79cb8df06d35468dd0ba9f04c85802c} 
+\index{doctest::detail@{doctest::detail}!setTestSuite@{setTestSuite}}
+\index{setTestSuite@{setTestSuite}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{setTestSuite()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} int doctest\+::detail\+::set\+Test\+Suite (\begin{DoxyParamCaption}\item[{const \textbf{ Test\+Suite} \&}]{ts }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_1_1detail_a6879a79aea397a22e296e4afd0a90e3b} 
+\index{doctest::detail@{doctest::detail}!stringifyBinaryExpr@{stringifyBinaryExpr}}
+\index{stringifyBinaryExpr@{stringifyBinaryExpr}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{stringifyBinaryExpr()}
+{\footnotesize\ttfamily template$<$typename L , typename R $>$ \\
+\textbf{ String} doctest\+::detail\+::stringify\+Binary\+Expr (\begin{DoxyParamCaption}\item[{const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(L)}]{lhs,  }\item[{const char $\ast$}]{op,  }\item[{const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(R)}]{rhs }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01356\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (DOCTEST\_STRINGIFY(lhs))\ +\ op\ +\ (DOCTEST\_STRINGIFY(rhs));}
+\DoxyCodeLine{01357\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_1_1detail_a60ffd50b9ee7adfcafc078f333aac8b6} 
+\index{doctest::detail@{doctest::detail}!throwException@{throwException}}
+\index{throwException@{throwException}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{throwException()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} void doctest\+::detail\+::throw\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_1_1detail_a8304147da6105e3359ba7ec124837669} 
+\index{doctest::detail@{doctest::detail}!tlssPop@{tlssPop}}
+\index{tlssPop@{tlssPop}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{tlssPop()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ String} doctest\+::detail\+::tlss\+Pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_1_1detail_a064d4f06f82441946b5093bc4553b6aa} 
+\index{doctest::detail@{doctest::detail}!tlssPush@{tlssPush}}
+\index{tlssPush@{tlssPush}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{tlssPush()}
+{\footnotesize\ttfamily \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ std\+::ostream} $\ast$ doctest\+::detail\+::tlss\+Push (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\label{namespacedoctest_1_1detail_a9b45a266999f027a4f3f96aabf31e06b} 
+\index{doctest::detail@{doctest::detail}!toStream@{toStream}}
+\index{toStream@{toStream}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{toStream()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ String} doctest\+::detail\+::to\+Stream (\begin{DoxyParamCaption}\item[{const T \&}]{in }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01065\ \ \ \ \ \ \ \ \ std::ostream*\ stream\ =\ tlssPush();}
+\DoxyCodeLine{01066\ \ \ \ \ \ \ \ \ filloss(stream,\ in);}
+\DoxyCodeLine{01067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tlssPop();}
+\DoxyCodeLine{01068\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\label{namespacedoctest_1_1detail_a0ffd8b760c2a9b355a1df02470fe2281} 
+\index{doctest::detail@{doctest::detail}!unary\_assert@{unary\_assert}}
+\index{unary\_assert@{unary\_assert}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{unary\_assert()}
+{\footnotesize\ttfamily template$<$typename L $>$ \\
+\textbf{ DOCTEST\+\_\+\+NOINLINE} bool doctest\+::detail\+::unary\+\_\+assert (\begin{DoxyParamCaption}\item[{\textbf{ assert\+Type\+::\+Enum}}]{at,  }\item[{const char $\ast$}]{file,  }\item[{int}]{line,  }\item[{const char $\ast$}]{expr,  }\item[{const \textbf{ DOCTEST\+\_\+\+REF\+\_\+\+WRAP}(L)}]{val }\end{DoxyParamCaption})}
+
+OCLINT bitwise operator in conditional
+\begin{DoxyCode}{0}
+\DoxyCodeLine{01780\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{01781\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ failed\ =\ !val;}
+\DoxyCodeLine{01782\ }
+\DoxyCodeLine{01783\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(at\ \&\ assertType::is\_false)\ }
+\DoxyCodeLine{01784\ \ \ \ \ \ \ \ \ \ \ \ \ failed\ =\ !failed;}
+\DoxyCodeLine{01785\ }
+\DoxyCodeLine{01786\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{01787\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ IF\ THE\ DEBUGGER\ BREAKS\ HERE\ -\/\ GO\ 1\ LEVEL\ UP\ IN\ THE\ CALLSTACK\ FOR\ THE\ FAILING\ ASSERT}}
+\DoxyCodeLine{01788\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ THIS\ IS\ THE\ EFFECT\ OF\ HAVING\ 'DOCTEST\_CONFIG\_SUPER\_FAST\_ASSERTS'\ DEFINED}}
+\DoxyCodeLine{01789\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{01790\ \ \ \ \ \ \ \ \ DOCTEST\_ASSERT\_OUT\_OF\_TESTS((DOCTEST\_STRINGIFY(val)));}
+\DoxyCodeLine{01791\ \ \ \ \ \ \ \ \ DOCTEST\_ASSERT\_IN\_TESTS((DOCTEST\_STRINGIFY(val)));}
+\DoxyCodeLine{01792\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !failed;}
+\DoxyCodeLine{01793\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variáveis}
+\label{namespacedoctest_1_1detail_ade1619b532a3d3e6f19ee1187ff3c514} 
+\index{doctest::detail@{doctest::detail}!TestCase@{TestCase}}
+\index{TestCase@{TestCase}!doctest::detail@{doctest::detail}}
+\doxysubsubsection{TestCase}
+{\footnotesize\ttfamily struct \textbf{ DOCTEST\+\_\+\+INTERFACE} \textbf{ doctest\+::detail\+::\+Test\+Case}}
+
